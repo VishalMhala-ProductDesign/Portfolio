@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="font style.css">
+<link rel="stylesheet" href="button.css">
+<link rel="stylesheet" href="card.css">
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .topband {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 30px;
+    background-color: var(--color-surface);
+    border-bottom: 1px solid var(--color-border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: var(--shadow-xs);
+  }
+
+  .topband-text {
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: var(--color-text-primary);
+  }
+
+  .topband-text p {
+    margin: 2px 0 0;
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--color-text-muted);
+  }
+
+  .button-container {
+    display: flex;
+    gap: 8px;
+  }
+
+  .main-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: auto;
+    padding: 32px 20px;
+  }
+
+  body { padding-bottom: 56px; }
+
+  /* Capability statement inside card */
+  .card-text {
+    flex: 1;
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .cap-i-can {
+    font-size: clamp(56px, 5.5vw, 84px);
+    font-weight: 200;
+    letter-spacing: -0.045em;
+    line-height: 1;
+    color: #E0671A;
+  }
+  .cap-line {
+    font-size: clamp(30px, 3.4vw, 50px);
+    font-weight: 300;
+    letter-spacing: -0.025em;
+    line-height: 1.2;
+    display: block;
+  }
+  .cap-blue    { color: #2563EB; }
+  .cap-olive   { color: #9A7C10; }
+  .cap-green   { color: #3A7258; }
+  .cap-mustard { color: #C08010; }
+  .cap-and {
+    font-size: clamp(22px, 2.4vw, 34px);
+    font-weight: 200;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    color: #94A3B8;
+  }
+  .cap-impact {
+    font-size: clamp(44px, 4.5vw, 68px);
+    font-weight: 200;
+    letter-spacing: -0.04em;
+    line-height: 1.05;
+    color: #0A1628;
+  }
+  .cap-bio {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.7;
+    color: #475569;
+  }
+</style>
+</head>
+<body>
+
+<div class="topband">
+  <div class="topband-text">
+    Vishal Mhala
+    <p>Senior Product Designer | AI-Powered Enterprise Workflow | Human-AI Collaboration | Agentic Systems</p>
+  </div>
+  <div class="button-container">
+    <a href="Case Study 1.html" class="button">PLEXOS Case Study </a>
+    <a href="Case Study 2.html" class="button">MM Case Study</a>
+    <a href="Other Art Work.html" class="button">Other Art Work</a>
+</div>
+</div>
+
+<!-- About Section -->
+<div class="main-content">
+  <div style="width:1350px; max-width:100%; margin:0 auto; padding:28px 32px; display:flex; gap:60px; align-items:stretch;">
+    <div class="card-text" style="flex:1;">
+      <div class="cap-i-can">I can</div>
+      <span class="cap-line cap-blue">Analyse workflows,</span>
+      <span class="cap-line cap-olive">Identify AI opportunities,</span>
+      <span class="cap-line cap-green">Design orchestration systems,</span>
+      <span class="cap-line cap-mustard">Define human-AI interaction,</span>
+      <div class="cap-and">and</div>
+      <div class="cap-impact">Improve operational efficiency</div>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:20px; width:320px; flex-shrink:0;">
+      <img src="Vishal Mhala Profile.jpg" alt="Profile Picture" class="card-profile-picture">
+      <p class="cap-bio">
+        I'm a Senior Product Designer focused on solving complex business problems through product strategy, workflow design, and scalable user experiences.
+        I've worked on enterprise platforms where users manage large datasets, sophisticated workflows, and critical business decisions — going beyond screens to understand systems, user behaviour, and business goals.
+        Today I explore how AI can be embedded into workflows to automate repetitive tasks, improve decision-making, and create measurable value.
+      </p>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Product Thinking Section -->
+<div class="main-content">
+  <div class="card">
+    <h2 class="card-title">Product Thinking</h2>
+
+    <div class="services-container">
+      <div class="services-column">
+        <div class="service-item">
+          <h3>Identifying Market Opportunities</h3>
+          <p>I analyze customer needs, industry trends, and business challenges to uncover opportunities for product innovation.</p>
+        </div>
+
+        <div class="service-item">
+          <h3>Balancing User, Business &amp; Technology Needs</h3>
+          <p>I evaluate solutions through the lens of user value, business impact, and technical feasibility.</p>
+        </div>
+
+        <div class="service-item">
+          <h3>Prioritizing High-Impact Solutions</h3>
+          <p>I assess opportunities based on effort, value, and strategic importance to focus on the most impactful initiatives.</p>
+        </div>
+      </div>
+
+      <div class="services-column">
+        <div class="service-item">
+          <h3>Defining Product Strategy</h3>
+          <p>I connect user problems and business goals to establish a clear direction for product development.</p>
+        </div>
+
+        <div class="service-item">
+          <h3>Measuring Product Success</h3>
+          <p>I define success metrics and track outcomes to understand adoption, engagement, and business impact.</p>
+        </div>
+
+        <div class="service-item">
+          <h3>Delivering Business Outcomes</h3>
+          <p>I collaborate with cross-functional teams to ensure product solutions create measurable value for both users and the organization.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- UX Thinking Section -->
+<div class="main-content">
+  <div class="card">
+    <h2 class="card-title">UX Thinking</h2>
+
+    <div class="services-container">
+      <div class="services-column">
+        <div class="service-item">
+          <h3>Understanding User Behaviors</h3>
+          <p>I conduct user interviews, observe workflows, and analyze feedback to uncover user needs, motivations, and pain points.</p>
+        </div>
+
+        <div class="service-item">
+          <h3>Defining User Problems</h3>
+          <p>I synthesize research findings into clear problem statements that align user challenges with business objectives.</p>
+        </div>
+
+        <div class="service-item">
+          <h3>Designing End-to-End Experiences</h3>
+          <p>I map user journeys and design seamless experiences across multiple touchpoints to support task completion.</p>
+        </div>
+      </div>
+
+      <div class="services-column">
+        <div class="service-item">
+          <h3>Simplifying Complex Workflows</h3>
+          <p>I break down complicated processes into intuitive steps, reducing cognitive load and improving usability.</p>
+        </div>
+
+        <div class="service-item">
+          <h3>Validating Solutions Through Research</h3>
+          <p>I test concepts and prototypes with users, gathering insights to refine designs before implementation.</p>
+        </div>
+
+        <div class="service-item">
+          <h3>Driving User-Centered Decisions</h3>
+          <p>I combine user insights, data, and stakeholder input to ensure product decisions are grounded in real user needs.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Bottom Band -->
+<div style="
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  padding: 16px 30px;
+  background-color: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+  box-shadow: 0 -1px 3px rgba(15,23,42,0.06);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+">
+  <a href="https://www.linkedin.com/in/vishal-mhala-331b519a" target="_blank" style="font-size:13px; font-weight:500; color:var(--color-accent); text-decoration:none; letter-spacing:0.01em;">LinkedIn</a>
+  <span style="color:var(--color-border); font-size:13px;">|</span>
+  <a href="Vishal Mhala Senior Product Designer.pdf" target="_blank" rel="noopener" style="font-size:13px; font-weight:500; color:var(--color-accent); text-decoration:none; letter-spacing:0.01em;">Resume</a>
+  <span style="color:var(--color-border); font-size:13px;">|</span>
+  <a href="tel:+918655128455" style="font-size:13px; font-weight:400; color:var(--color-text-primary); text-decoration:none;">MO — 8655128455</a>
+  <span style="color:var(--color-border); font-size:13px;">|</span>
+  <a href="mailto:vishal.m.mhala@gmail.com" style="font-size:13px; font-weight:400; color:var(--color-text-primary); text-decoration:none;">vishal.m.mhala@gmail.com</a>
+</div>
+
+</body>
+</html>

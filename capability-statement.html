@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Capability Statement — Vishal Mhala</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      background: #ffffff;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      color: #0A1628;
+    }
+
+    .slide {
+      min-height: 100vh;
+      padding: 80px 120px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 0;
+      position: relative;
+    }
+
+    /* Back link */
+    .back {
+      position: absolute;
+      top: 40px;
+      left: 120px;
+      font-size: 12px;
+      font-weight: 500;
+      color: #CBD5E1;
+      text-decoration: none;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+    }
+    .back:hover { color: #94A3B8; }
+
+    /* "I can" */
+    .heading {
+      font-size: clamp(60px, 7.5vw, 104px);
+      font-weight: 200;
+      letter-spacing: -0.045em;
+      line-height: 1;
+      color: #E0671A;
+      margin-bottom: 56px;
+    }
+
+    /* Capability lines */
+    .lines {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .line {
+      font-size: clamp(30px, 3.8vw, 56px);
+      font-weight: 300;
+      letter-spacing: -0.025em;
+      line-height: 1.45;
+      display: block;
+    }
+
+    .blue    { color: #2563EB; }
+    .olive   { color: #9A7C10; }
+    .green   { color: #3A7258; }
+    .mustard { color: #C08010; }
+
+    /* "and" connector */
+    .and {
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      color: #94A3B8;
+      text-transform: lowercase;
+      margin: 36px 0 30px;
+    }
+
+    /* Impact statement */
+    .impact {
+      font-size: clamp(50px, 6.8vw, 96px);
+      font-weight: 200;
+      letter-spacing: -0.04em;
+      line-height: 1.05;
+      color: #0A1628;
+      max-width: 16ch;
+    }
+
+    @media (max-width: 700px) {
+      .slide  { padding: 60px 36px; }
+      .back   { left: 36px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="slide">
+
+    <a href="index.html" class="back">← Portfolio</a>
+
+    <div class="heading">I can</div>
+
+    <div class="lines">
+      <span class="line blue">Analyse workflows,</span>
+      <span class="line olive">Identify AI opportunities,</span>
+      <span class="line green">Design orchestration systems,</span>
+      <span class="line mustard">Define human-AI interaction,</span>
+    </div>
+
+    <div class="and">and</div>
+
+    <div class="impact">Improve operational<br>efficiency</div>
+
+  </div>
+</body>
+</html>

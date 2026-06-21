@@ -1,0 +1,970 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PLEXOS &mdash; Cost Optimization Product for Power Domain</title>
+  <link rel="stylesheet" href="font style.css">
+  <link rel="stylesheet" href="button.css">
+  <link rel="stylesheet" href="card.css">
+  <link rel="stylesheet" href="case-study-1.css">
+  <link rel="stylesheet" href="layout.css">
+</head>
+<body>
+
+  <!-- ===== Top Band ===== -->
+  <div class="topband" id="topband">
+    <div class="topband-back">
+      <a href="index.html" class="back-button">Back</a>
+    </div>
+    <div class="topband-title">PLEXOS &mdash; Cost Optimization Product for Power Domain</div>
+  </div>
+
+  <!-- ===== Sidebar Nav ===== -->
+  <div class="sidebar-nav">
+    <a href="#product requirement" class="nav-button active">Product Requirement</a>
+    <a href="#Energy Market (Day Ahead)" class="nav-button">Energy Market (Day Ahead)</a>
+    <a href="#energyMarketRealTime" class="nav-button">Energy Market (Real Time)</a>
+    <a href="#interview" class="nav-button">Interview</a>
+    <a href="#persona" class="nav-button">Persona</a>
+    <a href="#unified energy market" class="nav-button">Unified Energy Market</a>
+    <a href="#independent Power Producers (IPPs)" class="nav-button">Independent Power Producers (IPPs)</a>
+    <a href="#independent System Operator (ISO)" class="nav-button">Independent System Operator (ISO)</a>
+    <a href="#load serving entity" class="nav-button">Load Serving Entity (LSE)</a>
+    <a href="#plexos web" class="nav-button">PLEXOS web</a>
+    <a href="#pendo analysis" class="nav-button">PENDO Analysis</a>
+  </div>
+
+  <!-- ===== Sections ===== -->
+
+  <div class="main-content">
+    <div class="card">
+      <div id="product requirement" class="section">
+        <h2>Product Requirements</h2>
+        <p>PLEXOS Cloud is a Software-as-a-Service (SaaS) platform that enables energy
+          market participants, utilities, system operators, planners, and analysts to model,
+          simulate, optimize, and analyze power systems through a cloud-based environment.
+          The platform provides scalable computation, collaboration capabilities, centralized
+          data management, scenario analysis, and visualization tools to support energy market
+          and transmission planning decisions.
+        </p>
+
+        <h2>Problem Statement</h2>
+        <p>Energy companies currently face several challenges:</p>
+        <ul style="margin-left: 20px; line-height: 1.8;">
+          <li>Complex desktop-based modeling workflows</li>
+          <li>Limited collaboration across teams</li>
+          <li>Long simulation execution times</li>
+          <li>Data version management issues</li>
+          <li>Difficulty sharing results with stakeholders</li>
+          <li>High infrastructure and maintenance costs</li>
+        </ul>
+        <p>A cloud-native platform is required to streamline modeling workflows, improve
+          collaboration, and accelerate decision-making.</p>
+
+        <h2>Vision</h2>
+        <p>Enable energy organizations to perform power system modeling, simulation, and planning
+          from anywhere through a scalable, secure, and collaborative cloud platform.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="main-content">
+    <div class="card">
+      <div id="Energy Market (Day Ahead)" class="section">
+        <h2>Energy Market (Day Ahead)</h2>
+
+        <div class="carousel" id="dayAheadCarousel">
+          <div class="carousel-track">
+
+            <div class="carousel-slide active">
+              <h4 class="slide-title">Independent Power Producers</h4>
+              <p class="slide-objective">IPPs Objective: &ldquo;How do I maximize revenue from my assets?&rdquo;</p>
+              <h4 class="slide-section">Generators Produce Electricity</h4>
+              <p class="slide-body">A gas-fired power plant offers 100 MWh of electricity in the Day-Ahead Market at $50/MWh. The ISO accepts this offer because it matches forecasted demand.<br><br>
+              The generator is scheduled to run 100 MWh the next day.<br><br>
+              Key point: The generator doesn&rsquo;t sell directly to customers &mdash; it sells into the ISO-run market.</p>
+              <h4 class="slide-section">Why They Use PLEXOS:</h4>
+              <p class="slide-body">To model their generation portfolios, optimize dispatch, and develop bidding strategies for day-ahead and real-time markets.<br><br>
+              To evaluate fuel switching, renewables integration, and storage economics.<br><br>
+              Examples: Shell, RWE Supply &amp; Trading, SN Aboitiz Power, Mabuhay Energy Corporation.</p>
+            </div>
+
+            <div class="carousel-slide">
+              <h4 class="slide-title">Independent System Operator</h4>
+              <p class="slide-objective">ISO Objective: &ldquo;How do I balance the system fairly?&rdquo;</p>
+              <h4 class="slide-section">Market Operators (middleman &mdash; doesn&rsquo;t own or profit from energy)</h4>
+              <p class="slide-body">The ISO clears the market: it matches supply (generators) and demand (utilities / LSEs).<br><br>
+              Market-clearing price = $50/MWh.<br>
+              Generator is committed to produce 100 MWh.<br>
+              Utility is committed to buy 100 MWh.<br><br>
+              Key point: The ISO does not keep the money or electricity. It acts as a clearinghouse, ensuring financial settlement between sellers and buyers.</p>
+            </div>
+
+            <div class="carousel-slide">
+              <h4 class="slide-title">Load Serving Entities</h4>
+              <p class="slide-objective">Utility Objective: &ldquo;How do I buy power cheaply?&rdquo;</p>
+              <h4 class="slide-section">Utilities (Actual buyer of wholesale energy and seller to retail customers)</h4>
+              <p class="slide-body">The utility (say, City Power Co.) has 100 MWh of demand forecasted for its customers. It bids in the DAM and is awarded 100 MWh at $50/MWh.<br><br>
+              Utility cost = 100 &times; $50 = $5,000 (paid to the market/ISO).<br><br>
+              Key point: Utilities use the ISO market to procure energy on behalf of their retail customers.</p>
+              <h4 class="slide-section">Why They Use PLEXOS:</h4>
+              <p class="slide-body">For demand forecasting, procurement planning, and resource adequacy assessments.<br><br>
+              To evaluate long-term investments (e.g., new solar, wind, gas, or storage).<br><br>
+              Examples: Alliant Energy, San Diego Gas &amp; Electric, Energy Australia, Territory Generation.</p>
+            </div>
+
+            <div class="carousel-slide">
+              <h4 class="slide-title">Customer</h4>
+              <p class="slide-objective">Indirect Users</p>
+              <h4 class="slide-section">Customer / Indirect Users (pays for energy, wires, and reliability costs)</h4>
+              <p class="slide-body">End-use customers (homes, factories, offices) consume the 100 MWh.<br><br>
+              Customers pay their retail electricity bill to the utility &mdash; covering wholesale energy cost, transmission/distribution charges, utility&rsquo;s operating costs, and profit margin.</p>
+              <h4 class="slide-section">Why They Use PLEXOS:</h4>
+              <p class="slide-body">End user customers (factories, households, businesses) don&rsquo;t use PLEXOS directly.</p>
+            </div>
+
+          </div>
+
+          <div class="carousel-controls">
+            <button class="carousel-btn" onclick="carouselMove('dayAheadCarousel', -1)">&#8249;</button>
+            <div class="carousel-dots">
+              <button class="carousel-dot active" onclick="carouselGoTo('dayAheadCarousel', 0)"></button>
+              <button class="carousel-dot" onclick="carouselGoTo('dayAheadCarousel', 1)"></button>
+              <button class="carousel-dot" onclick="carouselGoTo('dayAheadCarousel', 2)"></button>
+              <button class="carousel-dot" onclick="carouselGoTo('dayAheadCarousel', 3)"></button>
+            </div>
+            <button class="carousel-btn" onclick="carouselMove('dayAheadCarousel', 1)">&#8250;</button>
+            <span class="carousel-counter">1 / 4</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="main-content">
+    <div class="card">
+      <div id="energyMarketRealTime" class="section">
+        <h2>Energy Market (Real-Time)</h2>
+        <p>Available generators in the Real-Time Market at, say, $120/MWh
+
+          The ISO procures extra 10 MWh from other available generators in the
+          Real-Time Market at, say, $120/MWh.<br><br>
+
+          The utility must pay: 10 Ã— $120 = $1,200 extra.
+          Total utility cost = $5,000 (DAM) + $1,200 (RTM) = $6,200.<br><br>
+
+          If customer demand really was 110 MWh, their bill increases accordingly (e.g., 110 Ã— $70 = $7,700).
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="main-content">
+    <div class="card">
+      <div id="interview" class="section">
+        <h2>Interview</h2>
+
+        <div onclick="openDocumentFullScreen()" style="cursor:pointer; border:1px solid #ddd; border-radius:8px; padding:16px; transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='0 4px 12px rgba(0,0,0,0.15)'" onmouseout="this.style.boxShadow='none'">
+          <p style="margin:0 0 16px 0;">"I used AI to accelerate research preparation and analysis. AI helped generate open-ended and
+            close-ended interview questions, organize interview notes, identify recurring themes, and create
+            concise summaries. This allowed me to spend more time understanding user behavior and translating
+            insights into product decisions."</p>
+
+          <div class="profiles-row">
+            <div class="profile-card">
+              <img src="John Scott.jpg" alt="John Scott" class="profile-pic">
+              <div class="profile-name">John Scott</div>
+              <div class="profile-desc">Decisioning Advantage</div>
+            </div>
+            <div class="profile-card">
+              <img src="Rob Homer.jpg" alt="Rob Homer" class="profile-pic">
+              <div class="profile-name">Rob Homer</div>
+              <div class="profile-desc">Analytics for the Energy Transition</div>
+            </div>
+            <div class="profile-card">
+              <img src="Steven Broad.jpg" alt="Steven Broad" class="profile-pic">
+              <div class="profile-name">Steven Broad</div>
+              <div class="profile-desc">Product Leadership</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="main-content">
+    <div class="card">
+      <div id="persona" class="section">
+        <h2>Persona</h2>
+
+        <div onclick="openPersonaDocument()" style="display:flex; gap:24px; align-items:flex-start; margin-top:16px; cursor:pointer; border:1px solid #ddd; border-radius:8px; padding:16px; transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='0 4px 12px rgba(0,0,0,0.15)'" onmouseout="this.style.boxShadow='none'">
+          <img src="All Persona Collage.png" alt="All Persona Collage" style="width:45%; border-radius:6px; flex-shrink:0; object-fit:cover;">
+          <div style="flex:1;">
+            <p style="margin:0; line-height:1.8; color:#555; font-size:15px;">
+              John is an Independent System Operator responsible for maintaining grid reliability
+              and ensuring fair market operations. During the interview, he emphasized the importance
+              of balancing electricity supply and demand in real time while adhering to regulatory
+              requirements. He relies on multiple data sources to monitor system conditions,
+              market activity, and operational constraints. His primary goal is to make informed
+              decisions quickly to prevent reliability issues and market disruptions. John often
+              faces challenges due to changing grid conditions, unexpected outages, and incomplete
+              information. He values tools that provide a unified view of operational and market data.
+              Transparency and trust in the data are critical for his decision-making process. He frequently
+              collaborates with generators, utilities, and market participants to coordinate actions across
+              the system. Success for John means maintaining system stability while ensuring a fair and efficient
+              market outcome. He sees opportunities for AI to improve data aggregation, situational awareness,
+              and decision support during critical operational events.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="main-content">
+    <div class="card">
+      <div id="unified energy market" class="section">
+        <h2>Unified Energy Market Workflow (All Personas)</h2>
+
+        <table style="width:100%; border-collapse:collapse; font-size:14px; margin-top:16px;">
+          <thead>
+            <tr>
+              <th style="width:20%;"></th>
+              <th style="border:1px solid #CBD5E1; padding:10px; text-align:left; background:#fff;">
+                IPPs Objective :<br><strong>"How do I maximize revenue from my assets?"</strong>
+              </th>
+              <th style="border:1px solid #CBD5E1; padding:10px; text-align:left; background:#fff;">
+                ISO Objective :<br><strong>"How do I balance the system fairly?"</strong>
+              </th>
+              <th style="border:1px solid #CBD5E1; padding:10px; text-align:left; background:#fff;">
+                Utility Objective :<br><strong>"How do I buy power cheaply?"</strong>
+              </th>
+            </tr>
+            <tr>
+              <th style="border:1px solid #CBD5E1; padding:10px; text-align:left; background:#DBEAFE;">Step</th>
+              <th style="border:1px solid #CBD5E1; padding:10px; text-align:left; background:#DBEAFE;">IPPs / Generator</th>
+              <th style="border:1px solid #CBD5E1; padding:10px; text-align:left; background:#DBEAFE;">ISO / Market Operator</th>
+              <th style="border:1px solid #CBD5E1; padding:10px; text-align:left; background:#DBEAFE;">LSE / Utility</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="border:1px solid #CBD5E1; padding:10px; font-weight:bold; background:#EFF6FF;">1. Gather Input</td>
+              <td style="border:1px solid #CBD5E1; padding:10px;">Collect plant, fuel, and price data</td>
+              <td style="border:1px solid #CBD5E1; padding:10px;">Collect system, bids, and grid state data</td>
+              <td style="border:1px solid #CBD5E1; padding:10px;">Collect demand, contracts, and market data</td>
+            </tr>
+            <tr>
+              <td style="border:1px solid #CBD5E1; padding:10px; font-weight:bold; background:#EFF6FF;">2. Simulation Setup</td>
+              <td style="border:1px solid #CBD5E1; padding:10px;">Configure bidding &amp; asset models</td>
+              <td style="border:1px solid #CBD5E1; padding:10px;">Configure market clearing &amp; constraints</td>
+              <td style="border:1px solid #CBD5E1; padding:10px;">Configure procurement and demand models</td>
+            </tr>
+            <tr>
+              <td style="border:1px solid #CBD5E1; padding:10px; font-weight:bold; background:#EFF6FF;">3. Backcast (Validation)</td>
+              <td style="border:1px solid #CBD5E1; padding:10px;">Validate price, dispatch &amp; revenue vs history</td>
+              <td style="border:1px solid #CBD5E1; padding:10px;">Validate market behavior vs history</td>
+              <td style="border:1px solid #CBD5E1; padding:10px;">Validate model vs historical demand &amp; cost</td>
+            </tr>
+            <tr>
+              <td style="border:1px solid #CBD5E1; padding:10px; font-weight:bold; background:#EFF6FF;">4. Analyse Solution</td>
+              <td style="border:1px solid #CBD5E1; padding:10px;">Analyze profit drivers and asset performance</td>
+              <td style="border:1px solid #CBD5E1; padding:10px;">Analyse reliability, congestion, and prices</td>
+              <td style="border:1px solid #CBD5E1; padding:10px;">Analyze cost, supply mix, and adequacy</td>
+            </tr>
+            <tr>
+              <td style="border:1px solid #CBD5E1; padding:10px; font-weight:bold; background:#EFF6FF;">5. Forecast / Base Run</td>
+              <td style="border:1px solid #CBD5E1; padding:10px;">Forecast prices and revenue opportunities</td>
+              <td style="border:1px solid #CBD5E1; padding:10px;">Forecast system conditions &amp; market outcomes</td>
+              <td style="border:1px solid #CBD5E1; padding:10px;">Forecast demand and procurement needs</td>
+            </tr>
+            <tr>
+              <td style="border:1px solid #CBD5E1; padding:10px; font-weight:bold; background:#EFF6FF;">6. Scenario Run</td>
+              <td style="border:1px solid #CBD5E1; padding:10px;">Test profit vs risk across scenarios</td>
+              <td style="border:1px solid #CBD5E1; padding:10px;">Test system stress and market scenarios</td>
+              <td style="border:1px solid #CBD5E1; padding:10px;">Test supply-demand and investment scenarios</td>
+            </tr>
+            <tr>
+              <td style="border:1px solid #CBD5E1; padding:10px; font-weight:bold; background:#EFF6FF;">7. Compare Scenarios</td>
+              <td style="border:1px solid #CBD5E1; padding:10px;">Select highest risk-adjusted return strategy</td>
+              <td style="border:1px solid #CBD5E1; padding:10px;">Select most stable &amp; efficient system outcome</td>
+              <td style="border:1px solid #CBD5E1; padding:10px;">Select least-cost reliable option</td>
+            </tr>
+            <tr>
+              <td style="border:1px solid #CBD5E1; padding:10px; font-weight:bold; background:#EFF6FF;">8. Results / Outcome</td>
+              <td style="border:1px solid #CBD5E1; padding:10px;">Execute bids and realize revenue</td>
+              <td style="border:1px solid #CBD5E1; padding:10px;">Clear market and ensure system reliability</td>
+              <td style="border:1px solid #CBD5E1; padding:10px;">Procure power and serve customers</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="main-content">
+    <div class="card">
+      <div id="independent Power Producers (IPPs)" class="section">
+        <h2>Independent Power Producers (IPPs)</h2>
+        <p>
+           AI opportunities across the IPP journey include intelligent data aggregation, 
+           bidding strategy recommendations, price forecasting, revenue gap analysis, 
+           profit-risk simulations, and real-time performance monitoring. These capabilities 
+           help users optimize revenue, reduce market risk, improve decision-making speed, and 
+           identify the most profitable operational and bidding strategies.  
+        </p>
+
+        <!-- Editable user journey map table -->
+        <div style="overflow-x:auto; margin-top:16px;">
+          <table style="width:100%; border-collapse:collapse; font-size:12px; table-layout:fixed;">
+            <colgroup>
+              <col style="width:13%">
+              <col style="width:15%">
+              <col style="width:10%">
+              <col style="width:42%">
+              <col style="width:20%">
+            </colgroup>
+            <tbody>
+
+              <!-- ===== Real Time Section ===== -->
+              <tr>
+                <td rowspan="14" style="border:1px solid #CBD5E1; padding:10px 12px; vertical-align:top; background:#fff;">
+                  <strong style="font-size:12px;">Independent Power Producers (IPPs) / Generators</strong><br><br>
+                  <span style="color:#666; font-size:11px;">(Focused on asset value, dispatch, revenue, and market risk)</span><br><br>
+                  <span style="font-size:12px; line-height:2.1;">
+                    Operator<br>Trader<br>Market Analyst<br>Portfolio Manager<br>Risk Manager<br>Planner<br>Investment Analyst
+                  </span>
+                </td>
+                <td style="border:1px solid #CBD5E1; padding:8px 12px; background:#1B3F72; color:#fff; font-weight:bold; font-size:12px;">Real Time</td>
+                <td colspan="2" style="border:1px solid #CBD5E1; padding:8px 12px; background:#1B3F72; color:#fff; font-weight:bold; font-size:12px; text-align:center;">
+                  <span id="ippsStepTitle"></span>
+                </td>
+                <td style="border:1px solid #CBD5E1; padding:6px 10px; background:#1B3F72; color:#fff; font-weight:bold; font-size:12px; vertical-align:middle;">
+                  <div style="display:flex; align-items:center; justify-content:space-between; gap:6px;">
+                    <span>AI Opportunity</span>
+                    <div style="display:flex; gap:4px; flex-shrink:0; align-items:center;">
+                      <button onclick="ippsCarouselMove(-1)" style="width:20px;height:20px;font-size:13px;padding:0;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.35);color:#fff;border-radius:3px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;">&#8249;</button>
+                      <span class="ipps-step-indicator" style="font-size:11px;color:#fff;min-width:30px;text-align:center;font-variant-numeric:tabular-nums;opacity:0.8;">1 / 8</span>
+                      <button onclick="ippsCarouselMove(1)" style="width:20px;height:20px;font-size:13px;padding:0;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.35);color:#fff;border-radius:3px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;">&#8250;</button>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td rowspan="6" contenteditable="true" style="border:1px solid #CBD5E1; padding:8px 10px; background:#F8FAFC; outline:none; vertical-align:top; line-height:2.2;">
+                  Real-time dispatch &amp; generation report<br>
+                  Price (LMP) tracking &amp; opportunity report<br>
+                  Imbalance &amp; deviation report<br>
+                  Plant performance / availability report<br>
+                  Revenue realization (hourly) report
+                </td>
+                <td style="border:1px solid #CBD5E1; padding:5px 8px; background:#DBEAFE; font-weight:bold; vertical-align:top;">Goal</td>
+                <td id="ipp-rt-goal" style="border:1px solid #CBD5E1; padding:5px 10px; background:#F8FAFC; line-height:1.7;"></td>
+                <td id="ipp-rt-ai" rowspan="6" style="border:1px solid #CBD5E1; padding:10px 12px; vertical-align:top; background:#F8FAFC; font-size:12px; line-height:1.7;"></td>
+              </tr>
+              <tr>
+                <td style="border:1px solid #CBD5E1; padding:5px 8px; background:#DBEAFE; font-weight:bold; vertical-align:top;">Actions</td>
+                <td id="ipp-rt-actions" style="border:1px solid #CBD5E1; padding:5px 10px; background:#F8FAFC; line-height:1.7;"></td>
+              </tr>
+              <tr>
+                <td style="border:1px solid #CBD5E1; padding:5px 8px; background:#DBEAFE; font-weight:bold; vertical-align:top;">Thoughts</td>
+                <td id="ipp-rt-thoughts" style="border:1px solid #CBD5E1; padding:5px 10px; background:#F8FAFC; line-height:1.7;"></td>
+              </tr>
+              <tr>
+                <td style="border:1px solid #CBD5E1; padding:5px 8px; background:#DBEAFE; font-weight:bold; vertical-align:top;">Pain Point</td>
+                <td id="ipp-rt-painpoint" style="border:1px solid #CBD5E1; padding:5px 10px; background:#F8FAFC; line-height:1.7;"></td>
+              </tr>
+              <tr>
+                <td style="border:1px solid #CBD5E1; padding:5px 8px; background:#DBEAFE; font-weight:bold; vertical-align:top;">Emotions</td>
+                <td id="ipp-rt-emotions" style="border:1px solid #CBD5E1; padding:5px 10px; background:#F8FAFC; line-height:1.7;"></td>
+              </tr>
+              <tr>
+                <td style="border:1px solid #CBD5E1; padding:5px 8px; background:#DBEAFE; font-weight:bold; vertical-align:top;">Tool</td>
+                <td id="ipp-rt-tool" style="border:1px solid #CBD5E1; padding:5px 10px; background:#F8FAFC; line-height:1.7;"></td>
+              </tr>
+
+              <!-- ===== Day Ahead / Forward Section ===== -->
+              <tr>
+                <td style="border:1px solid #CBD5E1; padding:8px 12px; background:#1B3F72; color:#fff; font-weight:bold; font-size:12px;">Day Ahead / Forward</td>
+                <td colspan="2" style="border:1px solid #CBD5E1; padding:8px 12px; background:#1B3F72; color:#fff; font-weight:bold; font-size:12px; text-align:center;">
+                  <span id="ippsStepTitleDA"></span>
+                </td>
+                <td style="border:1px solid #CBD5E1; padding:6px 10px; background:#1B3F72; color:#fff; font-weight:bold; font-size:12px; vertical-align:middle;">
+                  <div style="display:flex; align-items:center; justify-content:space-between; gap:6px;">
+                    <span>AI Opportunity</span>
+                    <div style="display:flex; gap:4px; flex-shrink:0; align-items:center;">
+                      <button onclick="ippsCarouselMove(-1)" style="width:20px;height:20px;font-size:13px;padding:0;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.35);color:#fff;border-radius:3px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;">&#8249;</button>
+                      <span class="ipps-step-indicator" style="font-size:11px;color:#fff;min-width:30px;text-align:center;font-variant-numeric:tabular-nums;opacity:0.8;">1 / 8</span>
+                      <button onclick="ippsCarouselMove(1)" style="width:20px;height:20px;font-size:13px;padding:0;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.35);color:#fff;border-radius:3px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;">&#8250;</button>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td rowspan="6" contenteditable="true" style="border:1px solid #CBD5E1; padding:8px 10px; background:#F8FAFC; outline:none; vertical-align:top; line-height:2.2;">
+                  Price forecast report (DA / forward curves)<br>
+                  Bidding strategy &amp; offer curve report<br>
+                  Unit commitment &amp; dispatch forecast<br>
+                  Revenue &amp; margin forecast report<br>
+                  Risk exposure (VaR / downside scenarios)<br>
+                  Portfolio optimization report
+                </td>
+                <td style="border:1px solid #CBD5E1; padding:5px 8px; background:#DBEAFE; font-weight:bold; vertical-align:top;">Goal</td>
+                <td id="ipp-da-goal" style="border:1px solid #CBD5E1; padding:5px 10px; background:#F8FAFC; line-height:1.7;"></td>
+                <td id="ipp-da-ai" rowspan="6" style="border:1px solid #CBD5E1; padding:10px 12px; vertical-align:top; background:#F8FAFC; font-size:12px; line-height:1.7;"></td>
+              </tr>
+              <tr>
+                <td style="border:1px solid #CBD5E1; padding:5px 8px; background:#DBEAFE; font-weight:bold; vertical-align:top;">Actions</td>
+                <td id="ipp-da-actions" style="border:1px solid #CBD5E1; padding:5px 10px; background:#F8FAFC; line-height:1.7;"></td>
+              </tr>
+              <tr>
+                <td style="border:1px solid #CBD5E1; padding:5px 8px; background:#DBEAFE; font-weight:bold; vertical-align:top;">Thoughts</td>
+                <td id="ipp-da-thoughts" style="border:1px solid #CBD5E1; padding:5px 10px; background:#F8FAFC; line-height:1.7;"></td>
+              </tr>
+              <tr>
+                <td style="border:1px solid #CBD5E1; padding:5px 8px; background:#DBEAFE; font-weight:bold; vertical-align:top;">Pain Point</td>
+                <td id="ipp-da-painpoint" style="border:1px solid #CBD5E1; padding:5px 10px; background:#F8FAFC; line-height:1.7;"></td>
+              </tr>
+              <tr>
+                <td style="border:1px solid #CBD5E1; padding:5px 8px; background:#DBEAFE; font-weight:bold; vertical-align:top;">Emotions</td>
+                <td id="ipp-da-emotions" style="border:1px solid #CBD5E1; padding:5px 10px; background:#F8FAFC; line-height:1.7;"></td>
+              </tr>
+              <tr>
+                <td style="border:1px solid #CBD5E1; padding:5px 8px; background:#DBEAFE; font-weight:bold; vertical-align:top;">Tool</td>
+                <td id="ipp-da-tool" style="border:1px solid #CBD5E1; padding:5px 10px; background:#F8FAFC; line-height:1.7;"></td>
+              </tr>
+
+            </tbody>
+          </table>
+
+          <!-- Carousel controls -->
+          <div style="display:flex; justify-content:center; align-items:center; gap:16px; margin-top:14px;">
+            <button class="carousel-btn" onclick="ippsCarouselMove(-1)">&#8249;</button>
+            <div id="ippsCarouselDots" style="display:flex; gap:8px; align-items:center;">
+              <button class="carousel-dot active" onclick="ippsCarouselGoTo(0)" title="Gather Input &amp; Prepare"></button>
+              <button class="carousel-dot" onclick="ippsCarouselGoTo(1)" title="Simulation Setting"></button>
+              <button class="carousel-dot" onclick="ippsCarouselGoTo(2)" title="Execute Back Cast Model &amp; RUN"></button>
+              <button class="carousel-dot" onclick="ippsCarouselGoTo(3)" title="Analyse Solution"></button>
+              <button class="carousel-dot" onclick="ippsCarouselGoTo(4)" title="Forecast/Base Model &amp; Run"></button>
+              <button class="carousel-dot" onclick="ippsCarouselGoTo(5)" title="Forecast/Base Model + Scenario-A &amp; RUN"></button>
+              <button class="carousel-dot" onclick="ippsCarouselGoTo(6)" title="Compare Scenarios"></button>
+              <button class="carousel-dot" onclick="ippsCarouselGoTo(7)" title="Results"></button>
+            </div>
+            <button class="carousel-btn" onclick="ippsCarouselMove(1)">&#8250;</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="main-content">
+    <div class="card">
+      <div id="independent System Operator (ISO)" class="section">
+        <h2>Independent System Operator (ISO)</h2>
+
+        <p>
+          AI opportunities across the ISO journey include real-time data validation, constraint validation,
+          market pattern learning, root cause analysis, risk forecasting, stress scenario generation,
+          scenario risk ranking, and proactive real-time monitoring. These capabilities help operators
+          improve grid stability, accelerate decision-making, enhance market efficiency, identify emerging
+          risks earlier, and ensure reliable and transparent power system operations.
+        </p>
+
+        <!-- ISO user journey map table -->
+        <div style="overflow-x:auto; margin-top:16px;">
+          <table style="width:100%; border-collapse:collapse; font-size:12px; table-layout:fixed;">
+            <colgroup>
+              <col style="width:13%">
+              <col style="width:15%">
+              <col style="width:10%">
+              <col style="width:42%">
+              <col style="width:20%">
+            </colgroup>
+            <tbody>
+
+              <!-- ===== Real Time Section ===== -->
+              <tr>
+                <td rowspan="14" style="border:1px solid #CBD5E1; padding:10px 12px; vertical-align:top; background:#fff;">
+                  <strong style="font-size:12px;">Independent System Operator (ISO) / Market Operators</strong><br><br>
+                  <span style="color:#666; font-size:11px;">(Focused on system-wide efficiency, congestion, reliability, and market design)</span><br><br>
+                  <span style="font-size:12px; line-height:2.1;">
+                    System Operator / Dispatcher (RT)<br>Real-Time Market Operator<br>Day-Ahead Market Operator<br>Market Analyst<br>Transmission Planner<br>Reliability Engineer<br>Market Design / Policy Analyst
+                  </span>
+                </td>
+                <td style="border:1px solid #CBD5E1; padding:8px 12px; background:#1B3F72; color:#fff; font-weight:bold; font-size:12px;">Real Time</td>
+                <td colspan="2" style="border:1px solid #CBD5E1; padding:8px 12px; background:#1B3F72; color:#fff; font-weight:bold; font-size:12px; text-align:center;">
+                  <span id="isoStepTitle"></span>
+                </td>
+                <td style="border:1px solid #CBD5E1; padding:6px 10px; background:#1B3F72; color:#fff; font-weight:bold; font-size:12px; vertical-align:middle;">
+                  <div style="display:flex; align-items:center; justify-content:space-between; gap:6px;">
+                    <span>AI Opportunity</span>
+                    <div style="display:flex; gap:4px; flex-shrink:0; align-items:center;">
+                      <button onclick="isoCarouselMove(-1)" style="width:20px;height:20px;font-size:13px;padding:0;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.35);color:#fff;border-radius:3px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;">&#8249;</button>
+                      <span class="iso-step-indicator" style="font-size:11px;color:#fff;min-width:30px;text-align:center;font-variant-numeric:tabular-nums;opacity:0.8;">1 / 8</span>
+                      <button onclick="isoCarouselMove(1)" style="width:20px;height:20px;font-size:13px;padding:0;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.35);color:#fff;border-radius:3px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;">&#8250;</button>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td rowspan="6" contenteditable="true" style="border:1px solid #CBD5E1; padding:8px 10px; background:#F8FAFC; outline:none; vertical-align:top; line-height:2.2;">
+                  Real-time dispatch &amp; system balance report<br>
+                  Congestion &amp; transmission constraint report<br>
+                  Frequency &amp; reserve monitoring report<br>
+                  Imbalance / shortage risk report<br>
+                  Real-time LMP / price signal report
+                </td>
+                <td style="border:1px solid #CBD5E1; padding:5px 8px; background:#DBEAFE; font-weight:bold; vertical-align:top;">Goal</td>
+                <td id="iso-rt-goal" style="border:1px solid #CBD5E1; padding:5px 10px; background:#F8FAFC; line-height:1.7;"></td>
+                <td id="iso-rt-ai" rowspan="6" style="border:1px solid #CBD5E1; padding:10px 12px; vertical-align:top; background:#F8FAFC; font-size:12px; line-height:1.7;"></td>
+              </tr>
+              <tr>
+                <td style="border:1px solid #CBD5E1; padding:5px 8px; background:#DBEAFE; font-weight:bold; vertical-align:top;">Actions</td>
+                <td id="iso-rt-actions" style="border:1px solid #CBD5E1; padding:5px 10px; background:#F8FAFC; line-height:1.7;"></td>
+              </tr>
+              <tr>
+                <td style="border:1px solid #CBD5E1; padding:5px 8px; background:#DBEAFE; font-weight:bold; vertical-align:top;">Thoughts</td>
+                <td id="iso-rt-thoughts" style="border:1px solid #CBD5E1; padding:5px 10px; background:#F8FAFC; line-height:1.7;"></td>
+              </tr>
+              <tr>
+                <td style="border:1px solid #CBD5E1; padding:5px 8px; background:#DBEAFE; font-weight:bold; vertical-align:top;">Pain Point</td>
+                <td id="iso-rt-painpoint" style="border:1px solid #CBD5E1; padding:5px 10px; background:#F8FAFC; line-height:1.7;"></td>
+              </tr>
+              <tr>
+                <td style="border:1px solid #CBD5E1; padding:5px 8px; background:#DBEAFE; font-weight:bold; vertical-align:top;">Emotions</td>
+                <td id="iso-rt-emotions" style="border:1px solid #CBD5E1; padding:5px 10px; background:#F8FAFC; line-height:1.7;"></td>
+              </tr>
+              <tr>
+                <td style="border:1px solid #CBD5E1; padding:5px 8px; background:#DBEAFE; font-weight:bold; vertical-align:top;">Tool</td>
+                <td id="iso-rt-tool" style="border:1px solid #CBD5E1; padding:5px 10px; background:#F8FAFC; line-height:1.7;"></td>
+              </tr>
+
+              <!-- ===== Day Ahead / Forward Section ===== -->
+              <tr>
+                <td style="border:1px solid #CBD5E1; padding:8px 12px; background:#1B3F72; color:#fff; font-weight:bold; font-size:12px;">Day Ahead / Forward</td>
+                <td colspan="2" style="border:1px solid #CBD5E1; padding:8px 12px; background:#1B3F72; color:#fff; font-weight:bold; font-size:12px; text-align:center;">
+                  <span id="isoStepTitleDA"></span>
+                </td>
+                <td style="border:1px solid #CBD5E1; padding:6px 10px; background:#1B3F72; color:#fff; font-weight:bold; font-size:12px; vertical-align:middle;">
+                  <div style="display:flex; align-items:center; justify-content:space-between; gap:6px;">
+                    <span>AI Opportunity</span>
+                    <div style="display:flex; gap:4px; flex-shrink:0; align-items:center;">
+                      <button onclick="isoCarouselMove(-1)" style="width:20px;height:20px;font-size:13px;padding:0;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.35);color:#fff;border-radius:3px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;">&#8249;</button>
+                      <span class="iso-step-indicator" style="font-size:11px;color:#fff;min-width:30px;text-align:center;font-variant-numeric:tabular-nums;opacity:0.8;">1 / 8</span>
+                      <button onclick="isoCarouselMove(1)" style="width:20px;height:20px;font-size:13px;padding:0;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.35);color:#fff;border-radius:3px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;">&#8250;</button>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td rowspan="6" contenteditable="true" style="border:1px solid #CBD5E1; padding:8px 10px; background:#F8FAFC; outline:none; vertical-align:top; line-height:2.2;">
+                  Market clearing report (LMP, dispatch, unit commitment)<br>
+                  Congestion &amp; nodal pricing analysis<br>
+                  Resource adequacy / reserve margin report<br>
+                  Transmission constraint &amp; flow report<br>
+                  Market efficiency / price behaviour report
+                </td>
+                <td style="border:1px solid #CBD5E1; padding:5px 8px; background:#DBEAFE; font-weight:bold; vertical-align:top;">Goal</td>
+                <td id="iso-da-goal" style="border:1px solid #CBD5E1; padding:5px 10px; background:#F8FAFC; line-height:1.7;"></td>
+                <td id="iso-da-ai" rowspan="6" style="border:1px solid #CBD5E1; padding:10px 12px; vertical-align:top; background:#F8FAFC; font-size:12px; line-height:1.7;"></td>
+              </tr>
+              <tr>
+                <td style="border:1px solid #CBD5E1; padding:5px 8px; background:#DBEAFE; font-weight:bold; vertical-align:top;">Actions</td>
+                <td id="iso-da-actions" style="border:1px solid #CBD5E1; padding:5px 10px; background:#F8FAFC; line-height:1.7;"></td>
+              </tr>
+              <tr>
+                <td style="border:1px solid #CBD5E1; padding:5px 8px; background:#DBEAFE; font-weight:bold; vertical-align:top;">Thoughts</td>
+                <td id="iso-da-thoughts" style="border:1px solid #CBD5E1; padding:5px 10px; background:#F8FAFC; line-height:1.7;"></td>
+              </tr>
+              <tr>
+                <td style="border:1px solid #CBD5E1; padding:5px 8px; background:#DBEAFE; font-weight:bold; vertical-align:top;">Pain Point</td>
+                <td id="iso-da-painpoint" style="border:1px solid #CBD5E1; padding:5px 10px; background:#F8FAFC; line-height:1.7;"></td>
+              </tr>
+              <tr>
+                <td style="border:1px solid #CBD5E1; padding:5px 8px; background:#DBEAFE; font-weight:bold; vertical-align:top;">Emotions</td>
+                <td id="iso-da-emotions" style="border:1px solid #CBD5E1; padding:5px 10px; background:#F8FAFC; line-height:1.7;"></td>
+              </tr>
+              <tr>
+                <td style="border:1px solid #CBD5E1; padding:5px 8px; background:#DBEAFE; font-weight:bold; vertical-align:top;">Tool</td>
+                <td id="iso-da-tool" style="border:1px solid #CBD5E1; padding:5px 10px; background:#F8FAFC; line-height:1.7;"></td>
+              </tr>
+
+            </tbody>
+          </table>
+
+          <!-- Carousel controls -->
+          <div style="display:flex; justify-content:center; align-items:center; gap:16px; margin-top:14px;">
+            <button class="carousel-btn" onclick="isoCarouselMove(-1)">&#8249;</button>
+            <div id="isoCarouselDots" style="display:flex; gap:8px; align-items:center;">
+              <button class="carousel-dot active" onclick="isoCarouselGoTo(0)" title="Gather Input &amp; Prepare"></button>
+              <button class="carousel-dot" onclick="isoCarouselGoTo(1)" title="Simulation Setting"></button>
+              <button class="carousel-dot" onclick="isoCarouselGoTo(2)" title="Execute Back Cast Model &amp; RUN"></button>
+              <button class="carousel-dot" onclick="isoCarouselGoTo(3)" title="Analyse Solution"></button>
+              <button class="carousel-dot" onclick="isoCarouselGoTo(4)" title="Forecast/Base Model &amp; Run"></button>
+              <button class="carousel-dot" onclick="isoCarouselGoTo(5)" title="Forecast/Base Model + Scenario-A &amp; RUN"></button>
+              <button class="carousel-dot" onclick="isoCarouselGoTo(6)" title="Compare Scenarios"></button>
+              <button class="carousel-dot" onclick="isoCarouselGoTo(7)" title="Results"></button>
+            </div>
+            <button class="carousel-btn" onclick="isoCarouselMove(1)">&#8250;</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="main-content">
+    <div class="card">
+      <div id="load serving entity" class="section">
+        <h2>Load Serving Entity (LSE)</h2>
+
+        <p>
+          AI opportunities across the LSE journey include data integration and cleaning, model configuration
+          assistance, error detection and calibration, insight generation, forecasting automation, scenario
+          generation, decision support, and real-time monitoring and alerting. These capabilities help improve
+          forecast accuracy, reduce manual effort, identify risks earlier, optimize procurement and portfolio
+          decisions, and enhance confidence in delivering reliable and cost-effective energy services.
+        </p>
+
+        <!-- LSE user journey map table -->
+        <div style="overflow-x:auto; margin-top:16px;">
+          <table style="width:100%; border-collapse:collapse; font-size:12px; table-layout:fixed;">
+            <colgroup>
+              <col style="width:13%">
+              <col style="width:15%">
+              <col style="width:10%">
+              <col style="width:42%">
+              <col style="width:20%">
+            </colgroup>
+            <tbody>
+
+              <!-- ===== Real Time Section ===== -->
+              <tr>
+                <td rowspan="14" style="border:1px solid #CBD5E1; padding:10px 12px; vertical-align:top; background:#fff;">
+                  <strong style="font-size:12px;">Load-Serving Entity (LSE) / Utility</strong><br><br>
+                  <span style="color:#666; font-size:11px;">(Focused on serving load reliably at least cost over short and long horizons)</span><br><br>
+                  <span style="font-size:12px; line-height:2.1;">
+                    Grid Operator / Dispatcher<br>Short-Term Trader / Scheduler<br>Load Forecaster<br>Market Analyst<br>Resource Planner (IRP / Capacity)<br>Portfolio Manager<br>Risk Manager<br>Financial / Investment Analyst
+                  </span>
+                </td>
+                <td style="border:1px solid #CBD5E1; padding:8px 12px; background:#1B3F72; color:#fff; font-weight:bold; font-size:12px;">Real Time</td>
+                <td colspan="2" style="border:1px solid #CBD5E1; padding:8px 12px; background:#1B3F72; color:#fff; font-weight:bold; font-size:12px; text-align:center;">
+                  <span id="lseStepTitle"></span>
+                </td>
+                <td style="border:1px solid #CBD5E1; padding:6px 10px; background:#1B3F72; color:#fff; font-weight:bold; font-size:12px; vertical-align:middle;">
+                  <div style="display:flex; align-items:center; justify-content:space-between; gap:6px;">
+                    <span>AI Opportunity</span>
+                    <div style="display:flex; gap:4px; flex-shrink:0; align-items:center;">
+                      <button onclick="lseCarouselMove(-1)" style="width:20px;height:20px;font-size:13px;padding:0;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.35);color:#fff;border-radius:3px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;">&#8249;</button>
+                      <span class="lse-step-indicator" style="font-size:11px;color:#fff;min-width:30px;text-align:center;font-variant-numeric:tabular-nums;opacity:0.8;">1 / 8</span>
+                      <button onclick="lseCarouselMove(1)" style="width:20px;height:20px;font-size:13px;padding:0;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.35);color:#fff;border-radius:3px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;">&#8250;</button>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td rowspan="6" contenteditable="true" style="border:1px solid #CBD5E1; padding:8px 10px; background:#F8FAFC; outline:none; vertical-align:top; line-height:2.2;">
+                  Load vs Forecast Deviation<br>
+                  Generation &amp; Outage Status<br>
+                  Real-Time Price &amp; Congestion Signals<br>
+                  Reserve / Ancillary Status<br>
+                  Renewable Variability &amp; Weather Impact<br>
+                  System Imbalance / Shortage Risk<br>
+                  Load minus renewable generation<br>
+                  Critical for real-time balancing
+                </td>
+                <td style="border:1px solid #CBD5E1; padding:5px 8px; background:#DBEAFE; font-weight:bold; vertical-align:top;">Goal</td>
+                <td id="lse-rt-goal" style="border:1px solid #CBD5E1; padding:5px 10px; background:#F8FAFC; line-height:1.7;"></td>
+                <td id="lse-rt-ai" rowspan="6" style="border:1px solid #CBD5E1; padding:10px 12px; vertical-align:top; background:#F8FAFC; font-size:12px; line-height:1.7;"></td>
+              </tr>
+              <tr>
+                <td style="border:1px solid #CBD5E1; padding:5px 8px; background:#DBEAFE; font-weight:bold; vertical-align:top;">Actions</td>
+                <td id="lse-rt-actions" style="border:1px solid #CBD5E1; padding:5px 10px; background:#F8FAFC; line-height:1.7;"></td>
+              </tr>
+              <tr>
+                <td style="border:1px solid #CBD5E1; padding:5px 8px; background:#DBEAFE; font-weight:bold; vertical-align:top;">Thoughts</td>
+                <td id="lse-rt-thoughts" style="border:1px solid #CBD5E1; padding:5px 10px; background:#F8FAFC; line-height:1.7;"></td>
+              </tr>
+              <tr>
+                <td style="border:1px solid #CBD5E1; padding:5px 8px; background:#DBEAFE; font-weight:bold; vertical-align:top;">Pain Point</td>
+                <td id="lse-rt-painpoint" style="border:1px solid #CBD5E1; padding:5px 10px; background:#F8FAFC; line-height:1.7;"></td>
+              </tr>
+              <tr>
+                <td style="border:1px solid #CBD5E1; padding:5px 8px; background:#DBEAFE; font-weight:bold; vertical-align:top;">Emotions</td>
+                <td id="lse-rt-emotions" style="border:1px solid #CBD5E1; padding:5px 10px; background:#F8FAFC; line-height:1.7;"></td>
+              </tr>
+              <tr>
+                <td style="border:1px solid #CBD5E1; padding:5px 8px; background:#DBEAFE; font-weight:bold; vertical-align:top;">Tool</td>
+                <td id="lse-rt-tool" style="border:1px solid #CBD5E1; padding:5px 10px; background:#F8FAFC; line-height:1.7;"></td>
+              </tr>
+
+              <!-- ===== Day Ahead / Forward Section ===== -->
+              <tr>
+                <td style="border:1px solid #CBD5E1; padding:8px 12px; background:#1B3F72; color:#fff; font-weight:bold; font-size:12px;">Day Ahead / Forward</td>
+                <td colspan="2" style="border:1px solid #CBD5E1; padding:8px 12px; background:#1B3F72; color:#fff; font-weight:bold; font-size:12px; text-align:center;">
+                  <span id="lseStepTitleDA"></span>
+                </td>
+                <td style="border:1px solid #CBD5E1; padding:6px 10px; background:#1B3F72; color:#fff; font-weight:bold; font-size:12px; vertical-align:middle;">
+                  <div style="display:flex; align-items:center; justify-content:space-between; gap:6px;">
+                    <span>AI Opportunity</span>
+                    <div style="display:flex; gap:4px; flex-shrink:0; align-items:center;">
+                      <button onclick="lseCarouselMove(-1)" style="width:20px;height:20px;font-size:13px;padding:0;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.35);color:#fff;border-radius:3px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;">&#8249;</button>
+                      <span class="lse-step-indicator" style="font-size:11px;color:#fff;min-width:30px;text-align:center;font-variant-numeric:tabular-nums;opacity:0.8;">1 / 8</span>
+                      <button onclick="lseCarouselMove(1)" style="width:20px;height:20px;font-size:13px;padding:0;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.35);color:#fff;border-radius:3px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;">&#8250;</button>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td rowspan="6" contenteditable="true" style="border:1px solid #CBD5E1; padding:8px 10px; background:#F8FAFC; outline:none; vertical-align:top; line-height:2.2;">
+                  Demand &amp; Forecast Reports<br>
+                  Price &amp; Market Simulation Reports<br>
+                  Resource Planning (IRP / Capacity)<br>
+                  Procurement &amp; Bidding Report<br>
+                  Reliability &amp; Adequacy Report<br>
+                  Financial / Investment Reports
+                </td>
+                <td style="border:1px solid #CBD5E1; padding:5px 8px; background:#DBEAFE; font-weight:bold; vertical-align:top;">Goal</td>
+                <td id="lse-da-goal" style="border:1px solid #CBD5E1; padding:5px 10px; background:#F8FAFC; line-height:1.7;"></td>
+                <td id="lse-da-ai" rowspan="6" style="border:1px solid #CBD5E1; padding:10px 12px; vertical-align:top; background:#F8FAFC; font-size:12px; line-height:1.7;"></td>
+              </tr>
+              <tr>
+                <td style="border:1px solid #CBD5E1; padding:5px 8px; background:#DBEAFE; font-weight:bold; vertical-align:top;">Actions</td>
+                <td id="lse-da-actions" style="border:1px solid #CBD5E1; padding:5px 10px; background:#F8FAFC; line-height:1.7;"></td>
+              </tr>
+              <tr>
+                <td style="border:1px solid #CBD5E1; padding:5px 8px; background:#DBEAFE; font-weight:bold; vertical-align:top;">Thoughts</td>
+                <td id="lse-da-thoughts" style="border:1px solid #CBD5E1; padding:5px 10px; background:#F8FAFC; line-height:1.7;"></td>
+              </tr>
+              <tr>
+                <td style="border:1px solid #CBD5E1; padding:5px 8px; background:#DBEAFE; font-weight:bold; vertical-align:top;">Pain Point</td>
+                <td id="lse-da-painpoint" style="border:1px solid #CBD5E1; padding:5px 10px; background:#F8FAFC; line-height:1.7;"></td>
+              </tr>
+              <tr>
+                <td style="border:1px solid #CBD5E1; padding:5px 8px; background:#DBEAFE; font-weight:bold; vertical-align:top;">Emotions</td>
+                <td id="lse-da-emotions" style="border:1px solid #CBD5E1; padding:5px 10px; background:#F8FAFC; line-height:1.7;"></td>
+              </tr>
+              <tr>
+                <td style="border:1px solid #CBD5E1; padding:5px 8px; background:#DBEAFE; font-weight:bold; vertical-align:top;">Tool</td>
+                <td id="lse-da-tool" style="border:1px solid #CBD5E1; padding:5px 10px; background:#F8FAFC; line-height:1.7;"></td>
+              </tr>
+
+            </tbody>
+          </table>
+
+          <!-- Carousel controls -->
+          <div style="display:flex; justify-content:center; align-items:center; gap:16px; margin-top:14px;">
+            <button class="carousel-btn" onclick="lseCarouselMove(-1)">&#8249;</button>
+            <div id="lseCarouselDots" style="display:flex; gap:8px; align-items:center;">
+              <button class="carousel-dot active" onclick="lseCarouselGoTo(0)" title="Gather Input &amp; Prepare"></button>
+              <button class="carousel-dot" onclick="lseCarouselGoTo(1)" title="Simulation Setting"></button>
+              <button class="carousel-dot" onclick="lseCarouselGoTo(2)" title="Execute Back Cast Model &amp; RUN"></button>
+              <button class="carousel-dot" onclick="lseCarouselGoTo(3)" title="Analyse Solution"></button>
+              <button class="carousel-dot" onclick="lseCarouselGoTo(4)" title="Forecast/Base Model &amp; Run"></button>
+              <button class="carousel-dot" onclick="lseCarouselGoTo(5)" title="Forecast/Base Model + Scenario-A &amp; RUN"></button>
+              <button class="carousel-dot" onclick="lseCarouselGoTo(6)" title="Compare Scenarios"></button>
+              <button class="carousel-dot" onclick="lseCarouselGoTo(7)" title="Results"></button>
+            </div>
+            <button class="carousel-btn" onclick="lseCarouselMove(1)">&#8250;</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="main-content">
+    <div class="card">
+      <div id="plexos web" class="section">
+        <h2>PLEXOS Web</h2>
+
+        <div style="display:flex; gap:20px; margin-top:20px; justify-content:center;">
+
+          <div onclick="openPlexosOverview()" style="flex:1; border:1px solid #ddd; border-radius:8px; overflow:hidden; cursor:pointer; transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='0 4px 12px rgba(0,0,0,0.15)'" onmouseout="this.style.boxShadow='none'">
+            <img src="PLEXOS Overview.png" alt="PLEXOS Overview" style="width:100%; height:180px; object-fit:cover; display:block;">
+            <div style="padding:12px;">
+              <div style="font-weight:700; font-size:15px; margin-bottom:6px; color:#333;">PLEXOS Overview</div>
+              <div style="font-size:13px; color:#555; line-height:1.5;">AI opportunities are integrated throughout the journey, including data integration and cleaning, model configuration assistance, error detection and calibration.</div>
+            </div>
+          </div>
+
+          <div onclick="openPlexosData()" style="flex:1; border:1px solid #ddd; border-radius:8px; overflow:hidden; cursor:pointer; transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='0 4px 12px rgba(0,0,0,0.15)'" onmouseout="this.style.boxShadow='none'">
+            <img src="PLEXOS Data.png" alt="PLEXOS Data" style="width:100%; height:180px; object-fit:cover; display:block;">
+            <div style="padding:12px;">
+              <div style="font-weight:700; font-size:15px; margin-bottom:6px; color:#333;">PLEXOS Data</div>
+              <div style="font-size:13px; color:#555; line-height:1.5;">AI opportunities are integrated throughout the journey, including data integration and cleaning, model configuration assistance, error detection and calibration.</div>
+            </div>
+          </div>
+
+          <div onclick="openPlexosModels()" style="flex:1; border:1px solid #ddd; border-radius:8px; overflow:hidden; cursor:pointer; transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='0 4px 12px rgba(0,0,0,0.15)'" onmouseout="this.style.boxShadow='none'">
+            <img src="PLEXOS Models.png" alt="PLEXOS Models" style="width:100%; height:180px; object-fit:cover; display:block;">
+            <div style="padding:12px;">
+              <div style="font-weight:700; font-size:15px; margin-bottom:6px; color:#333;">PLEXOS Models</div>
+              <div style="font-size:13px; color:#555; line-height:1.5;">AI opportunities are integrated throughout the journey, including data integration and cleaning, model configuration assistance, error detection and calibration.</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="main-content">
+    <div class="card">
+      <div id="pendo analysis" class="section">
+        <h2>PENDO Analysis</h2>
+
+        <div onclick="openPendoAnalysis()" style="display:flex; gap:24px; align-items:flex-start; margin-top:16px; cursor:pointer; border:1px solid #ddd; border-radius:8px; padding:16px; transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='0 4px 12px rgba(0,0,0,0.15)'" onmouseout="this.style.boxShadow='none'">
+          <img src="PENDO Analysis.png" alt="PENDO Analysis" style="width:45%; border-radius:6px; flex-shrink:0; object-fit:cover;">
+          <div style="flex:1;">
+            <p style="margin:0; line-height:1.8; color:#555; font-size:15px;">
+              Pendo analysis of PLEXOS Cloud provided valuable insights into user behavior,
+              feature adoption, and navigation patterns across key workflows. By analyzing user interactions,
+              drop-off points, and engagement metrics, we identified areas where users experienced friction and
+              opportunities to streamline the overall experience. The data helped validate assumptions from user
+              interviews and highlighted the most frequently used features and workflows. These insights informed
+              design decisions, prioritization of improvements, and optimization of critical user journeys within
+              the platform. Ultimately, Pendo enabled a more data-driven approach to enhancing usability, increasing
+              feature adoption, and improving overall user satisfaction.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Modals ===== -->
+
+  <!-- PLEXOS Overview Modal -->
+  <div id="plexosOverviewModal" class="document-modal">
+    <div class="document-container">
+      <div class="document-header">
+        <h3>PLEXOS Overview</h3>
+        <button class="close-document" onclick="closePlexosOverview()">Ã— Close</button>
+      </div>
+      <div class="document-viewer" style="background:#000; display:flex; align-items:center; justify-content:center;">
+        <video controls style="width:100%; height:100%; outline:none;">
+          <source src="PLEXOS Overview.mov" type="video/quicktime">
+          <source src="PLEXOS Overview.mov" type="video/mp4">
+          Your browser does not support this video format.
+        </video>
+      </div>
+    </div>
+  </div>
+
+  <!-- PLEXOS Data Modal -->
+  <div id="plexosDataModal" class="document-modal">
+    <div class="document-container">
+      <div class="document-header">
+        <h3>PLEXOS Data</h3>
+        <button class="close-document" onclick="closePlexosData()">Ã— Close</button>
+      </div>
+      <div class="document-viewer" style="background:#000; display:flex; align-items:center; justify-content:center;">
+        <video controls style="width:100%; height:100%; outline:none;">
+          <source src="PLEXOS Data.mov" type="video/quicktime">
+          <source src="PLEXOS Data.mov" type="video/mp4">
+          Your browser does not support this video format.
+        </video>
+      </div>
+    </div>
+  </div>
+
+  <!-- PLEXOS Models Modal -->
+  <div id="plexosModelsModal" class="document-modal">
+    <div class="document-container">
+      <div class="document-header">
+        <h3>PLEXOS Models</h3>
+        <button class="close-document" onclick="closePlexosModels()">Ã— Close</button>
+      </div>
+      <div class="document-viewer" style="background:#000; display:flex; align-items:center; justify-content:center;">
+        <video controls style="width:100%; height:100%; outline:none;">
+          <source src="PLEXOS Models.mov" type="video/quicktime">
+          <source src="PLEXOS Models.mov" type="video/mp4">
+          Your browser does not support this video format.
+        </video>
+      </div>
+    </div>
+  </div>
+
+  <!-- PENDO Analysis Modal -->
+  <div id="pendoAnalysisModal" class="document-modal">
+    <div class="document-container">
+      <div class="document-header">
+        <h3>PENDO Analysis</h3>
+        <button class="close-document" onclick="closePendoAnalysis()">Ã— Close</button>
+      </div>
+      <div class="document-viewer">
+        <iframe src="PENDO%20Analysis.pdf"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- LSE Journey Modal -->
+  <div id="lseJourneyModal" class="document-modal">
+    <div class="document-container">
+      <div class="document-header">
+        <h3>LSE User Journey &amp; AI Opportunity</h3>
+        <button class="close-document" onclick="closeLSEJourney()">Ã— Close</button>
+      </div>
+      <div class="document-viewer">
+        <iframe src="LSE%20User%20Journey%20%26%20AI%20Oppourtunity.pdf"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- ISO Journey Modal -->
+  <div id="isoJourneyModal" class="document-modal">
+    <div class="document-container">
+      <div class="document-header">
+        <h3>ISO User Journey &amp; AI Opportunity</h3>
+        <button class="close-document" onclick="closeISOJourney()">Ã— Close</button>
+      </div>
+      <div class="document-viewer">
+        <iframe src="ISO%20User%20Journey%20%26%20AI%20Opportunity.pdf"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- IPPs Journey Modal -->
+  <div id="ippsJourneyModal" class="document-modal">
+    <div class="document-container">
+      <div class="document-header">
+        <h3>IPPs User Journey &amp; AI Opportunity</h3>
+        <button class="close-document" onclick="closeIPPsJourney()">Ã— Close</button>
+      </div>
+      <div class="document-viewer">
+        <iframe src="IPPs%20User%20Journey%20%26%20AI%20Opportunity.pdf"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- Persona Document Modal -->
+  <div id="personaModal" class="document-modal">
+    <div class="document-container">
+      <div class="document-header">
+        <h3>Persona Document</h3>
+        <button class="close-document" onclick="closePersonaDocument()">Ã— Close</button>
+      </div>
+      <div class="document-viewer">
+        <iframe src="All%20Persona.pdf"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- Interview Guide Modal -->
+  <div id="documentModal" class="document-modal">
+    <div class="document-container">
+      <div class="document-header">
+        <h3>Solution Document</h3>
+        <button class="close-document" onclick="closeDocumentFullScreen()">Ã— Close</button>
+      </div>
+      <div class="document-viewer">
+        <iframe src="Interview%20Guide.pdf"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <script src="case-study-1.js"></script>
+
+</body>
+</html>

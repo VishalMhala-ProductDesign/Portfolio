@@ -1,0 +1,194 @@
+/* ===== Card Container ===== */
+.card {
+  max-width: 1550px;
+  background: var(--color-surface);
+  padding: 28px 32px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  width: 1350px;
+  margin: 0 auto;
+  border: 1px solid var(--color-border);
+  transition: box-shadow var(--transition);
+}
+
+.card-title {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 0;
+  color: var(--color-text-primary);
+  text-align: center;
+}
+
+/* ===== Two Column Layout ===== */
+.card-content-two-col {
+  display: flex;
+  gap: 40px;
+  align-items: stretch;
+}
+
+.card-column      { flex: 1; }
+.card-column-left { flex: 1; }
+.card-column-right { flex: 0 0 auto; }
+
+/* ===== Services / Items Grid ===== */
+.services-container {
+  display: flex;
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.services-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.service-item {
+  padding: 20px 22px;
+  background-color: var(--color-bg);
+  border-left: 3px solid var(--color-accent);
+  border-radius: var(--radius-md);
+}
+
+
+.service-item h3 {
+  margin: 0 0 8px 0;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.service-item p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--color-text-secondary);
+}
+
+/* ===== Profile Picture ===== */
+.card-profile-picture {
+  width: 100%;
+  height: auto;
+  border-radius: 0;
+  display: block;
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-md);
+}
+
+/* ===== Text Content ===== */
+.card-text h1 {
+  margin: 0 0 4px 0;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.card-text h2 {
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1.45;
+  color: var(--color-text-secondary);
+  margin-bottom: 16px;
+}
+
+.card-text p {
+  margin: 0;
+  line-height: 1.8;
+  color: var(--color-text-secondary);
+  font-size: 15px;
+}
+
+/* ===== Card Grid ===== */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 16px;
+  margin-top: 0;
+}
+
+.card-grid-item {
+  padding: 16px 18px;
+  background-color: var(--color-bg);
+  border-radius: var(--radius-md);
+  border-left: 3px solid var(--color-accent);
+  border: 1px solid var(--color-border);
+  border-left: 3px solid var(--color-accent);
+  transition: box-shadow var(--transition), transform var(--transition);
+}
+
+.card-grid-item:hover {
+  box-shadow: var(--shadow-sm);
+  transform: translateY(-1px);
+}
+
+/* ===== Profiles Row ===== */
+.profiles-row {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.profile-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 200px;
+  flex-shrink: 0;
+}
+
+.profile-pic {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  object-position: top;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+}
+
+.profile-name {
+  margin-top: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--color-text-primary);
+  text-align: left;
+  width: 100%;
+}
+
+.profile-desc {
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  text-align: left;
+  width: 100%;
+  line-height: 1.4;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .card {
+    padding: 16px 18px;
+    width: 100%;
+  }
+
+  .card-content-two-col {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .services-container {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .card-profile-picture {
+    width: 200px;
+    height: 200px;
+  }
+
+  .card-title {
+    font-size: 22px;
+  }
+}
