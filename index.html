@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="font style.css">
-<link rel="stylesheet" href="button.css">
-<link rel="stylesheet" href="card.css">
+<link rel="stylesheet" href="assets/css/font style.css">
+<link rel="stylesheet" href="assets/css/button.css">
+<link rel="stylesheet" href="assets/css/card.css">
 <style>
   * {
     margin: 0;
@@ -16,12 +16,11 @@
     justify-content: space-between;
     align-items: center;
     padding: 16px 30px;
-    background-color: var(--color-surface);
+    background-color: #F1F5F9;
     border-bottom: 1px solid var(--color-border);
     position: sticky;
     top: 0;
     z-index: 100;
-    box-shadow: var(--shadow-xs);
   }
 
   .topband-text {
@@ -66,7 +65,7 @@
     font-weight: 200;
     letter-spacing: -0.045em;
     line-height: 1;
-    color: #E0671A;
+    color: #0F172A;
   }
   .cap-line {
     font-size: clamp(30px, 3.4vw, 50px);
@@ -75,29 +74,97 @@
     line-height: 1.2;
     display: block;
   }
-  .cap-blue    { color: #2563EB; }
-  .cap-olive   { color: #9A7C10; }
-  .cap-green   { color: #3A7258; }
-  .cap-mustard { color: #C08010; }
+  .cap-blue    { color: #0F172A; }
+  .cap-olive   { color: #0F172A; }
+  .cap-green   { color: #0F172A; }
+  .cap-mustard { color: #0F172A; }
   .cap-and {
     font-size: clamp(22px, 2.4vw, 34px);
     font-weight: 200;
     letter-spacing: -0.02em;
     line-height: 1.2;
-    color: #94A3B8;
+    color: #0F172A;
   }
   .cap-impact {
     font-size: clamp(44px, 4.5vw, 68px);
     font-weight: 200;
     letter-spacing: -0.04em;
     line-height: 1.05;
-    color: #0A1628;
+    color: #0F172A;
   }
   .cap-bio {
-    font-size: 14px;
+    font-size: 18px;
     font-weight: 400;
     line-height: 1.7;
     color: #475569;
+  }
+
+  /* End-to-End Section */
+  .e2e-stage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    padding: 12px 20px;
+    border-radius: 10px;
+    border: 1.5px solid;
+    min-width: 90px;
+    flex: 1;
+  }
+  .e2e-stage-num {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    opacity: 0.6;
+  }
+  .e2e-stage-label {
+    font-size: 13px;
+    font-weight: 700;
+  }
+  .e2e-arrow {
+    font-size: 18px;
+    color: #CBD5E1;
+    padding: 0 6px;
+    flex-shrink: 0;
+  }
+  .e2e-item {
+    border-left: 3px solid;
+    padding: 12px 0 12px 16px;
+    margin-bottom: 16px;
+  }
+  .e2e-item-stage {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .e2e-item-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #0F172A;
+    margin-bottom: 4px;
+  }
+  .e2e-item-desc {
+    font-size: 13px;
+    color: #64748B;
+    line-height: 1.6;
+  }
+
+  /* Flat section */
+  .flat-item {
+    padding: 18px 0;
+  }
+  .flat-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 6px;
+  }
+  .flat-desc {
+    font-size: 16px;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.65;
   }
 </style>
 </head>
@@ -108,16 +175,18 @@
     Vishal Mhala
     <p>Senior Product Designer | AI-Powered Enterprise Workflow | Human-AI Collaboration | Agentic Systems</p>
   </div>
-  <div class="button-container">
-    <a href="Case Study 1.html" class="button">PLEXOS Case Study </a>
-    <a href="Case Study 2.html" class="button">MM Case Study</a>
-    <a href="Other Art Work.html" class="button">Other Art Work</a>
-</div>
+  <div class="button-container" style="display:flex; align-items:center; gap:0;">
+    <a href="#section-ican" style="font-size:15px; font-weight:500; color:var(--color-accent); text-decoration:none; letter-spacing:0.01em;">I Can</a>
+    <span style="color:var(--color-border); font-size:15px; padding:0 16px;">|</span>
+    <a href="#section-thinking" style="font-size:15px; font-weight:500; color:var(--color-accent); text-decoration:none; letter-spacing:0.01em;">UX &amp; PM Thinking</a>
+    <span style="color:var(--color-border); font-size:15px; padding:0 16px;">|</span>
+    <a href="#section-casestudies" style="font-size:15px; font-weight:500; color:var(--color-accent); text-decoration:none; letter-spacing:0.01em;">Case Studies</a>
+  </div>
 </div>
 
 <!-- About Section -->
-<div class="main-content">
-  <div style="width:1350px; max-width:100%; margin:0 auto; padding:28px 32px; display:flex; gap:60px; align-items:stretch;">
+<div id="section-ican" class="main-content" style="background:#fff;">
+  <div style="width:1350px; max-width:100%; margin:0 auto; padding:14px 32px; display:flex; gap:60px; align-items:stretch;">
     <div class="card-text" style="flex:1;">
       <div class="cap-i-can">I can</div>
       <span class="cap-line cap-blue">Analyse workflows,</span>
@@ -127,101 +196,129 @@
       <div class="cap-and">and</div>
       <div class="cap-impact">Improve operational efficiency</div>
     </div>
-    <div style="display:flex; flex-direction:column; gap:20px; width:320px; flex-shrink:0;">
-      <img src="Vishal Mhala Profile.jpg" alt="Profile Picture" class="card-profile-picture">
+    <div style="display:flex; flex-direction:column; gap:00px; width:520px; flex-shrink:0;">
+
       <p class="cap-bio">
         I'm a Senior Product Designer focused on solving complex business problems through product strategy, workflow design, and scalable user experiences.
-        I've worked on enterprise platforms where users manage large datasets, sophisticated workflows, and critical business decisions — going beyond screens to understand systems, user behaviour, and business goals.
+        I've worked on enterprise platforms where users manage large datasets, sophisticated workflows, and critical business decisions â€” going beyond screens to understand systems, user behaviour, and business goals.
         Today I explore how AI can be embedded into workflows to automate repetitive tasks, improve decision-making, and create measurable value.
-      </p>
+      </p>      
+
+      <img src="images/profile/Vishal Mhala Profile.png" alt="Profile Picture" class="card-profile-picture" style="border:none; box-shadow:none;">
+
     </div>
   </div>
 </div>
 
 
 
-<!-- Product Thinking Section -->
-<div class="main-content">
-  <div class="card">
-    <h2 class="card-title">Product Thinking</h2>
+<!-- End-to-End Section -->
+<div id="section-thinking" class="main-content" style="padding-top:0; background:#C08010;">
+  <div style="width:1350px; max-width:100%; margin:0 auto; padding:0 32px;">
 
-    <div class="services-container">
-      <div class="services-column">
-        <div class="service-item">
-          <h3>Identifying Market Opportunities</h3>
-          <p>I analyze customer needs, industry trends, and business challenges to uncover opportunities for product innovation.</p>
+    <!-- Two columns -->
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:0;">
+
+      <!-- UX Thinking column -->
+      <div style="padding: 36px 48px 36px 0;">
+        <p style="font-size:14px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#fff; margin-bottom:20px;">UX Thinking</p>
+
+        <div class="flat-item">
+          <h3 class="flat-title">Understanding User Behaviors</h3>
+          <p class="flat-desc">Conducting user interviews, observing workflows, and analyzing feedback to uncover needs, motivations, and pain points.</p>
         </div>
-
-        <div class="service-item">
-          <h3>Balancing User, Business &amp; Technology Needs</h3>
-          <p>I evaluate solutions through the lens of user value, business impact, and technical feasibility.</p>
+        <div class="flat-item">
+          <h3 class="flat-title">Defining User Problems</h3>
+          <p class="flat-desc">Synthesizing research into clear problem statements that align user challenges with business objectives.</p>
         </div>
+        <div class="flat-item">
+          <h3 class="flat-title">Designing End-to-End Experiences</h3>
+          <p class="flat-desc">Mapping user journeys and designing seamless experiences across multiple touchpoints to support task completion.</p>
+        </div>
+        <div class="flat-item">
+          <h3 class="flat-title">Simplifying Complex Workflows</h3>
+          <p class="flat-desc">Breaking down complicated processes into intuitive steps, reducing cognitive load and improving usability.</p>
+        </div>
+        <div class="flat-item">
+          <h3 class="flat-title">Validating Solutions Through Research</h3>
+          <p class="flat-desc">Testing concepts and prototypes with users to gather insights and refine designs before implementation.</p>
+        </div>
+        <div class="flat-item" style="border-bottom:none; padding-bottom:0;">
+          <h3 class="flat-title">Driving User-Centered Decisions</h3>
+          <p class="flat-desc">Combining user insights, data, and stakeholder input to ensure product decisions are grounded in real user needs.</p>
+        </div>
+      </div>
 
-        <div class="service-item">
-          <h3>Prioritizing High-Impact Solutions</h3>
-          <p>I assess opportunities based on effort, value, and strategic importance to focus on the most impactful initiatives.</p>
+      <!-- PM Thinking column -->
+      <div style="padding: 36px 0 36px 48px;">
+        <p style="font-size:14px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#fff; margin-bottom:20px;">PM Thinking</p>
+
+        <div class="flat-item">
+          <h3 class="flat-title">Identifying Market Opportunities</h3>
+          <p class="flat-desc">Analyzing customer needs, industry trends, and business challenges to uncover opportunities for product innovation.</p>
+        </div>
+        <div class="flat-item">
+          <h3 class="flat-title">Defining Product Strategy</h3>
+          <p class="flat-desc">Connecting user problems and business goals to establish a clear direction for product development.</p>
+        </div>
+        <div class="flat-item">
+          <h3 class="flat-title">Balancing User, Business &amp; Technology</h3>
+          <p class="flat-desc">Evaluating solutions through the lens of user value, business impact, and technical feasibility simultaneously.</p>
+        </div>
+        <div class="flat-item">
+          <h3 class="flat-title">Prioritizing High-Impact Solutions</h3>
+          <p class="flat-desc">Assessing opportunities based on effort, value, and strategic importance to focus on the most impactful initiatives.</p>
+        </div>
+        <div class="flat-item">
+          <h3 class="flat-title">Measuring Product Success</h3>
+          <p class="flat-desc">Defining success metrics and tracking outcomes to understand adoption, engagement, and business impact.</p>
+        </div>
+        <div class="flat-item" style="border-bottom:none; padding-bottom:0;">
+          <h3 class="flat-title">Delivering Business Outcomes</h3>
+          <p class="flat-desc">Collaborating with cross-functional teams to ensure product solutions create measurable value for both users and the organization.</p>
         </div>
       </div>
 
-      <div class="services-column">
-        <div class="service-item">
-          <h3>Defining Product Strategy</h3>
-          <p>I connect user problems and business goals to establish a clear direction for product development.</p>
-        </div>
-
-        <div class="service-item">
-          <h3>Measuring Product Success</h3>
-          <p>I define success metrics and track outcomes to understand adoption, engagement, and business impact.</p>
-        </div>
-
-        <div class="service-item">
-          <h3>Delivering Business Outcomes</h3>
-          <p>I collaborate with cross-functional teams to ensure product solutions create measurable value for both users and the organization.</p>
-        </div>
-      </div>
     </div>
   </div>
 </div>
 
-<!-- UX Thinking Section -->
-<div class="main-content">
-  <div class="card">
-    <h2 class="card-title">UX Thinking</h2>
+<!-- Case Studies Section -->
+<div id="section-casestudies" style="background:#fff; padding: 48px 0 80px;">
+  <div style="width:1350px; max-width:100%; margin:0 auto; padding:0 32px;">
+    <p style="font-size:11px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#C08010; margin-bottom:28px;">Case Studies</p>
+    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:24px;">
 
-    <div class="services-container">
-      <div class="services-column">
-        <div class="service-item">
-          <h3>Understanding User Behaviors</h3>
-          <p>I conduct user interviews, observe workflows, and analyze feedback to uncover user needs, motivations, and pain points.</p>
+      <!-- PLEXOS Case Study -->
+      <a href="PLEXOS Case Study.html" style="text-decoration:none; display:block;">
+        <div style="border:1px solid #E2E8F0; border-radius:10px; padding:28px; transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='0 4px 16px rgba(15,23,42,0.10)'" onmouseout="this.style.boxShadow='none'">
+          <p style="font-size:10px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#C08010; margin:0 0 10px;">Energy Analytics</p>
+          <h3 style="font-size:17px; font-weight:700; color:#0F172A; margin:0 0 10px; line-height:1.35;">PLEXOS Case Study</h3>
+          <p style="font-size:13px; color:#64748B; line-height:1.65; margin:0 0 20px;">Designing an analytics platform for energy market modelling and dispatch optimisation across complex datasets.</p>
+          <span style="font-size:12px; font-weight:600; color:#C08010; letter-spacing:0.04em;">View Case Study →</span>
         </div>
+      </a>
 
-        <div class="service-item">
-          <h3>Defining User Problems</h3>
-          <p>I synthesize research findings into clear problem statements that align user challenges with business objectives.</p>
+      <!-- MM Case Study -->
+      <a href="MM Case Study.html" style="text-decoration:none; display:block;">
+        <div style="border:1px solid #E2E8F0; border-radius:10px; padding:28px; transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='0 4px 16px rgba(15,23,42,0.10)'" onmouseout="this.style.boxShadow='none'">
+          <p style="font-size:10px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#C08010; margin:0 0 10px;">Market Management</p>
+          <h3 style="font-size:17px; font-weight:700; color:#0F172A; margin:0 0 10px; line-height:1.35;">MM Case Study</h3>
+          <p style="font-size:13px; color:#64748B; line-height:1.65; margin:0 0 20px;">Reimagining market management workflows to streamline operations and improve decision-making for energy traders.</p>
+          <span style="font-size:12px; font-weight:600; color:#C08010; letter-spacing:0.04em;">View Case Study →</span>
         </div>
+      </a>
 
-        <div class="service-item">
-          <h3>Designing End-to-End Experiences</h3>
-          <p>I map user journeys and design seamless experiences across multiple touchpoints to support task completion.</p>
+      <!-- Merck Case Study -->
+      <a href="Merck Case Study.html" style="text-decoration:none; display:block;">
+        <div style="border:1px solid #E2E8F0; border-radius:10px; padding:28px; transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='0 4px 16px rgba(15,23,42,0.10)'" onmouseout="this.style.boxShadow='none'">
+          <p style="font-size:10px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#C08010; margin:0 0 10px;">Healthcare</p>
+          <h3 style="font-size:17px; font-weight:700; color:#0F172A; margin:0 0 10px; line-height:1.35;">Merck Case Study</h3>
+          <p style="font-size:13px; color:#64748B; line-height:1.65; margin:0 0 20px;">Redesigning VaccineIQ — a field management tool enabling Merck reps to track vaccination contracts and performance.</p>
+          <span style="font-size:12px; font-weight:600; color:#C08010; letter-spacing:0.04em;">View Case Study →</span>
         </div>
-      </div>
+      </a>
 
-      <div class="services-column">
-        <div class="service-item">
-          <h3>Simplifying Complex Workflows</h3>
-          <p>I break down complicated processes into intuitive steps, reducing cognitive load and improving usability.</p>
-        </div>
-
-        <div class="service-item">
-          <h3>Validating Solutions Through Research</h3>
-          <p>I test concepts and prototypes with users, gathering insights to refine designs before implementation.</p>
-        </div>
-
-        <div class="service-item">
-          <h3>Driving User-Centered Decisions</h3>
-          <p>I combine user insights, data, and stakeholder input to ensure product decisions are grounded in real user needs.</p>
-        </div>
-      </div>
     </div>
   </div>
 </div>
@@ -233,9 +330,8 @@
   justify-content: center;
   gap: 32px;
   padding: 16px 30px;
-  background-color: var(--color-surface);
+  background-color: #F1F5F9;
   border-top: 1px solid var(--color-border);
-  box-shadow: 0 -1px 3px rgba(15,23,42,0.06);
   position: fixed;
   bottom: 0;
   left: 0;
@@ -244,12 +340,13 @@
 ">
   <a href="https://www.linkedin.com/in/vishal-mhala-331b519a" target="_blank" style="font-size:13px; font-weight:500; color:var(--color-accent); text-decoration:none; letter-spacing:0.01em;">LinkedIn</a>
   <span style="color:var(--color-border); font-size:13px;">|</span>
-  <a href="Vishal Mhala Senior Product Designer.pdf" target="_blank" rel="noopener" style="font-size:13px; font-weight:500; color:var(--color-accent); text-decoration:none; letter-spacing:0.01em;">Resume</a>
+  <a href="docs/Vishal Mhala Senior Product Designer.pdf" target="_blank" rel="noopener" style="font-size:13px; font-weight:500; color:var(--color-accent); text-decoration:none; letter-spacing:0.01em;">Resume</a>
   <span style="color:var(--color-border); font-size:13px;">|</span>
-  <a href="tel:+918655128455" style="font-size:13px; font-weight:400; color:var(--color-text-primary); text-decoration:none;">MO — 8655128455</a>
+  <a href="tel:+918655128455" style="font-size:13px; font-weight:400; color:var(--color-text-primary); text-decoration:none;">MO â€” 8655128455</a>
   <span style="color:var(--color-border); font-size:13px;">|</span>
   <a href="mailto:vishal.m.mhala@gmail.com" style="font-size:13px; font-weight:400; color:var(--color-text-primary); text-decoration:none;">vishal.m.mhala@gmail.com</a>
 </div>
 
 </body>
 </html>
+

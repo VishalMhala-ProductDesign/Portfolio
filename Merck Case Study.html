@@ -1,0 +1,557 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="assets/css/font style.css">
+<link rel="stylesheet" href="assets/css/button.css">
+<style>
+  .back-button-container {
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+</style>
+</head>
+<body>
+
+<div class="back-button-container">
+  <a href="index.html" class="back-button">Back</a>
+</div>
+
+<div style="width:900px; max-width:100%; background:white; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.1); padding:40px 48px; box-sizing:border-box; margin:0 auto;">
+
+  <h1 style="font-size:28px; font-weight:700; margin:0 0 4px 0;">Merck VaccineIQ</h1>
+  <h2 style="font-size:16px; font-weight:400; color:#666; margin:0 0 36px 0;">iPad Application Design Case Study</h2>
+
+  <h3 style="font-size:13px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#888; margin:0 0 20px 0;">1. Project Overview</h3>
+
+  <table style="border-collapse:collapse; margin-bottom:32px;">
+    <tr>
+      <td style="padding:6px 32px 6px 0; font-size:14px; font-weight:600; color:#444; white-space:nowrap;">Project Name</td>
+      <td style="padding:6px 0; font-size:14px; color:#222;">VaccineIQ iPad Application</td>
+    </tr>
+    <tr>
+      <td style="padding:6px 32px 6px 0; font-size:14px; font-weight:600; color:#444;">Client</td>
+      <td style="padding:6px 0; font-size:14px; color:#222;">Merck Sharp &amp; Dohme Corp.</td>
+    </tr>
+    <tr>
+      <td style="padding:6px 32px 6px 0; font-size:14px; font-weight:600; color:#444;">Platform</td>
+      <td style="padding:6px 0; font-size:14px; color:#222;">iPad (iOS)</td>
+    </tr>
+    <tr>
+      <td style="padding:6px 32px 6px 0; font-size:14px; font-weight:600; color:#444;">Timeline</td>
+      <td style="padding:6px 0; font-size:14px; color:#222;">[Design Phase - Your dates]</td>
+    </tr>
+    <tr>
+      <td style="padding:6px 32px 6px 0; font-size:14px; font-weight:600; color:#444;">Team Role</td>
+      <td style="padding:6px 0; font-size:14px; color:#222;">[Your specific role]</td>
+    </tr>
+    <tr>
+      <td style="padding:6px 32px 6px 0; font-size:14px; font-weight:600; color:#444;">Tagline</td>
+      <td style="padding:6px 0; font-size:14px; color:#222; font-style:italic;">"Smart Data. Smart Insights."</td>
+    </tr>
+  </table>
+
+  <h4 style="font-size:14px; font-weight:700; color:#222; margin:0 0 10px 0;">Business Context</h4>
+  <p style="font-size:14px; line-height:1.75; color:#444; margin:0;">
+    VaccineIQ is a specialized data analytics application designed for Merck's vaccine sales team and contract administrators. The application provides real-time visibility into vaccine distribution, sales performance, and contract-specific metrics across multiple healthcare facilities and networks.
+  </p>
+
+</div>
+
+<!-- â”€â”€ Shared card styles â”€â”€ -->
+<style>
+  .cs-card {
+    width: 900px;
+    max-width: 100%;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    padding: 40px 48px;
+    box-sizing: border-box;
+    margin: 24px auto 0;
+  }
+  .cs-screen-label {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #fff;
+    background: #007E8A;
+    border-radius: 4px;
+    padding: 3px 10px;
+    margin-bottom: 12px;
+  }
+  .cs-screen-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #111;
+    margin: 0 0 4px 0;
+  }
+  .cs-file-ref {
+    font-size: 12px;
+    color: #999;
+    margin: 0 0 20px 0;
+  }
+  .cs-purpose {
+    font-size: 14px;
+    color: #555;
+    margin: 0 0 20px 0;
+    padding-left: 12px;
+    border-left: 3px solid #007E8A;
+    line-height: 1.6;
+  }
+  .cs-section-head {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #888;
+    margin: 24px 0 10px 0;
+  }
+  .cs-list {
+    margin: 0 0 0 0;
+    padding-left: 20px;
+    font-size: 14px;
+    color: #444;
+    line-height: 1.8;
+  }
+  .cs-caption {
+    font-size: 13px;
+    font-style: italic;
+    color: #555;
+    background: #f7f9fa;
+    border-radius: 6px;
+    padding: 16px 20px;
+    margin: 20px 0 0 0;
+    line-height: 1.7;
+  }
+  .cs-decisions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 16px;
+  }
+  .cs-tag {
+    font-size: 12px;
+    color: #007E8A;
+    background: #e8f5f6;
+    border-radius: 4px;
+    padding: 4px 10px;
+  }
+  .cs-divider {
+    border: none;
+    border-top: 1px solid #eee;
+    margin: 20px 0;
+  }
+  .cs-screenshot {
+    margin: 20px 0 24px;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #dde3e7;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+  }
+  .cs-screenshot img {
+    width: 100%;
+    display: block;
+  }
+  .cs-screenshot-pair {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 20px 0 24px;
+  }
+  .cs-screenshot-pair .cs-screenshot {
+    margin: 0;
+  }
+</style>
+
+<!-- â”€â”€ SCREEN 1 â”€â”€ -->
+<div class="cs-card">
+  <span class="cs-screen-label">Screen 1 of 9</span>
+  <h2 class="cs-screen-title">Contract Type Selection</h2>
+  <p class="cs-file-ref">File Reference: Pages 1â€“2 &nbsp;Â·&nbsp; Entry &amp; Navigation</p>
+  <p class="cs-purpose"><strong>Purpose:</strong> Entry point showing the problem â€” how to navigate 132,000+ locations.</p>
+
+  <div class="cs-screenshot">
+    <img src="images/merck/screen-01-contract.jpg" alt="Screen 1: Contract Type Selection">
+  </div>
+
+  <div class="cs-section-head">What's Shown</div>
+  <ul class="cs-list">
+    <li>"Select a Contract" dropdown</li>
+    <li>Displays "# Locations: 132,234" â€” establishes complexity</li>
+    <li>Filtering options: Contract Type, Sub Type, # Locations</li>
+    <li>Button: "OPEN DATASET"</li>
+  </ul>
+
+  <hr class="cs-divider">
+  <div class="cs-section-head">Why It's Essential</div>
+  <ul class="cs-list">
+    <li><strong>Establishes the problem:</strong> 132,000+ locations to navigate</li>
+    <li><strong>Shows hybrid approach:</strong> Not forcing single path, showing multiple filter options</li>
+    <li><strong>Visual clarity:</strong> Clear labeling and progressive disclosure</li>
+    <li><strong>Context setting:</strong> Users understand what data they're working with</li>
+  </ul>
+
+  <p class="cs-caption">"The challenge: Merck needed to help reps navigate 132,000+ locations efficiently. The entry screen shows our hybrid approach â€” providing guided filters (Contract Type, Sub Type) while displaying location count transparency. This prevents users from being overwhelmed by the full dataset."</p>
+
+  <div class="cs-section-head">Design Decisions Shown</div>
+  <div class="cs-decisions">
+    <span class="cs-tag">Progressive disclosure</span>
+    <span class="cs-tag">Clear labeling</span>
+    <span class="cs-tag">Transparency (count: 132,234)</span>
+    <span class="cs-tag">Multiple entry points</span>
+  </div>
+</div>
+
+<!-- â”€â”€ SCREEN 2 â”€â”€ -->
+<div class="cs-card">
+  <span class="cs-screen-label">Screen 2 of 9</span>
+  <h2 class="cs-screen-title">Dual-Panel Location Selection</h2>
+  <p class="cs-file-ref">File Reference: Page 4 &nbsp;Â·&nbsp; Data Selection &amp; Filtering</p>
+  <p class="cs-purpose"><strong>Purpose:</strong> Shows the solution to finding specific locations from a dataset of 132K.</p>
+
+  <div class="cs-screenshot">
+    <img src="images/merck/screen-02-locations.jpg" alt="Screen 2: Dual-Panel Location Selection">
+  </div>
+
+  <div class="cs-section-head">What's Shown</div>
+  <ul class="cs-list">
+    <li><strong>Left panel â€” "LOCATIONS FOUND"</strong> (20 locations from search): checkbox selection, address column, visual indicator of available results</li>
+    <li><strong>Right panel â€” "LOCATIONS SELECTED"</strong> (5 locations in working set): current selection, Include/Remove buttons between panels</li>
+    <li>Search/filter bars at top</li>
+    <li>"Save as new list" button</li>
+  </ul>
+
+  <hr class="cs-divider">
+  <div class="cs-section-head">Why It's Essential</div>
+  <ul class="cs-list">
+    <li><strong>Core IA innovation:</strong> Two-panel interface solves navigation friction</li>
+    <li><strong>User choice:</strong> Shows selected locations vs. available locations</li>
+    <li><strong>Efficiency:</strong> Demonstrates how custom lists work (key feature)</li>
+    <li><strong>Visual balance:</strong> Shows desktop-style affordances on iPad</li>
+    <li><strong>Actionable:</strong> Clear path to "create lists"</li>
+  </ul>
+
+  <p class="cs-caption">"Instead of forcing a single hierarchy (Divisionâ†’Regionâ†’Location), we designed a flexible two-panel interface. Users search or filter locations (left), then build their working set (right). This approach reduced location-finding time from 5â€“10 minutes to 30 seconds, and enabled custom list creation â€” a feature 70% of users adopted."</p>
+
+  <div class="cs-section-head">Design Decisions Shown</div>
+  <div class="cs-decisions">
+    <span class="cs-tag">Two-panel layout (iPad horizontal space)</span>
+    <span class="cs-tag">Search + filter</span>
+    <span class="cs-tag">Visual feedback (found vs. selected)</span>
+    <span class="cs-tag">Progressive workflow</span>
+    <span class="cs-tag">Touch-friendly (large checkboxes)</span>
+  </div>
+</div>
+
+<!-- â”€â”€ SCREEN 3 â”€â”€ -->
+<div class="cs-card">
+  <span class="cs-screen-label">Screen 3 of 9</span>
+  <h2 class="cs-screen-title">Summary Dashboard</h2>
+  <p class="cs-file-ref">File Reference: Page 6 (top) &nbsp;Â·&nbsp; Summary Dashboard</p>
+  <p class="cs-purpose"><strong>Purpose:</strong> Shows the "insight at a glance" moment â€” health of the entire portfolio in one view.</p>
+
+  <div class="cs-screenshot">
+    <img src="images/merck/screen-03-summary.jpg" alt="Screen 3: Summary Dashboard with KPI Cards">
+  </div>
+
+  <div class="cs-section-head">What's Shown</div>
+  <ul class="cs-list">
+    <li>4 large KPI cards: Doses 375K â†‘4% Â· Dollars $645K â†‘4% Â· Savings $2.5K â†“3% Â· # Locations 1,235</li>
+    <li>Each card has: icon, large number, trend arrow, percentage</li>
+    <li>Below: Bubble chart preview</li>
+    <li>Tab navigation: SUMMARY | DOSES | DOLLARS | SAVINGS | HIERARCHY</li>
+  </ul>
+
+  <hr class="cs-divider">
+  <div class="cs-section-head">Why It's Essential</div>
+  <ul class="cs-list">
+    <li><strong>Design innovation:</strong> KPI cards â€” Icon + Color + Size + Trend indicator = instant understanding</li>
+    <li><strong>Information hierarchy:</strong> Large numbers for quick scanning</li>
+    <li><strong>Tab system:</strong> Shows how we avoided overwhelming a single screen</li>
+    <li><strong>Entry to deeper analysis:</strong> Paths to DOSES, SAVINGS tabs</li>
+  </ul>
+
+  <p class="cs-caption">"The summary dashboard demonstrates our visual design system. Four KPI cards use consistent patterns: icon (visual differentiation), color (brand + functional), large typography (readable from distance), and trend indicators (â†‘/â†“ for performance context). This allows executives and field reps to understand sales health in 30 seconds â€” a significant improvement over scrolling spreadsheets."</p>
+
+  <div class="cs-section-head">Design Decisions Shown</div>
+  <div class="cs-decisions">
+    <span class="cs-tag">Visual encoding (icon + color + size + trend)</span>
+    <span class="cs-tag">Typography hierarchy (28pt metrics, 12pt labels)</span>
+    <span class="cs-tag">Color palette (green, navy, orange, teal)</span>
+    <span class="cs-tag">Responsive cards</span>
+    <span class="cs-tag">Tab-based organization</span>
+  </div>
+</div>
+
+<!-- â”€â”€ SCREEN 4 â”€â”€ -->
+<div class="cs-card">
+  <span class="cs-screen-label">Screen 4 of 9</span>
+  <h2 class="cs-screen-title">Bubble Chart Visualization</h2>
+  <p class="cs-file-ref">File Reference: Page 6 (middle) &nbsp;Â·&nbsp; Visualization â€” Key Design Decision</p>
+  <p class="cs-purpose"><strong>Purpose:</strong> Showcases the key visualization design decision â€” why bubble chart over line chart.</p>
+
+  <div class="cs-screenshot">
+    <img src="images/merck/screen-03-summary.jpg" alt="Screen 4: Bubble Chart Visualization (lower half of Summary screen)">
+  </div>
+
+  <div class="cs-section-head">What's Shown</div>
+  <ul class="cs-list">
+    <li>X-axis: Current Doses (volume, 0â€“750K scale)</li>
+    <li>Y-axis: Dose Change % (âˆ’30% to +40%)</li>
+    <li>Bubble size: Encodes additional context</li>
+    <li>Product labels: GARDASILÂ®, PedvaxHIBÂ®, ProQuadÂ®, PNEUMOVAXÂ®23, M-M-RÂ®II, RECOMBIVAX HBÂ®</li>
+    <li>Quadrant interpretation visible</li>
+    <li>Title: "CURRENT DOSES VS. DOSE CHANGE JAN 2018 TO JUNE 2018"</li>
+  </ul>
+
+  <hr class="cs-divider">
+  <div class="cs-section-head">Why It's Essential</div>
+  <ul class="cs-list">
+    <li><strong>Critical design decision:</strong> With 14+ products, line charts = spaghetti; scatter plot = each product readable + three dimensions encoded</li>
+    <li><strong>Actionable insight:</strong> Quadrants tell the story â€” Upper right (GARDASILÂ®9) = star performers; Lower right (PedvaxHIBÂ®) = declining, at-risk</li>
+    <li><strong>Shows design rationale:</strong> Visual encoding makes trend analysis instant</li>
+    <li><strong>Demonstrates complexity handling:</strong> 7â€“14 products, all readable</li>
+  </ul>
+
+  <p class="cs-caption">"The bubble chart was a critical design decision. Rather than overlapping line charts (unreadable with 14+ products), we chose a scatter plot encoding three dimensions: X-axis shows current volume, Y-axis shows growth rate, and bubble size adds context. This visualization enables instant identification of star performers (upper right) vs. at-risk products (lower right), turning data into actionable insights in seconds."</p>
+
+  <div class="cs-section-head">Design Decisions Shown</div>
+  <div class="cs-decisions">
+    <span class="cs-tag">Visualization type (bubble vs. line vs. bar)</span>
+    <span class="cs-tag">Axis mapping (volumeâ†’X, growthâ†’Y)</span>
+    <span class="cs-tag">Quadrant analysis</span>
+    <span class="cs-tag">Label placement</span>
+    <span class="cs-tag">Color consistency (orange primary)</span>
+    <span class="cs-tag">Responsive sizing</span>
+  </div>
+</div>
+
+<!-- â”€â”€ SCREEN 5 â”€â”€ -->
+<div class="cs-card">
+  <span class="cs-screen-label">Screen 5 of 9</span>
+  <h2 class="cs-screen-title">Product Overview Table</h2>
+  <p class="cs-file-ref">File Reference: Page 7 &nbsp;Â·&nbsp; Hierarchical Exploration</p>
+  <p class="cs-purpose"><strong>Purpose:</strong> Shows tabular data comparison and the drill-down path for users who prefer precise numbers.</p>
+
+  <div class="cs-screenshot">
+    <img src="images/merck/screen-05-table.jpg" alt="Screen 5: Product Overview Table">
+  </div>
+
+  <div class="cs-section-head">What's Shown</div>
+  <ul class="cs-list">
+    <li>Table columns: Product Name Â· Current Dose Contribution (%) Â· Current Doses Â· Prior Doses Â· % Change Â· View Locations</li>
+    <li>2â€“3 products visible simultaneously</li>
+    <li>Orange visual indicator bar charts for contribution scale</li>
+    <li>Sortable headers implied</li>
+    <li>"View Locations" drill-down link per product</li>
+  </ul>
+
+  <hr class="cs-divider">
+  <div class="cs-section-head">Why It's Essential</div>
+  <ul class="cs-list">
+    <li><strong>Complements bubble chart:</strong> Tabular view of the same data</li>
+    <li><strong>Drill-down path:</strong> "View Locations" shows how users go deeper</li>
+    <li><strong>Data literacy:</strong> Precise numbers alongside percentage change</li>
+    <li><strong>Comparison:</strong> Prior vs. Current highlights performance</li>
+    <li><strong>Accessibility:</strong> Supports users who prefer numbers over visuals</li>
+  </ul>
+
+  <p class="cs-caption">"While the bubble chart provides visual insight, the Overview table serves users who want precise numbers and side-by-side comparison. The 'View Locations' link initiates drill-down, allowing users to understand not just that GARDASILÂ®9 is growing (+12%), but WHERE and in which locations. This dual-view approach (visual + tabular) supports different user preferences and analytical depths."</p>
+
+  <div class="cs-section-head">Design Decisions Shown</div>
+  <div class="cs-decisions">
+    <span class="cs-tag">Dual visualization (visual + tabular)</span>
+    <span class="cs-tag">Contribution bars</span>
+    <span class="cs-tag">Comparison columns (prior vs. current)</span>
+    <span class="cs-tag">Sortable headers</span>
+    <span class="cs-tag">Drill-down affordances</span>
+    <span class="cs-tag">Consistent orange color scheme</span>
+  </div>
+</div>
+
+<!-- â”€â”€ SCREEN 6 â”€â”€ -->
+<div class="cs-card">
+  <span class="cs-screen-label">Screen 6 of 9</span>
+  <h2 class="cs-screen-title">Hierarchical Drill-Down View</h2>
+  <p class="cs-file-ref">File Reference: Page 17 &nbsp;Â·&nbsp; Hierarchical Exploration</p>
+  <p class="cs-purpose"><strong>Purpose:</strong> Shows hierarchical navigation and regional comparison â€” Division â†’ Region â†’ District â†’ Location.</p>
+
+  <div class="cs-screenshot">
+    <img src="images/merck/screen-06-hierarchy.jpg" alt="Screen 6: Hierarchical Drill-Down â€” Doses by Division">
+  </div>
+
+  <div class="cs-section-head">What's Shown</div>
+  <ul class="cs-list">
+    <li>Table: Divisions (South East, South West, North East, etc.)</li>
+    <li>All Products column showing total doses</li>
+    <li>Product breakdown columns: GARDASILÂ®, GARDASILÂ®9, M-M-RÂ®II, PedvaxHIBÂ®, PNEUMOVAXÂ®23, ProQuadÂ®</li>
+    <li>Orange bar chart indicators for volume scale</li>
+    <li>Chart view below (stacked/grouped bars by division)</li>
+    <li>Ability to click division to drill into regions within it</li>
+    <li>Title: "DOSES BY DIVISION JAN 2018 TO JUNE 2018"</li>
+  </ul>
+
+  <hr class="cs-divider">
+  <div class="cs-section-head">Why It's Essential</div>
+  <ul class="cs-list">
+    <li><strong>Information architecture:</strong> Clearly shows hierarchy levels (Divisionâ†’Regionâ†’District)</li>
+    <li><strong>Regional comparison:</strong> Users identify top and bottom performers by geography</li>
+    <li><strong>Flexibility:</strong> Supports "by Division, by Region, by District" selection dropdowns</li>
+    <li><strong>Visual encoding:</strong> Orange bars show volume visually; numbers show precisely</li>
+    <li><strong>Drill-down enabled:</strong> Clicking leads to Region â†’ District â†’ Location</li>
+  </ul>
+
+  <p class="cs-caption">"The hierarchical drill-down views accommodate users who think geographically. Starting at the Division level, they can see that South East (52,891 doses) slightly outperforms South West (52,819). They can then drill to Region, District, even specific locations. This top-down navigation path, combined with search-based and list-based paths, ensures every mental model is supported."</p>
+
+  <div class="cs-section-head">Design Decisions Shown</div>
+  <div class="cs-decisions">
+    <span class="cs-tag">Progressive disclosure (hierarchy levels)</span>
+    <span class="cs-tag">Comparative layout</span>
+    <span class="cs-tag">Visual + numeric (bar + exact numbers)</span>
+    <span class="cs-tag">Multiple navigation paths</span>
+    <span class="cs-tag">Consistent visual system (orange bars, teal headers)</span>
+    <span class="cs-tag">Drill-down affordances (clickable rows)</span>
+  </div>
+</div>
+
+<!-- â”€â”€ SCREEN 7 â”€â”€ -->
+<div class="cs-card">
+  <span class="cs-screen-label">Screen 7 of 9</span>
+  <h2 class="cs-screen-title">Location Detail Modal / Popover</h2>
+  <p class="cs-file-ref">File Reference: Pages 30â€“31 &nbsp;Â·&nbsp; Detail Level</p>
+  <p class="cs-purpose"><strong>Purpose:</strong> Shows the deepest level of detail â€” where users make actual decisions about accounts.</p>
+
+  <div class="cs-screenshot-pair">
+    <div class="cs-screenshot">
+      <img src="images/merck/screen-07-list.jpg" alt="Screen 7: Location Dose Summary List">
+    </div>
+    <div class="cs-screenshot">
+      <img src="images/merck/screen-07-popover.jpg" alt="Screen 7: Location Detail Popover">
+    </div>
+  </div>
+
+  <div class="cs-section-head">What's Shown</div>
+  <ul class="cs-list">
+    <li>Location: "ACS Healthcare Medical â€“ Brick â€“ NJ", 1234 Maple Street, Detroit IL 043209</li>
+    <li>Identifiers: DEA FC2999354 Â· HIN 434534232 Â· Member Name ID 3169 Â· PartyID 3169 Â· Merck Account 3240909435</li>
+    <li>Organizational context: IHS Name Â· Contract Admin (PREMIER INC) Â· Current Contract (VBC â€“ GPO Acute) Â· Enrollment Date 02/01/2016</li>
+    <li>Contract history table: Product Group 1 &amp; 2 â€” prior discount tiers vs. current "BASE"; Commitment Letter Submitted dates</li>
+    <li>Popover format â€” doesn't hide the previous view</li>
+  </ul>
+
+  <hr class="cs-divider">
+  <div class="cs-section-head">Why It's Essential</div>
+  <ul class="cs-list">
+    <li><strong>Drill-down completion:</strong> Shows where the user journey ends</li>
+    <li><strong>Context preservation:</strong> Popover keeps previous view visible (iPad UX best practice)</li>
+    <li><strong>Comprehensive detail:</strong> All info needed without additional screens</li>
+    <li><strong>Contract intelligence:</strong> Discount tiers and enrollment dates visible</li>
+    <li><strong>Action enablement:</strong> User has everything needed to make decisions</li>
+  </ul>
+
+  <p class="cs-caption">"The location detail popover is where users make decisions. It shows not just performance data, but full context: contract type, discount tier, enrollment date, and organizational relationships. The popover format (rather than full-screen overlay) maintains context with the previous view. This design accommodates the complete user journey: from 'which locations are worth investigating?' (summary) to 'what's happening at this specific location?' (detail)."</p>
+
+  <div class="cs-section-head">Design Decisions Shown</div>
+  <div class="cs-decisions">
+    <span class="cs-tag">Popover vs. full screen (maintains context)</span>
+    <span class="cs-tag">Comprehensive but scannable</span>
+    <span class="cs-tag">Prioritized information (name + address first)</span>
+    <span class="cs-tag">Contract details (discount history)</span>
+    <span class="cs-tag">Unique identifiers (DEA, HIN, PartyID)</span>
+    <span class="cs-tag">Action-ready</span>
+    <span class="cs-tag">Consistent typography</span>
+  </div>
+</div>
+
+<!-- â”€â”€ SCREEN 8 â”€â”€ -->
+<div class="cs-card">
+  <span class="cs-screen-label">Screen 8 of 9</span>
+  <h2 class="cs-screen-title">Data Refresh Transparency Modal</h2>
+  <p class="cs-file-ref">File Reference: Page 32 &nbsp;Â·&nbsp; Data Transparency</p>
+  <p class="cs-purpose"><strong>Purpose:</strong> Addresses data trust and accuracy concerns by making data freshness fully visible.</p>
+
+  <div class="cs-screenshot">
+    <img src="images/merck/screen-08-refresh.jpg" alt="Screen 8: Data Refresh Transparency Modal">
+  </div>
+
+  <div class="cs-section-head">What's Shown</div>
+  <ul class="cs-list">
+    <li>Modal title: "DATA REFRESH DETAILS"</li>
+    <li>Subtitle: "Intended for directional use only as there are lags in the timing of data released by the Wholesalers/Distributors"</li>
+    <li><strong>By Source:</strong> RME Membership (04/25/18) Â· Rebates/Admin Fees (04/01/18) Â· IQVIA DDD (03/01/18) Â· Direct Sales (04/26/18) Â· Indirect Sales (04/18/18)</li>
+    <li><strong>By Wholesaler:</strong> AMERISOURCE THOROFARE Â· ANDA PHARMACEUTICALS INC Â· ASD SPECIALTY WAREHOUSE #28 and others with dated refreshes</li>
+    <li>Color-coding: Recent data = green Â· Older data = yellow</li>
+    <li>Disclaimer visible re: third-party payor reporting</li>
+  </ul>
+
+  <hr class="cs-divider">
+  <div class="cs-section-head">Why It's Essential</div>
+  <ul class="cs-list">
+    <li><strong>Trust builder:</strong> Transparency about data sources and freshness</li>
+    <li><strong>Reality check:</strong> Addresses "Is this current? Can I trust it?" concerns</li>
+    <li><strong>Design philosophy:</strong> Commitment to honesty over hiding complexity</li>
+    <li><strong>Problem solution:</strong> Solves the data freshness questions that emerged in Iteration #3</li>
+    <li><strong>Stakeholder requirement:</strong> Shows compliance-conscious approach</li>
+  </ul>
+
+  <p class="cs-caption">"User research revealed a critical trust issue: with five different data sources (direct sales, indirect sales, rebates, RME membership, IQVIA DDD), each with different refresh cycles, users questioned data accuracy. Rather than hide this complexity, we made it transparent. The Data Refresh Details modal shows exactly when each metric was updated, with color-coding (fresh vs. aged) and a clear disclaimer. Transparency beats hiding complexity."</p>
+
+  <div class="cs-section-head">Design Decisions Shown</div>
+  <div class="cs-decisions">
+    <span class="cs-tag">Transparency-first approach</span>
+    <span class="cs-tag">Clear labeling (source, date, lag)</span>
+    <span class="cs-tag">Visual indicators (green/yellow color-coding)</span>
+    <span class="cs-tag">Disclaimer / expectation management</span>
+    <span class="cs-tag">Accessible from every screen</span>
+    <span class="cs-tag">User-centric language</span>
+    <span class="cs-tag">Compliance awareness</span>
+  </div>
+</div>
+
+<!-- â”€â”€ SCREEN 9 â”€â”€ -->
+<div class="cs-card" style="margin-bottom: 48px;">
+  <span class="cs-screen-label" style="background:#6c757d;">Screen 9 of 9 â€” Optional</span>
+  <h2 class="cs-screen-title">Volume Trend Chart (Line Graph)</h2>
+  <p class="cs-file-ref">File Reference: Page 11 &nbsp;Â·&nbsp; Extended Case Study</p>
+  <p class="cs-purpose"><strong>Purpose:</strong> Shows time-series analysis capability â€” how products perform over rolling 12/24/36-month periods.</p>
+
+  <div class="cs-screenshot">
+    <img src="images/merck/screen-09-trend.jpg" alt="Screen 9: Product Volume Trend Chart">
+  </div>
+
+  <div class="cs-section-head">What's Shown</div>
+  <ul class="cs-list">
+    <li>X-axis: Monthly periods (Jan '17 through Dec '17, R12M view)</li>
+    <li>Y-axis: # of Doses (scale 0â€“100K)</li>
+    <li>Line chart with trend line, orange color for product</li>
+    <li>Months labeled: Jan'17, Feb'17, Mar'17, etc.</li>
+    <li>Toggle options: R12M Â· R24M Â· R36M (rolling periods)</li>
+    <li>Product highlighted: GARDASILÂ®9 volume trajectory</li>
+  </ul>
+
+  <hr class="cs-divider">
+  <div class="cs-section-head">Why It's Optional</div>
+  <ul class="cs-list">
+    <li><strong>Supports time-based analysis:</strong> Shows how products perform across periods</li>
+    <li><strong>Complements bubble chart:</strong> Bubble = snapshot; line chart = trajectory</li>
+    <li><strong>Multiple time periods:</strong> R12M, R24M, R36M options show analytical depth</li>
+    <li><strong>Less critical than others:</strong> Bubble chart already conveys growth direction</li>
+    <li><strong>Include if:</strong> You want to showcase complete analysis capabilities</li>
+  </ul>
+
+  <p class="cs-caption">"The Volume Trend chart complements the bubble chart snapshot by showing historical trajectory. Users can toggle between R12M (12-month rolling), R24M (24-month), and R36M (36-month) views. Some users prefer line charts for time-series; others prefer bubble charts for quick comparison. By offering both, we support different analytical preferences."</p>
+
+  <div class="cs-section-head">Design Decisions Shown</div>
+  <div class="cs-decisions">
+    <span class="cs-tag">Time-series view</span>
+    <span class="cs-tag">R12M / R24M / R36M toggle</span>
+    <span class="cs-tag">Orange color consistency</span>
+    <span class="cs-tag">Trend line overlay</span>
+    <span class="cs-tag">Complements bubble chart (dual view)</span>
+  </div>
+</div>
+
+</body>
+</html>
