@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amgen — Quality &amp; Trends Analytics Dashboard</title>
+  <link rel="stylesheet" href="assets/css/font style.css">
+  <link rel="stylesheet" href="assets/css/button.css">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body { background: #F1F5F9; padding-bottom: 60px; }
+
+  /* ── Topband ── */
+  .topband {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 14px 28px;
+    background: #fff;
+    border-bottom: 1px solid #E2E8F0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .topband-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #0F172A;
+    letter-spacing: -0.01em;
+  }
+
+  /* ── Card shell ── */
+  .cs-card {
+    width: 900px;
+    max-width: 100%;
+    background: #fff;
+    border-radius: 10px;
+    border: 1px solid #E2E8F0;
+    padding: 40px 48px;
+    box-sizing: border-box;
+    margin: 24px auto 0;
+  }
+
+  /* ── Section label ── */
+  .cs-label {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #1B4B9A;
+    background: #EBF1FB;
+    border-radius: 4px;
+    padding: 3px 10px;
+    margin-bottom: 14px;
+  }
+
+  h1.cs-h1 {
+    font-size: 26px;
+    font-weight: 700;
+    color: #0F172A;
+    margin: 0 0 4px;
+    line-height: 1.25;
+  }
+  h2.cs-h2 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #0F172A;
+    margin: 0 0 16px;
+    line-height: 1.3;
+  }
+  .cs-sub {
+    font-size: 14px;
+    font-weight: 400;
+    color: #64748B;
+    margin: 0 0 28px;
+  }
+
+  /* ── Meta table ── */
+  .cs-meta {
+    border-collapse: collapse;
+    margin-bottom: 32px;
+    width: 100%;
+    max-width: 560px;
+  }
+  .cs-meta tr { border-bottom: 1px solid #F1F5F9; }
+  .cs-meta td { padding: 8px 0; font-size: 14px; vertical-align: top; }
+  .cs-meta td:first-child { font-weight: 600; color: #1B4B9A; width: 160px; padding-right: 24px; white-space: nowrap; }
+  .cs-meta td:last-child { color: #334155; }
+
+  /* ── Section heading ── */
+  .cs-section-head {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #94A3B8;
+    margin: 28px 0 10px;
+  }
+
+  /* ── Body copy ── */
+  .cs-body {
+    font-size: 14px;
+    line-height: 1.75;
+    color: #475569;
+    margin: 0 0 16px;
+  }
+
+  /* ── Pull quote / callout ── */
+  .cs-callout {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #334155;
+    background: #F8FAFC;
+    border-left: 3px solid #1B4B9A;
+    padding: 14px 20px;
+    margin: 20px 0;
+    border-radius: 0 6px 6px 0;
+  }
+
+  /* ── Lists ── */
+  .cs-list {
+    padding-left: 20px;
+    font-size: 14px;
+    color: #475569;
+    line-height: 1.85;
+    margin: 0 0 16px;
+  }
+  .cs-list li { margin-bottom: 2px; }
+
+  /* ── Two-column feature table ── */
+  .cs-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    margin: 0 0 16px;
+  }
+  .cs-table th {
+    text-align: left;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #fff;
+    background: #1B4B9A;
+    padding: 10px 16px;
+  }
+  .cs-table td {
+    padding: 10px 16px;
+    color: #334155;
+    border-bottom: 1px solid #F1F5F9;
+    vertical-align: top;
+  }
+  .cs-table td:first-child { font-weight: 600; color: #1B4B9A; width: 220px; }
+  .cs-table tr:last-child td { border-bottom: none; }
+  .cs-table tr:nth-child(even) td { background: #F8FAFC; }
+
+  /* ── Metric grid ── */
+  .cs-metrics {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin: 0 0 16px;
+  }
+  .cs-metric-box {
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    padding: 18px 20px;
+    text-align: center;
+  }
+  .cs-metric-num {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1B4B9A;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .cs-metric-label {
+    font-size: 12px;
+    color: #64748B;
+    line-height: 1.4;
+  }
+
+  /* ── Tags ── */
+  .cs-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+  .cs-tag {
+    font-size: 12px;
+    color: #1B4B9A;
+    background: #EBF1FB;
+    border-radius: 4px;
+    padding: 4px 10px;
+  }
+
+  /* ── Divider ── */
+  .cs-divider { border: none; border-top: 1px solid #F1F5F9; margin: 24px 0; }
+
+  /* ── Screenshot ── */
+  .cs-screenshot {
+    margin: 20px 0;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #E2E8F0;
+    box-shadow: 0 4px 16px rgba(15,23,42,0.08);
+  }
+  .cs-screenshot img {
+    width: 100%;
+    display: block;
+  }
+  .cs-screenshot-pair {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 20px 0;
+  }
+  .cs-screenshot-pair .cs-screenshot { margin: 0; }
+
+  /* ── Section divider slide ── */
+  .cs-section-slide {
+    width: 900px;
+    max-width: 100%;
+    margin: 24px auto 0;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #E2E8F0;
+    box-shadow: 0 4px 16px rgba(15,23,42,0.06);
+  }
+  .cs-section-slide img {
+    width: 100%;
+    display: block;
+  }
+</style>
+</head>
+<body>
+
+<!-- Topband -->
+<div class="topband">
+  <a href="index.html" class="back-button">← Back</a>
+  <div class="topband-title">Amgen — Quality &amp; Trends Analytics Dashboard</div>
+</div>
+
+<!-- ── OVERVIEW ── -->
+<div class="cs-card" style="margin-top:32px;">
+  <span class="cs-label">Project Overview</span>
+  <h1 class="cs-h1">Amgen Quality &amp; Trends Analytics Dashboard</h1>
+  <p class="cs-sub">Enterprise Sales Intelligence Platform &nbsp;·&nbsp; IC Process Validation — Q3 2017</p>
+
+  <table class="cs-meta">
+    <tr><td>Role</td><td>UX/UI Product Designer</td></tr>
+    <tr><td>Project Type</td><td>Enterprise Analytics Dashboard</td></tr>
+    <tr><td>Timeline</td><td>Q3 2017 — Pharmaceutical Sales Intelligence</td></tr>
+    <tr><td>Focus Areas</td><td>Data Visualization, UX Design, Information Architecture</td></tr>
+  </table>
+
+  <div class="cs-section-head">Challenge &amp; Scope</div>
+  <p class="cs-body">Amgen, a global biopharmaceutical leader, faced a critical business intelligence challenge. The organization operated with fragmented sales data spread across multiple systems and data sources, creating visibility gaps that hindered real-time decision-making for sales leadership. Sales teams at corporate, regional, and field levels struggled to access unified, actionable insights into product performance, making it difficult to identify trends, track progress against quarterly goals, and allocate resources effectively.</p>
+
+  <div class="cs-section-head">Strategic Objective</div>
+  <p class="cs-body">The primary goal was to design and deliver a comprehensive enterprise analytics platform that would unify pharmaceutical sales data across the entire organizational hierarchy — from C-suite executives to regional managers to individual field sales representatives. The platform needed to transform complex, multi-dimensional data into intuitive, actionable intelligence while serving diverse user personas with varying analytical needs and technical expertise.</p>
+
+  <div class="cs-section-head">Design Scope &amp; Deliverables</div>
+  <p class="cs-body">As the lead UX/UI Product Designer, I architected a sophisticated dashboard system featuring six complementary analytical views, each optimized for specific business questions and user workflows. The platform consolidates data from multiple pharmaceutical data sources (DDD, Xponent, Account Dependency systems) into a unified interface, enabling drill-down analysis from company-wide metrics down to individual prescriber accounts. The design accommodates 50+ analytical dimensions while maintaining an intuitive user experience optimized for both quick executive scanning and deep analytical exploration.</p>
+</div>
+
+<!-- ── EXECUTIVE SUMMARY ── -->
+<div class="cs-card">
+  <span class="cs-label">Executive Summary</span>
+  <h2 class="cs-h2">Transforming Pharmaceutical Data into Actionable Intelligence</h2>
+  <p class="cs-body">The Amgen Quality &amp; Trends Report represents a comprehensive enterprise analytics dashboard designed to provide pharmaceutical sales teams with real-time insights into product performance, market trends, and sales metrics. This case study details the strategic UX/UI design approach that transformed complex pharmaceutical data into an intuitive, actionable dashboard enabling data-driven decision-making across multiple business units.</p>
+
+  <div class="cs-callout">
+    Key Design Achievements: Dynamic filtering with cascading logic reduces user errors and cognitive load. Color-coded anomaly detection (green "within range" vs. magenta "out of range") enables instant status recognition. Hierarchical drill-down navigation accommodates multiple analytical depths. Real-time metric calculations and 12+ months of historical trend data enable both tactical assessment and strategic pattern recognition.
+  </div>
+</div>
+
+<!-- ── PROJECT REQUIREMENTS ── -->
+<div class="cs-card">
+  <span class="cs-label">Project Requirements &amp; Objectives</span>
+  <h2 class="cs-h2">Business Objectives</h2>
+  <ul class="cs-list">
+    <li>Consolidate pharmaceutical sales data from multiple data sources into a unified analytics platform</li>
+    <li>Provide real-time visibility into brand sales performance across organizational hierarchy</li>
+    <li>Enable tracking of actual sales against quarterly CSTD (Consistent Sales Target Development) goals</li>
+    <li>Identify performance trends and anomalies at all organizational levels</li>
+    <li>Support strategic decision-making for executives and field sales representatives</li>
+    <li>Drive data-driven accountability and enable performance coaching</li>
+  </ul>
+
+  <hr class="cs-divider">
+  <div class="cs-section-head">Functional Requirements</div>
+  <table class="cs-table">
+    <tr><th>Requirement</th><th>Description</th></tr>
+    <tr><td>Multi-Dimensional Filtering</td><td>Filter by BU, Sales Force, Brand, Channel, Territory, Account, Prescriber</td></tr>
+    <tr><td>Hierarchical Drill-Down</td><td>Navigate from company-wide metrics to individual prescriber level</td></tr>
+    <tr><td>Real-Time Metrics</td><td>Display CSTD Sales, Goals, SGA, and variance percentages</td></tr>
+    <tr><td>Advanced Trend Analysis</td><td>12+ months of data with anomaly indicators</td></tr>
+    <tr><td>Data Integration</td><td>Consolidate from DDD, Xponent, Account systems</td></tr>
+    <tr><td>Performance Tracking</td><td>Monthly tracking with month-over-month change analysis</td></tr>
+    <tr><td>Anomaly Detection</td><td>Flag data points exceeding expected ranges</td></tr>
+    <tr><td>Export Capabilities</td><td>Enable data export to Excel and BI tools</td></tr>
+  </table>
+
+  <hr class="cs-divider">
+  <div class="cs-section-head">User Personas &amp; Requirements</div>
+  <ul class="cs-list">
+    <li><strong>Executive Dashboard:</strong> High-level performance overview for C-suite</li>
+    <li><strong>Manager Coaching Tool:</strong> Detailed territory and account analysis</li>
+    <li><strong>Sales Rep Dashboard:</strong> Quick-access metrics for personal accounts</li>
+    <li><strong>Data Analyst View:</strong> Granular data access with advanced analysis</li>
+  </ul>
+</div>
+
+<!-- ── DESIGN CHALLENGE ── -->
+<div class="cs-card">
+  <span class="cs-label">Design Challenge &amp; Problem Statement</span>
+  <h2 class="cs-h2">Designing for Complexity Without Complexity</h2>
+  <p class="cs-body">Amgen required a sophisticated analytics platform capable of visualizing multi-dimensional pharmaceutical sales data across different business units, sales forces, brands, and geographic territories. The challenge was designing an interface that could handle complexity while maintaining intuitive usability.</p>
+
+  <div class="cs-section-head">Key Design Constraints</div>
+  <ul class="cs-list">
+    <li>Handle complex hierarchical data structures spanning 5+ levels</li>
+    <li>Enable quick filtering across 20+ dimensions</li>
+    <li>Present trend analysis with goal tracking and metrics</li>
+    <li>Accommodate diverse user groups with varying expertise</li>
+    <li>Display real-time sales data in digestible formats</li>
+    <li>Maintain performance with 50+ dimensional data</li>
+    <li>Meet pharmaceutical industry compliance requirements</li>
+  </ul>
+</div>
+
+<!-- ── DESIGN SOLUTION ── -->
+<div class="cs-card">
+  <span class="cs-label">Design Solution &amp; Architecture</span>
+  <h2 class="cs-h2">Six Integrated Dashboard Views</h2>
+  <p class="cs-body">The solution implements a modular dashboard architecture featuring six complementary analytical views, each optimized for specific analytical needs. This approach balances comprehensive data access with cognitive simplicity.</p>
+
+  <table class="cs-table">
+    <tr><th>Dashboard View</th><th>Purpose</th></tr>
+    <tr><td>Brand Sales Trend</td><td>Bar/trend-line visualization tracking actual sales vs. quarterly goals</td></tr>
+    <tr><td>Channel Trend Breaks</td><td>Analyzes retail and non-retail channel performance with anomaly detection</td></tr>
+    <tr><td>Territory Trend Breaks</td><td>Hierarchical geographic analysis with performance variance indicators</td></tr>
+    <tr><td>Account Trend Breaks</td><td>Account-level sales tracking with month-over-month change indicators</td></tr>
+    <tr><td>Prescriber Retail Details</td><td>Granular prescriber-level data with normalized unit metrics</td></tr>
+    <tr><td>Baseline Comparison</td><td>Comparative analysis against historical baselines</td></tr>
+  </table>
+</div>
+
+<!-- ── DESIGN DELIVERABLES ── -->
+<div class="cs-card">
+  <span class="cs-label">Design Deliverables &amp; Implementation</span>
+  <h2 class="cs-h2">Landing Screen — Dashboard Portal</h2>
+  <p class="cs-body">The landing screen serves as the primary entry point for all users. It features the comprehensive navigation sidebar with six primary analytical views. The sidebar remains persistent across all views, enabling seamless navigation. Users can switch between views instantly without losing context.</p>
+
+  <div class="cs-screenshot">
+    <img src="images/Amgen/AMGen-UI- Dashboard-02_pages-to-jpg-0001.jpg" alt="Dashboard Landing Screen — Navigation sidebar with six analytical views">
+  </div>
+
+  <div class="cs-section-head">Navigation Icon System</div>
+  <p class="cs-body">Each sidebar view has a distinct icon in active (teal filled) and inactive (teal outline) states, providing clear visual feedback on the current context.</p>
+  <div class="cs-screenshot">
+    <img src="images/Amgen/AMGen-UI- Dashboard-02_pages-to-jpg-0015.jpg" alt="Navigation icon set — active and inactive states">
+  </div>
+
+  <hr class="cs-divider">
+  <div class="cs-screenshot">
+    <img src="images/Amgen/AMGen-UI- Dashboard-02_pages-to-jpg-0002.jpg" alt="Brand Sales Trend section title">
+  </div>
+
+  <h2 class="cs-h2" style="margin-top:20px;">Brand Sales Trend — Primary Analytics</h2>
+  <p class="cs-body">The primary analytics dashboard combines a bar chart showing monthly CSTD Sales with an overlaid trend line displaying CSTD Goals. This dual-metric approach creates natural comparison points. Below the chart, a comprehensive data table provides precise values.</p>
+
+  <div class="cs-screenshot">
+    <img src="images/Amgen/AMGen-UI- Dashboard-02_pages-to-jpg-0003.jpg" alt="Brand Sales Trend — bar chart with CSTD Goals trend line and data table">
+  </div>
+
+  <div class="cs-callout">
+    The bar chart (CSTD Sales) and overlaid trend line (CSTD Goals) create an immediate visual comparison between actuals and targets. Users instantly see where performance exceeds or falls below the goal without interpreting numbers — the gap tells the story.
+  </div>
+
+  <div class="cs-section-head">Interactive Tooltip — Row Hover State</div>
+  <p class="cs-body">Hovering a table row reveals a contextual tooltip with BU, Sales Force, Brand and CSTD Goals — keeping detail accessible without cluttering the main view.</p>
+  <div class="cs-screenshot">
+    <img src="images/Amgen/AMGen-UI- Dashboard-02_pages-to-jpg-0004.jpg" alt="Brand Sales Trend — tooltip hover state on data table row">
+  </div>
+
+  <hr class="cs-divider">
+  <div class="cs-screenshot">
+    <img src="images/Amgen/AMGen-UI- Dashboard-02_pages-to-jpg-0005.jpg" alt="Channel Trend Breaks section title">
+  </div>
+
+  <h2 class="cs-h2" style="margin-top:20px;">Channel Trend Breaks — Retail Analysis</h2>
+  <p class="cs-body">The Channel Trend Breaks view provides detailed analysis across retail and non-retail channels. The line chart features color-coded data points: green "Within Range" and magenta "Out of Range" anomalies. This visual encoding enables instant status recognition.</p>
+
+  <div class="cs-screenshot">
+    <img src="images/Amgen/AMGen-UI- Dashboard-02_pages-to-jpg-0006.jpg" alt="Channel Trend Breaks — color-coded anomaly detection with green/magenta indicators">
+  </div>
+
+  <hr class="cs-divider">
+  <div class="cs-screenshot">
+    <img src="images/Amgen/AMGen-UI- Dashboard-02_pages-to-jpg-0007.jpg" alt="Territory Trend Breaks section title">
+  </div>
+
+  <h2 class="cs-h2" style="margin-top:20px;">Territory Trend Breaks — Geographic Hierarchy</h2>
+  <p class="cs-body">The Territory view demonstrates geographic drill-down capability through three levels: Regional Sales Director (RSD) → District Manager (DM) → Individual Territory. Each level reveals progressively finer data with the same chart layout, allowing users to drill without losing orientation.</p>
+
+  <div class="cs-section-head">Level 1 — RSD (Regional Sales Director)</div>
+  <div class="cs-screenshot">
+    <img src="images/Amgen/AMGen-UI- Dashboard-02_pages-to-jpg-0008.jpg" alt="Territory Trend Breaks — RSD level, East region">
+  </div>
+
+  <div class="cs-section-head">Level 2 — DM (District Manager)</div>
+  <div class="cs-screenshot">
+    <img src="images/Amgen/AMGen-UI- Dashboard-02_pages-to-jpg-0009.jpg" alt="Territory Trend Breaks — DM level, Florida district">
+  </div>
+
+  <div class="cs-section-head">Level 3 — Territory</div>
+  <div class="cs-screenshot">
+    <img src="images/Amgen/AMGen-UI- Dashboard-02_pages-to-jpg-0010.jpg" alt="Territory Trend Breaks — Territory level, St. Petersburg FL">
+  </div>
+
+  <hr class="cs-divider">
+  <div class="cs-screenshot">
+    <img src="images/Amgen/AMGen-UI- Dashboard-02_pages-to-jpg-0011.jpg" alt="Account Trend Breaks section title">
+  </div>
+
+  <h2 class="cs-h2" style="margin-top:20px;">Account Trend Breaks — Prescriber Intelligence</h2>
+  <p class="cs-body">The Account view provides granular performance tracking at the individual account level. The line chart tracks normalized units over 12+ months with each data point labeled. The table shows Change from Previous Month, Present in Goals, and Present in Sales — giving reps immediate actionability.</p>
+
+  <div class="cs-screenshot">
+    <img src="images/Amgen/AMGen-UI- Dashboard-02_pages-to-jpg-0012.jpg" alt="Account Trend Breaks — Cooley Dick normalized units with account-level table">
+  </div>
+
+  <hr class="cs-divider">
+  <div class="cs-screenshot">
+    <img src="images/Amgen/AMGen-UI- Dashboard-02_pages-to-jpg-0013.jpg" alt="Prescriber Retail Details section title">
+  </div>
+
+  <h2 class="cs-h2" style="margin-top:20px;">Prescriber Retail Details</h2>
+  <p class="cs-body">The deepest level of granularity — individual prescriber performance. The same normalized unit trend chart is paired with a prescriber-level table showing Prescriber ID, Prescriber Name, month-on-month change, and goal/sales presence flags.</p>
+
+  <div class="cs-screenshot">
+    <img src="images/Amgen/AMGen-UI- Dashboard-02_pages-to-jpg-0014.jpg" alt="Prescriber Retail Details — prescriber-level tracking with ID and name columns">
+  </div>
+</div>
+
+<!-- ── DESIGN APPROACH ── -->
+<div class="cs-card">
+  <span class="cs-label">Design Approach &amp; Methodology</span>
+  <h2 class="cs-h2">Five Design Principles</h2>
+
+  <div class="cs-section-head">1. Information Architecture &amp; Navigation</div>
+  <p class="cs-body">The dashboard implements a persistent sidebar navigation pattern featuring six primary analytical views with intuitive icons. This approach provides consistent navigation while maintaining focus on analytical content.</p>
+
+  <div class="cs-section-head">2. Dynamic Filtering System</div>
+  <p class="cs-body">The filter panel implements cascading logic where selecting one dimension automatically constrains available options in dependent dimensions. This reduces user errors and cognitive load compared to independent filter selection.</p>
+
+  <div class="cs-section-head">3. Strategic Data Visualization</div>
+  <p class="cs-body">The design combines multiple visualization types: bar charts for comparing actuals against goals; trend lines reveal temporal patterns; color-coded status indicators enable instant anomaly recognition; detailed tables provide precise values.</p>
+
+  <div class="cs-section-head">4. Visual Hierarchy &amp; Color Strategy</div>
+  <p class="cs-body">The design implements a professional color palette: deep blues for primary UI elements; accent orange highlights key metrics; green/magenta status indicators convey performance state.</p>
+
+  <div class="cs-section-head">5. Interactive Intelligence &amp; Progressive Disclosure</div>
+  <p class="cs-body">The interface implements hover-state tooltips revealing detailed information without cluttering the primary view. Table rows expand on interaction to show related attributes.</p>
+</div>
+
+<!-- ── KEY FEATURES ── -->
+<div class="cs-card">
+  <span class="cs-label">Key Features &amp; Core Functionality</span>
+  <h2 class="cs-h2">Platform Capabilities</h2>
+
+  <table class="cs-table">
+    <tr><th>Feature</th><th>Description</th></tr>
+    <tr><td>Multi-Level Drill-Down</td><td>Navigate through BU → Sales Force → Brand → Territory → Account → Prescriber levels</td></tr>
+    <tr><td>Real-Time Metrics</td><td>CSTD Sales, Goals, SGA, and variance calculations update dynamically</td></tr>
+    <tr><td>Trend Detection</td><td>Visual indicators highlight significant variations and anomalies</td></tr>
+    <tr><td>Extended Time Series</td><td>12+ months of data enabling seasonal pattern and trend analysis</td></tr>
+    <tr><td>Geographic Intelligence</td><td>Multi-level geographic hierarchy for context-aware analysis</td></tr>
+    <tr><td>Comparative Analysis</td><td>Side-by-side goals vs. actuals with variance calculations</td></tr>
+    <tr><td>Anomaly Flagging</td><td>Automatic color-coding identifies out-of-range values</td></tr>
+    <tr><td>Exportable Data</td><td>Data export to Excel, Tableau, and enterprise BI systems</td></tr>
+  </table>
+</div>
+
+<!-- ── METRICS & IMPACT ── -->
+<div class="cs-card">
+  <span class="cs-label">Design Metrics &amp; Business Impact</span>
+  <h2 class="cs-h2">Measurable Outcomes</h2>
+
+  <div class="cs-metrics">
+    <div class="cs-metric-box">
+      <div class="cs-metric-num">6</div>
+      <div class="cs-metric-label">Distinct analytical views for different personas</div>
+    </div>
+    <div class="cs-metric-box">
+      <div class="cs-metric-num">3</div>
+      <div class="cs-metric-label">Hierarchical data levels (Regional → Territory → Account)</div>
+    </div>
+    <div class="cs-metric-box">
+      <div class="cs-metric-num">8+</div>
+      <div class="cs-metric-label">Cascading filter dimensions per view</div>
+    </div>
+    <div class="cs-metric-box">
+      <div class="cs-metric-num">12+</div>
+      <div class="cs-metric-label">Months of historical trend data per chart</div>
+    </div>
+    <div class="cs-metric-box">
+      <div class="cs-metric-num">100%</div>
+      <div class="cs-metric-label">Real-time response to filter changes</div>
+    </div>
+    <div class="cs-metric-box">
+      <div class="cs-metric-num">&lt;2s</div>
+      <div class="cs-metric-label">Average page load time</div>
+    </div>
+  </div>
+
+  <div class="cs-section-head">Business Outcomes &amp; User Impact</div>
+  <ul class="cs-list">
+    <li><strong>Accelerated Decision-Making:</strong> Sales leaders identify performance gaps in minutes instead of hours</li>
+    <li><strong>Data-Driven Accountability:</strong> Clear visualization drives evidence-based performance conversations</li>
+    <li><strong>Cross-Functional Adoption:</strong> Intuitive design serves executives, managers, and field representatives</li>
+    <li><strong>Scalable Architecture:</strong> Modular design accommodates new products, territories, and metrics</li>
+    <li><strong>Compliance &amp; Security:</strong> Audit trails and role-based access ensure pharmaceutical-grade standards</li>
+    <li><strong>Performance Optimization:</strong> Sub-second filter response handles enterprise-scale data efficiently</li>
+  </ul>
+</div>
+
+<!-- ── TECHNICAL ── -->
+<div class="cs-card">
+  <span class="cs-label">Technical Implementation &amp; Architecture</span>
+  <h2 class="cs-h2">System Architecture</h2>
+  <p class="cs-body">The dashboard architecture leverages modern web technologies for performance and interactivity, with real-time data connectors to multiple pharmaceutical data sources.</p>
+
+  <table class="cs-table">
+    <tr><th>Component</th><th>Details</th></tr>
+    <tr><td>Data Integration</td><td>DDD, Xponent, Account Dependency, CRM, CORLANDER Brand systems</td></tr>
+    <tr><td>Visualization Engine</td><td>Advanced charting with interactive drill-down and real-time updates</td></tr>
+    <tr><td>UI Framework</td><td>Responsive, accessible component library for cross-device compatibility</td></tr>
+    <tr><td>Filter Engine</td><td>Intelligent cascading filters with logical dimension constraints</td></tr>
+    <tr><td>Performance</td><td>Sub-second filter response times with 50+ dimensional optimization</td></tr>
+    <tr><td>Security Model</td><td>Role-based access control, data encryption, audit logging</td></tr>
+    <tr><td>Accessibility</td><td>WCAG compliance, keyboard navigation, color-blind friendly palette</td></tr>
+  </table>
+</div>
+
+<!-- ── LEARNINGS ── -->
+<div class="cs-card">
+  <span class="cs-label">Key Design Learnings &amp; Insights</span>
+  <h2 class="cs-h2">Critical Principles for Enterprise Analytics</h2>
+  <p class="cs-body">This project revealed critical principles for designing enterprise analytics platforms serving diverse user personas.</p>
+
+  <table class="cs-table">
+    <tr><th>Principle</th><th>Insight</th></tr>
+    <tr><td>Hierarchical Filtering</td><td>Cascading filters reduce cognitive load and user errors vs. independent filter selection</td></tr>
+    <tr><td>Dual Metric Design</td><td>Presenting goals alongside actuals creates natural comparison context</td></tr>
+    <tr><td>Visual Anomaly Detection</td><td>Automatic color-coding more effective than pattern recognition</td></tr>
+    <tr><td>Progressive Disclosure</td><td>Layered information serves both quick scan and deep-dive needs</td></tr>
+    <tr><td>Color as Data Encoding</td><td>Strategic color usage improves scan time and reduces interpretation errors</td></tr>
+  </table>
+</div>
+
+<!-- ── CONCLUSION ── -->
+<div class="cs-card" style="margin-bottom:48px;">
+  <span class="cs-label">Conclusion &amp; Strategic Impact</span>
+  <h2 class="cs-h2">From Data Complexity to Competitive Advantage</h2>
+  <p class="cs-body">The Amgen Quality &amp; Trends Dashboard represents a strategic design achievement in transforming enterprise pharmaceutical data into accessible, actionable intelligence. By integrating sophisticated information architecture, strategic data visualization, intelligent filtering systems, and progressive disclosure patterns, the dashboard successfully serves executives, managers, and field representatives within a unified platform.</p>
+
+  <p class="cs-body">The design demonstrates that complexity in data doesn't require complexity in interface. Through thoughtful design decisions — cascading filters to reduce errors, dual metrics to establish natural comparisons, color-based anomaly detection to improve scan time, and hierarchical drill-down to accommodate diverse analytical depths — the platform transformed a challenge into a strategic competitive advantage.</p>
+
+  <div class="cs-section-head">Key Success Factors</div>
+  <ul class="cs-list">
+    <li>User-centered approach addressing four distinct personas</li>
+    <li>Modular architecture enabling rapid iteration and scaling</li>
+    <li>Performance optimization supporting enterprise-scale data</li>
+    <li>Compliance-first design ensuring regulatory requirements</li>
+    <li>Data-driven decision-making enabling accountability</li>
+  </ul>
+
+  <div class="cs-callout">
+    This case study illustrates how strategic UX/UI design can elevate enterprise platforms into catalysts for organizational performance improvement.
+  </div>
+
+  <div class="cs-tags">
+    <span class="cs-tag">Enterprise Analytics</span>
+    <span class="cs-tag">Data Visualization</span>
+    <span class="cs-tag">Information Architecture</span>
+    <span class="cs-tag">Pharmaceutical</span>
+    <span class="cs-tag">Multi-Persona UX</span>
+    <span class="cs-tag">Cascading Filters</span>
+    <span class="cs-tag">Anomaly Detection</span>
+    <span class="cs-tag">Drill-Down Navigation</span>
+  </div>
+</div>
+
+</body>
+</html>

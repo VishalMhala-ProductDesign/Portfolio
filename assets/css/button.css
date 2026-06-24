@@ -69,17 +69,16 @@
 .back-button {
   background-color: transparent;
   color: var(--color-secondary);
-  border: 1.5px solid var(--color-border);
-  padding: 8px 18px;
-  border-radius: var(--radius-md);
+  border: none;
+  padding: 0;
+  font-size: 22px;
+  line-height: 1;
 }
 
 .back-button:hover {
-  background-color: var(--color-hover-bg);
   color: var(--color-text-primary);
-  border-color: var(--color-secondary);
-  box-shadow: var(--shadow-sm);
   text-decoration: none;
+  transform: translateX(-2px);
 }
 
 /* ===== Sidebar Nav Button ===== */
