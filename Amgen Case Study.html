@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -14,20 +14,26 @@
   /* ── Topband ── */
   .topband {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: 24px;
-    padding: 14px 28px;
-    background: #fff;
-    border-bottom: 1px solid #E2E8F0;
+    padding: 16px 30px;
+    background-color: #F1F5F9;
+    border-bottom: none;
     position: sticky;
     top: 0;
     z-index: 100;
   }
-  .topband-title {
-    font-size: 14px;
+  .topband-text {
+    font-size: 15px;
     font-weight: 600;
-    color: #0F172A;
     letter-spacing: -0.01em;
+    color: var(--color-text-primary);
+  }
+  .topband-text p {
+    margin: 2px 0 0;
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--color-text-muted);
   }
 
   /* ── Card shell ── */
@@ -95,7 +101,7 @@
     font-weight: 700;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: #94A3B8;
+    color: #64748B;
     margin: 28px 0 10px;
   }
 
@@ -235,8 +241,21 @@
 
 <!-- Topband -->
 <div class="topband">
-  <a href="index.html" class="back-button">← Back</a>
-  <div class="topband-title">Amgen — Quality &amp; Trends Analytics Dashboard</div>
+  <div class="topband-text">
+    Vishal Mhala
+    <p>Senior Product Designer | AI-Powered Enterprise Workflow | Human-AI Collaboration | Agentic Systems</p>
+  </div>
+  <div style="display:flex; align-items:center; gap:0;">
+    <a href="index.html#section-ican" style="font-size:15px; font-weight:500; color:var(--color-accent); text-decoration:none; letter-spacing:0.01em;">I Can</a>
+    <span style="color:var(--color-border); font-size:15px; padding:0 16px;">|</span>
+    <a href="index.html#section-thinking" style="font-size:15px; font-weight:500; color:var(--color-accent); text-decoration:none; letter-spacing:0.01em;">UX &amp; PM Thinking</a>
+    <span style="color:var(--color-border); font-size:15px; padding:0 16px;">|</span>
+    <a href="index.html#section-aithinking" style="font-size:15px; font-weight:500; color:var(--color-accent); text-decoration:none; letter-spacing:0.01em;">AI Thinking &amp; Tool</a>
+    <span style="color:var(--color-border); font-size:15px; padding:0 16px;">|</span>
+    <a href="index.html#section-casestudies" style="font-size:15px; font-weight:500; color:var(--color-accent); text-decoration:none; letter-spacing:0.01em;">Case Studies</a>
+    <span style="color:var(--color-border); font-size:15px; padding:0 16px;">|</span>
+    <a href="index.html#section-beyond" style="font-size:15px; font-weight:500; color:var(--color-accent); text-decoration:none; letter-spacing:0.01em;">Design Review</a>
+  </div>
 </div>
 
 <!-- ── OVERVIEW ── -->
@@ -263,7 +282,7 @@
 </div>
 
 <!-- ── EXECUTIVE SUMMARY ── -->
-<div class="cs-card">
+<div class="cs-card" id="amgen-summary">
   <span class="cs-label">Executive Summary</span>
   <h2 class="cs-h2">Transforming Pharmaceutical Data into Actionable Intelligence</h2>
   <p class="cs-body">The Amgen Quality &amp; Trends Report represents a comprehensive enterprise analytics dashboard designed to provide pharmaceutical sales teams with real-time insights into product performance, market trends, and sales metrics. This case study details the strategic UX/UI design approach that transformed complex pharmaceutical data into an intuitive, actionable dashboard enabling data-driven decision-making across multiple business units.</p>
@@ -274,7 +293,7 @@
 </div>
 
 <!-- ── PROJECT REQUIREMENTS ── -->
-<div class="cs-card">
+<div class="cs-card" id="amgen-requirements">
   <span class="cs-label">Project Requirements &amp; Objectives</span>
   <h2 class="cs-h2">Business Objectives</h2>
   <ul class="cs-list">
@@ -346,7 +365,7 @@
 </div>
 
 <!-- ── DESIGN DELIVERABLES ── -->
-<div class="cs-card">
+<div class="cs-card" id="amgen-deliverables">
   <span class="cs-label">Design Deliverables &amp; Implementation</span>
   <h2 class="cs-h2">Landing Screen — Dashboard Portal</h2>
   <p class="cs-body">The landing screen serves as the primary entry point for all users. It features the comprehensive navigation sidebar with six primary analytical views. The sidebar remains persistent across all views, enabling seamless navigation. Users can switch between views instantly without losing context.</p>
@@ -355,16 +374,8 @@
     <img src="images/Amgen/AMGen-UI- Dashboard-02_pages-to-jpg-0001.jpg" alt="Dashboard Landing Screen — Navigation sidebar with six analytical views">
   </div>
 
-  <div class="cs-section-head">Navigation Icon System</div>
-  <p class="cs-body">Each sidebar view has a distinct icon in active (teal filled) and inactive (teal outline) states, providing clear visual feedback on the current context.</p>
-  <div class="cs-screenshot">
-    <img src="images/Amgen/AMGen-UI- Dashboard-02_pages-to-jpg-0015.jpg" alt="Navigation icon set — active and inactive states">
-  </div>
 
   <hr class="cs-divider">
-  <div class="cs-screenshot">
-    <img src="images/Amgen/AMGen-UI- Dashboard-02_pages-to-jpg-0002.jpg" alt="Brand Sales Trend section title">
-  </div>
 
   <h2 class="cs-h2" style="margin-top:20px;">Brand Sales Trend — Primary Analytics</h2>
   <p class="cs-body">The primary analytics dashboard combines a bar chart showing monthly CSTD Sales with an overlaid trend line displaying CSTD Goals. This dual-metric approach creates natural comparison points. Below the chart, a comprehensive data table provides precise values.</p>
@@ -384,10 +395,6 @@
   </div>
 
   <hr class="cs-divider">
-  <div class="cs-screenshot">
-    <img src="images/Amgen/AMGen-UI- Dashboard-02_pages-to-jpg-0005.jpg" alt="Channel Trend Breaks section title">
-  </div>
-
   <h2 class="cs-h2" style="margin-top:20px;">Channel Trend Breaks — Retail Analysis</h2>
   <p class="cs-body">The Channel Trend Breaks view provides detailed analysis across retail and non-retail channels. The line chart features color-coded data points: green "Within Range" and magenta "Out of Range" anomalies. This visual encoding enables instant status recognition.</p>
 
@@ -396,10 +403,6 @@
   </div>
 
   <hr class="cs-divider">
-  <div class="cs-screenshot">
-    <img src="images/Amgen/AMGen-UI- Dashboard-02_pages-to-jpg-0007.jpg" alt="Territory Trend Breaks section title">
-  </div>
-
   <h2 class="cs-h2" style="margin-top:20px;">Territory Trend Breaks — Geographic Hierarchy</h2>
   <p class="cs-body">The Territory view demonstrates geographic drill-down capability through three levels: Regional Sales Director (RSD) → District Manager (DM) → Individual Territory. Each level reveals progressively finer data with the same chart layout, allowing users to drill without losing orientation.</p>
 
@@ -419,10 +422,6 @@
   </div>
 
   <hr class="cs-divider">
-  <div class="cs-screenshot">
-    <img src="images/Amgen/AMGen-UI- Dashboard-02_pages-to-jpg-0011.jpg" alt="Account Trend Breaks section title">
-  </div>
-
   <h2 class="cs-h2" style="margin-top:20px;">Account Trend Breaks — Prescriber Intelligence</h2>
   <p class="cs-body">The Account view provides granular performance tracking at the individual account level. The line chart tracks normalized units over 12+ months with each data point labeled. The table shows Change from Previous Month, Present in Goals, and Present in Sales — giving reps immediate actionability.</p>
 
@@ -430,21 +429,10 @@
     <img src="images/Amgen/AMGen-UI- Dashboard-02_pages-to-jpg-0012.jpg" alt="Account Trend Breaks — Cooley Dick normalized units with account-level table">
   </div>
 
-  <hr class="cs-divider">
-  <div class="cs-screenshot">
-    <img src="images/Amgen/AMGen-UI- Dashboard-02_pages-to-jpg-0013.jpg" alt="Prescriber Retail Details section title">
-  </div>
-
-  <h2 class="cs-h2" style="margin-top:20px;">Prescriber Retail Details</h2>
-  <p class="cs-body">The deepest level of granularity — individual prescriber performance. The same normalized unit trend chart is paired with a prescriber-level table showing Prescriber ID, Prescriber Name, month-on-month change, and goal/sales presence flags.</p>
-
-  <div class="cs-screenshot">
-    <img src="images/Amgen/AMGen-UI- Dashboard-02_pages-to-jpg-0014.jpg" alt="Prescriber Retail Details — prescriber-level tracking with ID and name columns">
-  </div>
 </div>
 
 <!-- ── DESIGN APPROACH ── -->
-<div class="cs-card">
+<div class="cs-card" id="amgen-approach">
   <span class="cs-label">Design Approach &amp; Methodology</span>
   <h2 class="cs-h2">Five Design Principles</h2>
 
@@ -465,7 +453,7 @@
 </div>
 
 <!-- ── KEY FEATURES ── -->
-<div class="cs-card">
+<div class="cs-card" id="amgen-features">
   <span class="cs-label">Key Features &amp; Core Functionality</span>
   <h2 class="cs-h2">Platform Capabilities</h2>
 
@@ -526,7 +514,7 @@
 </div>
 
 <!-- ── TECHNICAL ── -->
-<div class="cs-card">
+<div class="cs-card" id="amgen-tech">
   <span class="cs-label">Technical Implementation &amp; Architecture</span>
   <h2 class="cs-h2">System Architecture</h2>
   <p class="cs-body">The dashboard architecture leverages modern web technologies for performance and interactivity, with real-time data connectors to multiple pharmaceutical data sources.</p>
@@ -544,7 +532,7 @@
 </div>
 
 <!-- ── LEARNINGS ── -->
-<div class="cs-card">
+<div class="cs-card" id="amgen-learnings">
   <span class="cs-label">Key Design Learnings &amp; Insights</span>
   <h2 class="cs-h2">Critical Principles for Enterprise Analytics</h2>
   <p class="cs-body">This project revealed critical principles for designing enterprise analytics platforms serving diverse user personas.</p>
@@ -591,6 +579,147 @@
     <span class="cs-tag">Drill-Down Navigation</span>
   </div>
 </div>
+
+<!-- ── Page nav styles ── -->
+<style>
+  .page-nav-title {
+    position: fixed;
+    top: 86px;
+    right: 20px;
+    width: 176px;
+    padding: 0 12px 12px;
+    border-bottom: 2px solid #0F172A;
+  }
+  .page-nav-title-name {
+    font-size: 12px;
+    font-weight: 700;
+    color: #0F172A;
+    letter-spacing: -0.01em;
+    line-height: 1.3;
+  }
+  .page-nav-title-sub {
+    display: block;
+    font-size: 10px;
+    font-weight: 500;
+    color: #64748B;
+    margin-top: 2px;
+    letter-spacing: 0;
+    line-height: 1.3;
+  }
+
+  .page-nav {
+    position: fixed;
+    top: 168px;
+    right: 20px;
+    width: 176px;
+    max-height: calc(100vh - 184px);
+    overflow-y: auto;
+    z-index: 90;
+    padding: 0 0 8px 0;
+  }
+  .page-nav::-webkit-scrollbar { width: 3px; }
+  .page-nav::-webkit-scrollbar-thumb { background: #E2E8F0; border-radius: 2px; }
+
+  .page-nav-group { margin-bottom: 6px; }
+  .page-nav-group-label {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #0F172A;
+    padding: 0 12px 5px;
+    display: block;
+  }
+  .page-nav a {
+    display: block;
+    font-size: 11px;
+    font-weight: 500;
+    color: #2563EB;
+    text-decoration: none;
+    padding: 5px 12px;
+    border-left: 2px solid transparent;
+    line-height: 1.35;
+    transition: color 0.15s, border-color 0.15s;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .page-nav a:hover { color: #1D4ED8; }
+  .page-nav a.active {
+    color: #1D4ED8;
+    font-weight: 700;
+    border-left-color: #2563EB;
+  }
+
+  .cs-card { scroll-margin-top: 60px; }
+</style>
+
+<!-- ── Right-side page nav title ── -->
+<div class="page-nav-title">
+  <div class="page-nav-title-name">Amgen</div>
+  <span class="page-nav-title-sub">Quality &amp; Trends Analytics Dashboard</span>
+</div>
+
+<!-- ── Right-side page navigation ── -->
+<nav class="page-nav" id="pageNav">
+
+  <div class="page-nav-group">
+    <span class="page-nav-group-label">Overview</span>
+    <a href="#amgen-overview">Project Overview</a>
+    <a href="#amgen-summary">Executive Summary</a>
+    <a href="#amgen-requirements">Requirements</a>
+  </div>
+
+  <div class="page-nav-group">
+    <span class="page-nav-group-label">Design</span>
+    <a href="#amgen-challenge">Challenge</a>
+    <a href="#amgen-solution">Solution</a>
+    <a href="#amgen-deliverables">Deliverables</a>
+    <a href="#amgen-approach">Approach</a>
+    <a href="#amgen-features">Key Features</a>
+  </div>
+
+  <div class="page-nav-group">
+    <span class="page-nav-group-label">Outcomes</span>
+    <a href="#amgen-impact">Business Impact</a>
+    <a href="#amgen-tech">Technical Architecture</a>
+    <a href="#amgen-learnings">Design Learnings</a>
+    <a href="#amgen-conclusion">Conclusion</a>
+  </div>
+
+</nav>
+
+<script>
+  (function () {
+    var ids = [
+      'amgen-overview','amgen-summary','amgen-requirements',
+      'amgen-challenge','amgen-solution','amgen-deliverables',
+      'amgen-approach','amgen-features','amgen-impact',
+      'amgen-tech','amgen-learnings','amgen-conclusion'
+    ];
+    var links = document.querySelectorAll('.page-nav a');
+
+    function docTop(el) {
+      return el.getBoundingClientRect().top + window.pageYOffset;
+    }
+
+    function onScroll() {
+      var scrollY = window.pageYOffset + 80;
+      var current = ids[0];
+      ids.forEach(function (id) {
+        var el = document.getElementById(id);
+        if (el && docTop(el) <= scrollY) current = id;
+      });
+      links.forEach(function (a) {
+        var href = a.getAttribute('href').replace('#', '');
+        a.classList.toggle('active', href === current);
+      });
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  })();
+</script>
 
 </body>
 </html>

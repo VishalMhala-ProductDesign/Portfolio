@@ -1,0 +1,201 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Visualization Panel — Design Review</title>
+  <link rel="stylesheet" href="assets/css/font style.css">
+  <link rel="stylesheet" href="assets/css/button.css">
+  <link rel="stylesheet" href="assets/css/card.css">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #F1F5F9; padding-bottom: 60px; }
+  .topband {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 16px 30px; background-color: #F1F5F9;
+    border-bottom: none;
+    position: sticky; top: 0; z-index: 100;
+  }
+  .topband-text { font-size: 15px; font-weight: 600; letter-spacing: -0.01em; color: var(--color-text-primary); }
+  .topband-text p { margin: 2px 0 0; font-size: 12px; font-weight: 400; color: var(--color-text-muted); }
+  .cs-card {
+    background: #fff; border-radius: 10px; border: 1px solid #E2E8F0;
+    padding: 36px 40px; margin: 24px auto 0; width: 960px; max-width: 100%;
+  }
+  .section-label {
+    font-size: 10px; font-weight: 700; letter-spacing: 0.12em;
+    text-transform: uppercase; color: #94A3B8; margin-bottom: 20px; display: block;
+  }
+  .rec-title { font-size: 22px; font-weight: 700; color: #0F172A; letter-spacing: -0.02em; margin-bottom: 6px; }
+  .rec-subtitle { font-size: 14px; color: #64748B; font-weight: 400; line-height: 1.6; margin-top: 8px; }
+  .video-wrap {
+    position: relative; padding-bottom: 56.25%; height: 0;
+    overflow: hidden; border-radius: 8px; background: #0F172A;
+  }
+  .video-wrap video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; border-radius: 8px; }
+  .note-section { margin-top: 28px; }
+  .note-section:first-child { margin-top: 0; }
+  .note-heading {
+    font-size: 13px; font-weight: 700; color: #0F172A; letter-spacing: 0.01em;
+    margin-bottom: 10px; padding-bottom: 8px; border-bottom: 1px solid #F1F5F9;
+  }
+  .note-item {
+    font-size: 14px; color: #475569; line-height: 1.65;
+    padding: 4px 0 4px 16px; border-left: 2px solid #E2E8F0; margin-bottom: 6px;
+  }
+  .note-sub { font-size: 13px; color: #64748B; line-height: 1.6; padding: 3px 0 3px 28px; margin-bottom: 4px; }
+  .insight-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 4px; }
+  .insight-block { background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 8px; padding: 18px 20px; }
+  .insight-block-title {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.1em;
+    text-transform: uppercase; color: #94A3B8; margin-bottom: 12px;
+  }
+  .insight-item { font-size: 13px; color: #334155; line-height: 1.6; padding: 3px 0 3px 14px; border-left: 2px solid #CBD5E1; margin-bottom: 6px; }
+  .option-compare { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-top: 12px; }
+  .option-card { background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 8px; padding: 16px 18px; }
+  .option-label { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #94A3B8; margin-bottom: 8px; }
+  .option-name { font-size: 14px; font-weight: 700; color: #0F172A; margin-bottom: 6px; }
+  .option-desc { font-size: 13px; color: #475569; line-height: 1.55; }
+  .winner { border-color: #A7F3D0; background: #F0FDF4; }
+  .winner .option-label { color: #059669; }
+</style>
+</head>
+<body>
+
+<div class="topband">
+  <div class="topband-text">
+    Vishal Mhala
+    <p>Senior Product Designer | AI-Powered Enterprise Workflow | Human-AI Collaboration | Agentic Systems</p>
+  </div>
+  <div style="display:flex; align-items:center; gap:0;">
+    <a href="index.html#section-ican" style="font-size:15px; font-weight:500; color:var(--color-accent); text-decoration:none; letter-spacing:0.01em;">I Can</a>
+    <span style="color:var(--color-border); font-size:15px; padding:0 16px;">|</span>
+    <a href="index.html#section-thinking" style="font-size:15px; font-weight:500; color:var(--color-accent); text-decoration:none; letter-spacing:0.01em;">UX &amp; PM Thinking</a>
+    <span style="color:var(--color-border); font-size:15px; padding:0 16px;">|</span>
+    <a href="index.html#section-aithinking" style="font-size:15px; font-weight:500; color:var(--color-accent); text-decoration:none; letter-spacing:0.01em;">AI Thinking &amp; Tool</a>
+    <span style="color:var(--color-border); font-size:15px; padding:0 16px;">|</span>
+    <a href="index.html#section-casestudies" style="font-size:15px; font-weight:500; color:var(--color-accent); text-decoration:none; letter-spacing:0.01em;">Case Studies</a>
+    <span style="color:var(--color-border); font-size:15px; padding:0 16px;">|</span>
+    <a href="index.html#section-beyond" style="font-size:15px; font-weight:500; color:var(--color-accent); text-decoration:none; letter-spacing:0.01em;">Design Review</a>
+  </div>
+</div>
+
+<!-- Header -->
+<div class="cs-card">
+  <span class="section-label">Design Review &mdash; Recording</span>
+  <div class="rec-title">Data Visualization Panel on PRO Panel &amp; Layering Panel</div>
+  <div class="rec-subtitle">Three design options compared for data visualization controls across the Property Panel and Map Layering Panel. Final decision: Option 2 confirmed — visualization controls available in both panels. Data Card always floats above all other visualizations.</div>
+</div>
+
+<!-- Video -->
+<div class="cs-card">
+  <span class="section-label">Recording</span>
+  <div class="video-wrap">
+    <video controls preload="metadata">
+      <source src="https://www.dropbox.com/scl/fi/4jw24fwcqfyd3oc1lfkcm/Data-Visualization-Panel-on-PRO-Panel-Layering-Panel-Design-Review.mp4?rlkey=qxt9hr30ttemlv1pntnak7imc&st=6o7jhoy2&dl=1" type="video/mp4">
+    </video>
+  </div>
+</div>
+
+<!-- Options Compared -->
+<div class="cs-card">
+  <span class="section-label">Design Options Compared</span>
+
+  <div class="option-compare">
+    <div class="option-card">
+      <div class="option-label">Option 1</div>
+      <div class="option-name">Properties Panel Only</div>
+      <div class="option-desc">User selects visualization from Property Panel; editing opens in Layering Panel. Interaction feels disconnected across two separate panels.</div>
+    </div>
+    <div class="option-card winner">
+      <div class="option-label">Option 2 &mdash; Selected</div>
+      <div class="option-name">Both Panels</div>
+      <div class="option-desc">Existing visualization panel remains in Property Panel; clicking visualization opens the panel normally. Already implemented, familiar, faster development, less user education needed.</div>
+    </div>
+    <div class="option-card">
+      <div class="option-label">Option 3</div>
+      <div class="option-name">Hover-Based</div>
+      <div class="option-desc">Hover over property &rarr; quick visualization controls appear. Concern: constant hover menus feel intrusive when user is just selecting/unselecting properties. Possible mitigation: hover delay.</div>
+    </div>
+  </div>
+</div>
+
+<!-- Discussion Notes -->
+<div class="cs-card">
+  <span class="section-label">Discussion Notes</span>
+
+  <div class="note-section">
+    <div class="note-heading">Map Layering Workflow</div>
+    <div class="note-item">User hovers over a layer/property in Map Layering &rarr; quick action menu appears.</div>
+    <div class="note-item">User can: open visualization controls, switch visualization type, reorder layers.</div>
+    <div class="note-item">Switching visualization updates the map immediately; change reflects simultaneously in Layering Panel, Property Panel, and Data Visualization Panel.</div>
+  </div>
+
+  <div class="note-section">
+    <div class="note-heading">Data Card Layering Behavior</div>
+    <div class="note-item">Key rule: Data Card always floats on top of all visualizations.</div>
+    <div class="note-item">If a property changes to Data Card &rarr; it automatically moves above other visualizations.</div>
+    <div class="note-item">If changed back to another visualization type &rarr; returns to normal ordering.</div>
+    <div class="note-item">A separator line in the Map Layering panel defines the boundary between the Data Card section and the Other visualization section.</div>
+    <div class="note-item">Data cards cannot be placed inside the normal visualization section and vice versa — system auto-corrects forced repositioning.</div>
+  </div>
+
+  <div class="note-section">
+    <div class="note-heading">Layer Shuffling &amp; Multiple Properties</div>
+    <div class="note-item">Users reorder layers using drag handles — map updates immediately on reorder. Applies to point layers, line layers, and data cards.</div>
+    <div class="note-item">Point objects and line objects (e.g., pipelines) follow the same layering behavior and separator line rule.</div>
+    <div class="note-item">In unpinned state: only the topmost property value is visible on the Data Card.</div>
+    <div class="note-item">When user pins the Data Card: all stacked property values become visible (follows existing data card behavior).</div>
+  </div>
+
+  <div class="note-section">
+    <div class="note-heading">Opacity &amp; Visual Settings</div>
+    <div class="note-item">Opacity control exists in visualization settings; Apply button appears only after a modification is made.</div>
+    <div class="note-item">Users are not expected to adjust opacity/size frequently — possible future move to user preferences panel.</div>
+    <div class="note-item">Bubble size is calculated from the property value, not a fixed setting — Small/Medium/Large controls likely unnecessary and may be removed.</div>
+  </div>
+
+  <div class="note-section">
+    <div class="note-heading">Hide/Show Behavior — Still Open</div>
+    <div class="note-item">Current proposal: hiding a property removes it from Map, Property Panel, and Layering Panel everywhere.</div>
+    <div class="note-item">Technical feasibility must be confirmed with Shivam/Chetan before finalizing this behavior.</div>
+  </div>
+</div>
+
+<!-- UX Insights -->
+<div class="cs-card">
+  <span class="section-label">UX Insights</span>
+
+  <div class="insight-grid">
+
+    <div class="insight-block">
+      <div class="insight-block-title">Why Option 2 Won</div>
+      <div class="insight-item">Already implemented — reduces engineering risk and timeline.</div>
+      <div class="insight-item">Familiar pattern — users already know how to use it, so onboarding cost is near zero.</div>
+      <div class="insight-item">Hover-based patterns (Option 3) introduce discoverability risk — users may never find controls they can't see.</div>
+    </div>
+
+    <div class="insight-block">
+      <div class="insight-block-title">Auto-Layer Priority Rule</div>
+      <div class="insight-item">Automatically placing Data Card above all other visualizations is a smart default that removes a whole class of "why is my card hidden?" support issues.</div>
+      <div class="insight-item">Explicit separator line in the UI makes the rule visible and learnable, rather than hidden magic.</div>
+    </div>
+
+    <div class="insight-block">
+      <div class="insight-block-title">Real-Time Sync Across Panels</div>
+      <div class="insight-item">When switching visualization types, all three panels (Map, Layering, Property) must update simultaneously.</div>
+      <div class="insight-item">Out-of-sync panel state is a major trust issue — users lose confidence in what is "actually" happening on the map.</div>
+    </div>
+
+    <div class="insight-block">
+      <div class="insight-block-title">Open Items for Engineering</div>
+      <div class="insight-item">Confirm: visualization panel in Map Layering technically feasible?</div>
+      <div class="insight-item">Confirm: final hide/show behavior with Shivam/Chetan.</div>
+      <div class="insight-item">Decide: remove bubble size controls in next iteration?</div>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>

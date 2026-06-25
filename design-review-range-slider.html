@@ -1,0 +1,207 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Range Slider &amp; Drop Zeroes — Design Review</title>
+  <link rel="stylesheet" href="assets/css/font style.css">
+  <link rel="stylesheet" href="assets/css/button.css">
+  <link rel="stylesheet" href="assets/css/card.css">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #F1F5F9; padding-bottom: 60px; }
+  .topband {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 16px 30px; background-color: #F1F5F9;
+    border-bottom: none;
+    position: sticky; top: 0; z-index: 100;
+  }
+  .topband-text { font-size: 15px; font-weight: 600; letter-spacing: -0.01em; color: var(--color-text-primary); }
+  .topband-text p { margin: 2px 0 0; font-size: 12px; font-weight: 400; color: var(--color-text-muted); }
+  .cs-card {
+    background: #fff; border-radius: 10px; border: 1px solid #E2E8F0;
+    padding: 36px 40px; margin: 24px auto 0; width: 960px; max-width: 100%;
+  }
+  .section-label {
+    font-size: 10px; font-weight: 700; letter-spacing: 0.12em;
+    text-transform: uppercase; color: #94A3B8; margin-bottom: 20px; display: block;
+  }
+  .rec-title { font-size: 22px; font-weight: 700; color: #0F172A; letter-spacing: -0.02em; margin-bottom: 6px; }
+  .rec-subtitle { font-size: 14px; color: #64748B; font-weight: 400; line-height: 1.6; margin-top: 8px; }
+  .video-wrap {
+    position: relative; padding-bottom: 56.25%; height: 0;
+    overflow: hidden; border-radius: 8px; background: #0F172A;
+  }
+  .video-wrap video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; border-radius: 8px; }
+  .note-section { margin-top: 28px; }
+  .note-section:first-child { margin-top: 0; }
+  .note-heading {
+    font-size: 13px; font-weight: 700; color: #0F172A; letter-spacing: 0.01em;
+    margin-bottom: 10px; padding-bottom: 8px; border-bottom: 1px solid #F1F5F9;
+  }
+  .note-item {
+    font-size: 14px; color: #475569; line-height: 1.65;
+    padding: 4px 0 4px 16px; border-left: 2px solid #E2E8F0; margin-bottom: 6px;
+  }
+  .note-sub { font-size: 13px; color: #64748B; line-height: 1.6; padding: 3px 0 3px 28px; margin-bottom: 4px; }
+  .insight-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 4px; }
+  .insight-block { background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 8px; padding: 18px 20px; }
+  .insight-block-title {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.1em;
+    text-transform: uppercase; color: #94A3B8; margin-bottom: 12px;
+  }
+  .insight-item { font-size: 13px; color: #334155; line-height: 1.6; padding: 3px 0 3px 14px; border-left: 2px solid #CBD5E1; margin-bottom: 6px; }
+  .decision-table { width: 100%; border-collapse: collapse; font-size: 13px; margin-top: 8px; }
+  .decision-table th {
+    background: #F1F5F9; color: #64748B; font-size: 11px; font-weight: 700;
+    letter-spacing: 0.08em; text-transform: uppercase; padding: 8px 12px; text-align: left; border-bottom: 1px solid #E2E8F0;
+  }
+  .decision-table td { padding: 10px 12px; color: #475569; border-bottom: 1px solid #F1F5F9; vertical-align: top; }
+</style>
+</head>
+<body>
+
+<div class="topband">
+  <div class="topband-text">
+    Vishal Mhala
+    <p>Senior Product Designer | AI-Powered Enterprise Workflow | Human-AI Collaboration | Agentic Systems</p>
+  </div>
+  <div style="display:flex; align-items:center; gap:0;">
+    <a href="index.html#section-ican" style="font-size:15px; font-weight:500; color:var(--color-accent); text-decoration:none; letter-spacing:0.01em;">I Can</a>
+    <span style="color:var(--color-border); font-size:15px; padding:0 16px;">|</span>
+    <a href="index.html#section-thinking" style="font-size:15px; font-weight:500; color:var(--color-accent); text-decoration:none; letter-spacing:0.01em;">UX &amp; PM Thinking</a>
+    <span style="color:var(--color-border); font-size:15px; padding:0 16px;">|</span>
+    <a href="index.html#section-aithinking" style="font-size:15px; font-weight:500; color:var(--color-accent); text-decoration:none; letter-spacing:0.01em;">AI Thinking &amp; Tool</a>
+    <span style="color:var(--color-border); font-size:15px; padding:0 16px;">|</span>
+    <a href="index.html#section-casestudies" style="font-size:15px; font-weight:500; color:var(--color-accent); text-decoration:none; letter-spacing:0.01em;">Case Studies</a>
+    <span style="color:var(--color-border); font-size:15px; padding:0 16px;">|</span>
+    <a href="index.html#section-beyond" style="font-size:15px; font-weight:500; color:var(--color-accent); text-decoration:none; letter-spacing:0.01em;">Design Review</a>
+  </div>
+</div>
+
+<!-- Header -->
+<div class="cs-card">
+  <span class="section-label">Design Review &mdash; Recording</span>
+  <div class="rec-title">Range Slider &amp; Drop Zeroes — Component Design Review</div>
+  <div class="rec-subtitle">UX improvements to the Data Card visualization panel — covering Range Slider behavior, Drop Zero toggle, filter panel layout, and engineering handoff readiness. Key decision: Drop Zero and Range Slider are fully independent filters.</div>
+</div>
+
+<!-- Video -->
+<div class="cs-card">
+  <span class="section-label">Recording</span>
+  <div class="video-wrap">
+    <video controls preload="metadata">
+      <source src="https://www.dropbox.com/scl/fi/wbyb72k4jjmy1za4oui4y/Range-Slider-and-Drop-Zeroes-_-Component-Design-Review.mp4?rlkey=pl90r686l57na8q01yu6ditn2&st=7oib59o8&dl=1" type="video/mp4">
+    </video>
+  </div>
+</div>
+
+<!-- Discussion Notes -->
+<div class="cs-card">
+  <span class="section-label">Discussion Notes</span>
+
+  <div class="note-section">
+    <div class="note-heading">Keep Visualization Panel Open After Apply</div>
+    <div class="note-item">Current behavior: clicking Apply closes the visualization panel automatically.</div>
+    <div class="note-item">Problem: user must reopen, adjust, and re-apply — unnecessary extra clicks and poor usability for iterative adjustments.</div>
+    <div class="note-item">Decision: keep panel open after Apply; add a manual Close (X) button so users control when to dismiss.</div>
+  </div>
+
+  <div class="note-section">
+    <div class="note-heading">Updated Filter Panel Layout</div>
+    <div class="note-item">New layout: labels on the left side, actions/controls on the right side.</div>
+    <div class="note-sub">Drop Zero &rarr; Toggle on the right</div>
+    <div class="note-sub">Range &rarr; Slider + Input fields on the right</div>
+    <div class="note-sub">Opacity &rarr; existing behavior retained</div>
+    <div class="note-item">Benefits: cleaner scanning, better alignment, more organized UI that scales with more filter types.</div>
+  </div>
+
+  <div class="note-section">
+    <div class="note-heading">Drop Zero Toggle Behavior</div>
+    <div class="note-item">Default state: Drop Zero toggle is ON by default — users normally don't want zero-value cards visible on the map.</div>
+    <div class="note-item">When Drop Zero is ON: zero-value cards are hidden from the map — slider range is NOT redefined.</div>
+    <div class="note-item">Drop Zero only filters zero values; it does not change or move the slider endpoints.</div>
+  </div>
+
+  <div class="note-section">
+    <div class="note-heading">Drop Zero and Range Are Independent (Key Decision)</div>
+    <div class="note-item">Earlier assumption: turning Drop Zero ON would move slider minimum to zero.</div>
+    <div class="note-item"><strong>Final decision: do NOT connect them.</strong></div>
+    <div class="note-item">Range filter controls which value range is displayed; Drop Zero only hides zero values within that range.</div>
+    <div class="note-sub">Example: Range set to -30 to +30 with 50 cards; if 20 cards are zero-value and Drop Zero is ON, 30 cards shown. Slider stays at -30 to +30.</div>
+    <div class="note-item">Negative numbers are supported — Drop Zero must work correctly when values span negative to positive ranges.</div>
+  </div>
+
+  <div class="note-section">
+    <div class="note-heading">Range Input Text Fields</div>
+    <div class="note-item">Phase 2 addition: add numeric text fields for minimum and maximum alongside the slider.</div>
+    <div class="note-item">Default values should come from actual API data range (e.g., if Gas Storage API returns range 20–50, UI shows 20 to 50, not 0 to 500).</div>
+    <div class="note-item">Input validation: block alphabetic input via HTML5 validation — remove custom error messages (HTML5 handles this natively).</div>
+  </div>
+
+  <div class="note-section">
+    <div class="note-heading">Filter Panel Height &amp; Reset</div>
+    <div class="note-item">Remove internal scrollbar — make panel height dynamic (more filters = panel grows; fewer filters = panel shrinks).</div>
+    <div class="note-item">Reset button added and appreciated — with multiple filters, reset is important for usability. Position: top right area alongside Close button.</div>
+  </div>
+
+  <div class="note-section">
+    <div class="note-heading">Scope Decision</div>
+    <div class="note-item"><strong>In scope:</strong> Drop Zero toggle, Range Slider improvements, text input for range, dynamic panel height, new toggle styling, minor layout updates.</div>
+    <div class="note-item"><strong>Out of scope:</strong> fill opacity changes, larger visualization redesign — planned separately based on priority.</div>
+  </div>
+</div>
+
+<!-- Decisions Summary -->
+<div class="cs-card">
+  <span class="section-label">UX Decisions Summary</span>
+  <table class="decision-table">
+    <tr><th>Feature</th><th>Final Decision</th></tr>
+    <tr><td>Apply button</td><td>Keep panel open after Apply</td></tr>
+    <tr><td>Close panel</td><td>Manual close button (X)</td></tr>
+    <tr><td>Drop Zero default</td><td>ON</td></tr>
+    <tr><td>Drop Zero effect</td><td>Hide zero values only — does not move slider</td></tr>
+    <tr><td>Range + Drop Zero</td><td>Fully independent filters</td></tr>
+    <tr><td>Negative values</td><td>Fully supported</td></tr>
+    <tr><td>Invalid text input</td><td>Block via HTML5 native validation</td></tr>
+    <tr><td>Custom error messages</td><td>Removed</td></tr>
+    <tr><td>Panel scrolling</td><td>Removed — panel auto-expands</td></tr>
+    <tr><td>Reset button</td><td>Added — top right area</td></tr>
+  </table>
+</div>
+
+<!-- UX Insights -->
+<div class="cs-card">
+  <span class="section-label">UX Insights</span>
+
+  <div class="insight-grid">
+
+    <div class="insight-block">
+      <div class="insight-block-title">Iterative Filter UX</div>
+      <div class="insight-item">Closing a panel on Apply forces unnecessary reopens during fine-tuning. Panels used for iterative work should stay open until the user is done.</div>
+      <div class="insight-item">Separate close and apply is a standard pattern for power-user filter panels.</div>
+    </div>
+
+    <div class="insight-block">
+      <div class="insight-block-title">Filter Independence Principle</div>
+      <div class="insight-item">Linking Drop Zero to the Range Slider would create invisible side effects — users would move one control and see another change unexpectedly.</div>
+      <div class="insight-item">Independent filters are predictable and easier to reason about, especially when debugging why data appears/disappears.</div>
+    </div>
+
+    <div class="insight-block">
+      <div class="insight-block-title">Data-Driven Defaults</div>
+      <div class="insight-item">Slider range defaulting to actual API data range (not 0–500) gives users an immediately meaningful starting point.</div>
+      <div class="insight-item">Generic 0–500 defaults force users to hunt for their real range, adding friction before any work starts.</div>
+    </div>
+
+    <div class="insight-block">
+      <div class="insight-block-title">Lean on Platform Validation</div>
+      <div class="insight-item">HTML5 input validation natively prevents non-numeric input. Custom error messages for the same scenario are redundant and add maintenance overhead.</div>
+      <div class="insight-item">Save custom validation effort for rules the platform cannot handle (e.g., min &gt; max).</div>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>

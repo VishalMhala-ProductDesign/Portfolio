@@ -1,0 +1,188 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Study On Cloud — Design Review</title>
+  <link rel="stylesheet" href="assets/css/font style.css">
+  <link rel="stylesheet" href="assets/css/button.css">
+  <link rel="stylesheet" href="assets/css/card.css">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #F1F5F9; padding-bottom: 60px; }
+  .topband {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 16px 30px; background-color: #F1F5F9;
+    border-bottom: none;
+    position: sticky; top: 0; z-index: 100;
+  }
+  .topband-text { font-size: 15px; font-weight: 600; letter-spacing: -0.01em; color: var(--color-text-primary); }
+  .topband-text p { margin: 2px 0 0; font-size: 12px; font-weight: 400; color: var(--color-text-muted); }
+  .cs-card {
+    background: #fff; border-radius: 10px; border: 1px solid #E2E8F0;
+    padding: 36px 40px; margin: 24px auto 0; width: 960px; max-width: 100%;
+  }
+  .section-label {
+    font-size: 10px; font-weight: 700; letter-spacing: 0.12em;
+    text-transform: uppercase; color: #94A3B8; margin-bottom: 20px; display: block;
+  }
+  .rec-title { font-size: 22px; font-weight: 700; color: #0F172A; letter-spacing: -0.02em; margin-bottom: 6px; }
+  .rec-subtitle { font-size: 14px; color: #64748B; font-weight: 400; line-height: 1.6; margin-top: 8px; }
+  .video-wrap {
+    position: relative; padding-bottom: 56.25%; height: 0;
+    overflow: hidden; border-radius: 8px; background: #0F172A;
+  }
+  .video-wrap video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; border-radius: 8px; }
+  .note-section { margin-top: 28px; }
+  .note-section:first-child { margin-top: 0; }
+  .note-heading {
+    font-size: 13px; font-weight: 700; color: #0F172A; letter-spacing: 0.01em;
+    margin-bottom: 10px; padding-bottom: 8px; border-bottom: 1px solid #F1F5F9;
+  }
+  .note-item {
+    font-size: 14px; color: #475569; line-height: 1.65;
+    padding: 4px 0 4px 16px; border-left: 2px solid #E2E8F0; margin-bottom: 6px;
+  }
+  .note-sub { font-size: 13px; color: #64748B; line-height: 1.6; padding: 3px 0 3px 28px; margin-bottom: 4px; }
+  .insight-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 4px; }
+  .insight-block { background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 8px; padding: 18px 20px; }
+  .insight-block-title {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.1em;
+    text-transform: uppercase; color: #94A3B8; margin-bottom: 12px;
+  }
+  .insight-item { font-size: 13px; color: #334155; line-height: 1.6; padding: 3px 0 3px 14px; border-left: 2px solid #CBD5E1; margin-bottom: 6px; }
+  .decision-table { width: 100%; border-collapse: collapse; font-size: 13px; margin-top: 8px; }
+  .decision-table th {
+    background: #F1F5F9; color: #64748B; font-size: 11px; font-weight: 700;
+    letter-spacing: 0.08em; text-transform: uppercase; padding: 8px 12px; text-align: left; border-bottom: 1px solid #E2E8F0;
+  }
+  .decision-table td { padding: 10px 12px; color: #475569; border-bottom: 1px solid #F1F5F9; vertical-align: top; }
+</style>
+</head>
+<body>
+
+<div class="topband">
+  <div class="topband-text">
+    Vishal Mhala
+    <p>Senior Product Designer | AI-Powered Enterprise Workflow | Human-AI Collaboration | Agentic Systems</p>
+  </div>
+  <div style="display:flex; align-items:center; gap:0;">
+    <a href="index.html#section-ican" style="font-size:15px; font-weight:500; color:var(--color-accent); text-decoration:none; letter-spacing:0.01em;">I Can</a>
+    <span style="color:var(--color-border); font-size:15px; padding:0 16px;">|</span>
+    <a href="index.html#section-thinking" style="font-size:15px; font-weight:500; color:var(--color-accent); text-decoration:none; letter-spacing:0.01em;">UX &amp; PM Thinking</a>
+    <span style="color:var(--color-border); font-size:15px; padding:0 16px;">|</span>
+    <a href="index.html#section-aithinking" style="font-size:15px; font-weight:500; color:var(--color-accent); text-decoration:none; letter-spacing:0.01em;">AI Thinking &amp; Tool</a>
+    <span style="color:var(--color-border); font-size:15px; padding:0 16px;">|</span>
+    <a href="index.html#section-casestudies" style="font-size:15px; font-weight:500; color:var(--color-accent); text-decoration:none; letter-spacing:0.01em;">Case Studies</a>
+    <span style="color:var(--color-border); font-size:15px; padding:0 16px;">|</span>
+    <a href="index.html#section-beyond" style="font-size:15px; font-weight:500; color:var(--color-accent); text-decoration:none; letter-spacing:0.01em;">Design Review</a>
+  </div>
+</div>
+
+<!-- Header -->
+<div class="cs-card">
+  <span class="section-label">Design Review &mdash; Recording</span>
+  <div class="rec-title">Create Study On Cloud</div>
+  <div class="rec-subtitle">UX flow review for enabling users to create predefined study structures (Gas, Electric, Water, Universal) directly from PLEXOS Cloud. Final agreed direction: deep-link users from Cloud to the relevant Marketplace Playbook rather than building a duplicate template system inside Cloud.</div>
+</div>
+
+<!-- Video -->
+<div class="cs-card">
+  <span class="section-label">Recording</span>
+  <div class="video-wrap">
+    <video controls preload="metadata">
+      <source src="https://www.dropbox.com/scl/fi/es1ywav6nr2jcqk84rm7e/Create-Study-On-Cloud-Design-Review.mp4?rlkey=ceadvvj6ilsymhsxn547d9inx&st=kpx7zqf6&dl=1" type="video/mp4">
+    </video>
+  </div>
+</div>
+
+<!-- Discussion Notes -->
+<div class="cs-card">
+  <span class="section-label">Discussion Notes</span>
+
+  <div class="note-section">
+    <div class="note-heading">Objective &amp; Problem Statement</div>
+    <div class="note-item">Goal: Let users quickly create a predefined study structure for Gas, Water, Electric, or Universal studies directly from Cloud.</div>
+    <div class="note-item">Current gap: Users must create studies in Excel/Desktop and push them to Cloud — Cloud is not the starting point.</div>
+    <div class="note-item">Scope: Creating a basic starting point only — not replacing Marketplace or building a full study ecosystem inside Cloud.</div>
+  </div>
+
+  <div class="note-section">
+    <div class="note-heading">Design Options Discussed</div>
+    <div class="note-item"><strong>Option 1 — Create Study button on Top Navigation</strong></div>
+    <div class="note-sub">Add a "Create Study" button in the top band; clicking opens templates.</div>
+    <div class="note-sub">Rejected: top nav is already crowded (study version, tenant name, notifications); creating studies is not a frequent action.</div>
+    <div class="note-item"><strong>Option 2 — Create Study inside Study Dropdown</strong></div>
+    <div class="note-sub">Place "Create Study" inside the existing study dropdown panel.</div>
+    <div class="note-sub">Concern: new users with no studies would not know to click the dropdown to start — poor discoverability.</div>
+  </div>
+
+  <div class="note-section">
+    <div class="note-heading">New Tenant Scenario</div>
+    <div class="note-item">A brand-new customer gets a new tenant with zero studies — a different handling is needed.</div>
+    <div class="note-item">Proposed solution: if tenant has no studies, show a modal with recommended starting studies and guide toward first study creation.</div>
+    <div class="note-item">Two distinct scenarios must be handled separately: new user (needs onboarding guidance, empty-state modal) vs. existing user (quick access via dropdown).</div>
+  </div>
+
+  <div class="note-section">
+    <div class="note-heading">Marketplace Integration</div>
+    <div class="note-item">Starter studies are already being built by a separate team and published to Marketplace as Playbooks (Electric, Gas, and future Water/Universal).</div>
+    <div class="note-item">Intent: reuse this work by redirecting users directly to the relevant Marketplace Playbook rather than duplicating templates inside Cloud.</div>
+    <div class="note-item">Marketplace contains Insights, Reports, and Playbooks — starter studies are packaged Playbooks with Excel templates.</div>
+  </div>
+
+  <div class="note-section">
+    <div class="note-heading">Final Agreed Direction</div>
+    <div class="note-item">User flow: Click Create Study &rarr; Select type (Gas/Electric/Water/Universal) &rarr; Deep-link to relevant Marketplace Playbook &rarr; Click "Add to Cloud" &rarr; Study created in tenant.</div>
+    <div class="note-item">Critical UX rule: do NOT send users to the full Marketplace browser — link directly to the specific Playbook to avoid confusion.</div>
+  </div>
+
+  <div class="note-section">
+    <div class="note-heading">Open Decisions</div>
+    <div class="note-item">Final placement of "Create Study" entry point (top UI / dropdown / conditional empty-state modal) — pending broader team discussion.</div>
+    <div class="note-item">Need to validate: how many starter templates will exist long-term (4 vs. 10–20+) and impact on UI scalability.</div>
+    <div class="note-item">Need to confirm Marketplace deep-link technical feasibility with engineering.</div>
+    <div class="note-item">Need a demo of new tenant creation flow to understand the zero-studies state.</div>
+  </div>
+</div>
+
+<!-- UX Insights -->
+<div class="cs-card">
+  <span class="section-label">UX Insights</span>
+
+  <div class="insight-grid">
+
+    <div class="insight-block">
+      <div class="insight-block-title">Entry Point Strategy</div>
+      <div class="insight-item">Avoid adding low-frequency actions (like "Create Study") to a crowded top nav.</div>
+      <div class="insight-item">Contextual entry points (study dropdown, empty-state modal) reduce noise while improving discoverability for the right users.</div>
+    </div>
+
+    <div class="insight-block">
+      <div class="insight-block-title">Empty State Design</div>
+      <div class="insight-item">New tenants with zero studies require a different experience — onboarding modal, not just a blank list.</div>
+      <div class="insight-item">Guided first-run flows prevent users from getting stuck before they understand the product.</div>
+    </div>
+
+    <div class="insight-block">
+      <div class="insight-block-title">Avoid Duplication</div>
+      <div class="insight-item">Building a new template system inside Cloud when Marketplace Playbooks already exist creates maintenance overhead and UX inconsistency.</div>
+      <div class="insight-item">Deep-linking reuses existing investment and gives users more value (Playbooks include Excel templates, not just study shells).</div>
+    </div>
+
+    <div class="insight-block">
+      <div class="insight-block-title">Action Items</div>
+      <table class="decision-table">
+        <tr><th>Owner</th><th>Action</th></tr>
+        <tr><td>Vishal</td><td>Discuss Create Study placement with UX/product team</td></tr>
+        <tr><td>Team</td><td>Provide new tenant onboarding demo</td></tr>
+        <tr><td>Engineering</td><td>Confirm Marketplace deep-link feasibility</td></tr>
+        <tr><td>Product</td><td>Clarify starter study count and scalability</td></tr>
+      </table>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>

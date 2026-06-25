@@ -1,0 +1,181 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Card, Layer &amp; Legend — Design Review</title>
+  <link rel="stylesheet" href="assets/css/font style.css">
+  <link rel="stylesheet" href="assets/css/button.css">
+  <link rel="stylesheet" href="assets/css/card.css">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #F1F5F9; padding-bottom: 60px; }
+  .topband {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 16px 30px; background-color: #F1F5F9;
+    border-bottom: none;
+    position: sticky; top: 0; z-index: 100;
+  }
+  .topband-text { font-size: 15px; font-weight: 600; letter-spacing: -0.01em; color: var(--color-text-primary); }
+  .topband-text p { margin: 2px 0 0; font-size: 12px; font-weight: 400; color: var(--color-text-muted); }
+  .cs-card {
+    background: #fff; border-radius: 10px; border: 1px solid #E2E8F0;
+    padding: 36px 40px; margin: 24px auto 0; width: 960px; max-width: 100%;
+  }
+  .section-label {
+    font-size: 10px; font-weight: 700; letter-spacing: 0.12em;
+    text-transform: uppercase; color: #94A3B8; margin-bottom: 20px; display: block;
+  }
+  .rec-title { font-size: 22px; font-weight: 700; color: #0F172A; letter-spacing: -0.02em; margin-bottom: 6px; }
+  .rec-subtitle { font-size: 14px; color: #64748B; font-weight: 400; line-height: 1.6; margin-top: 8px; }
+  .video-wrap {
+    position: relative; padding-bottom: 56.25%; height: 0;
+    overflow: hidden; border-radius: 8px; background: #0F172A;
+  }
+  .video-wrap video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; border-radius: 8px; }
+  .note-section { margin-top: 28px; }
+  .note-section:first-child { margin-top: 0; }
+  .note-heading {
+    font-size: 13px; font-weight: 700; color: #0F172A; letter-spacing: 0.01em;
+    margin-bottom: 10px; padding-bottom: 8px; border-bottom: 1px solid #F1F5F9;
+  }
+  .note-item {
+    font-size: 14px; color: #475569; line-height: 1.65;
+    padding: 4px 0 4px 16px; border-left: 2px solid #E2E8F0; margin-bottom: 6px;
+  }
+  .note-sub { font-size: 13px; color: #64748B; line-height: 1.6; padding: 3px 0 3px 28px; margin-bottom: 4px; }
+  .insight-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 4px; }
+  .insight-block { background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 8px; padding: 18px 20px; }
+  .insight-block-title {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.1em;
+    text-transform: uppercase; color: #94A3B8; margin-bottom: 12px;
+  }
+  .insight-item { font-size: 13px; color: #334155; line-height: 1.6; padding: 3px 0 3px 14px; border-left: 2px solid #CBD5E1; margin-bottom: 6px; }
+</style>
+</head>
+<body>
+
+<div class="topband">
+  <div class="topband-text">
+    Vishal Mhala
+    <p>Senior Product Designer | AI-Powered Enterprise Workflow | Human-AI Collaboration | Agentic Systems</p>
+  </div>
+  <div style="display:flex; align-items:center; gap:0;">
+    <a href="index.html#section-ican" style="font-size:15px; font-weight:500; color:var(--color-accent); text-decoration:none; letter-spacing:0.01em;">I Can</a>
+    <span style="color:var(--color-border); font-size:15px; padding:0 16px;">|</span>
+    <a href="index.html#section-thinking" style="font-size:15px; font-weight:500; color:var(--color-accent); text-decoration:none; letter-spacing:0.01em;">UX &amp; PM Thinking</a>
+    <span style="color:var(--color-border); font-size:15px; padding:0 16px;">|</span>
+    <a href="index.html#section-aithinking" style="font-size:15px; font-weight:500; color:var(--color-accent); text-decoration:none; letter-spacing:0.01em;">AI Thinking &amp; Tool</a>
+    <span style="color:var(--color-border); font-size:15px; padding:0 16px;">|</span>
+    <a href="index.html#section-casestudies" style="font-size:15px; font-weight:500; color:var(--color-accent); text-decoration:none; letter-spacing:0.01em;">Case Studies</a>
+    <span style="color:var(--color-border); font-size:15px; padding:0 16px;">|</span>
+    <a href="index.html#section-beyond" style="font-size:15px; font-weight:500; color:var(--color-accent); text-decoration:none; letter-spacing:0.01em;">Design Review</a>
+  </div>
+</div>
+
+<!-- Header -->
+<div class="cs-card">
+  <span class="section-label">Design Review &mdash; Recording</span>
+  <div class="rec-title">Data Card, Layer &amp; Legend</div>
+  <div class="rec-subtitle">End-to-end workflow validation for Map Layering, Data Cards, Properties Panel interactions, and Show/Hide behavior across layers. The primary unresolved issue is achieving a single source of truth for layer visibility when users can toggle layers from two different panels.</div>
+</div>
+
+<!-- Video -->
+<div class="cs-card">
+  <span class="section-label">Recording</span>
+  <div class="video-wrap">
+    <video controls preload="metadata">
+      <source src="https://www.dropbox.com/scl/fi/ul6teplx7hen96xlumsnb/Data-Card-Layer-Lagend-Design-Review.mp4?rlkey=0etypn04cijc7u18t1m5sc0rf&st=5q3yj9ki&dl=1" type="video/mp4">
+    </video>
+  </div>
+</div>
+
+<!-- Discussion Notes -->
+<div class="cs-card">
+  <span class="section-label">Discussion Notes</span>
+
+  <div class="note-section">
+    <div class="note-heading">Layer Positioning &amp; Floating Data Card</div>
+    <div class="note-item">Data Card always stays on the top/floating layer regardless of other visualization switches.</div>
+    <div class="note-item">Changing from Data Card to Bubble keeps Data Card fixed at the top position; switching visualization types updates layer order automatically.</div>
+    <div class="note-item">Avoids users needing to manually re-position the Data Card repeatedly after every visualization change.</div>
+  </div>
+
+  <div class="note-section">
+    <div class="note-heading">Pinning &amp; Editing Capabilities</div>
+    <div class="note-item">Existing pinning functionality unchanged — users can hover, open the Edit panel, pin items, and clear all pins.</div>
+    <div class="note-item">Editable properties: Value, Unit, Property object name.</div>
+  </div>
+
+  <div class="note-section">
+    <div class="note-heading">Layer Ordering Behavior</div>
+    <div class="note-item">Selecting a property from the Properties Panel moves that item to the top of the Map Layering panel.</div>
+    <div class="note-item">Moving a property up/down in the layer order updates the Data Card displayed value accordingly.</div>
+    <div class="note-sub">Example: moving Max Volume below Injection changes the card value to show Injection.</div>
+  </div>
+
+  <div class="note-section">
+    <div class="note-heading">Layer Visibility (Show/Hide) — Two Different Behaviors</div>
+    <div class="note-item"><strong>Hiding from Properties Panel:</strong> layer disappears completely from the Map Layering panel.</div>
+    <div class="note-item"><strong>Hiding from Map Layering Panel:</strong> layer hides visually but remains available in the layer list — user can re-enable without returning to Solution Panel.</div>
+    <div class="note-item">Inconsistency between the two creates confusion and makes behavior hard to predict.</div>
+  </div>
+
+  <div class="note-section">
+    <div class="note-heading">Single Source of Truth Concern</div>
+    <div class="note-item">Two different states tracking the same toggle creates UX inconsistency and potential engineering bugs.</div>
+    <div class="note-item">Suggested direction: maintain a single state/source of truth for visibility, regardless of where the user clicked.</div>
+    <div class="note-item">Concern flagged to discuss with Chetan (developer) and Tim for technical feasibility.</div>
+    <div class="note-item">If Map Layering hide removes the layer entirely, user must return to Solution Panel to re-enable — poor UX. Preferred: keep layer accessible in Map Layering as a persistent chip, only visually hidden.</div>
+  </div>
+
+  <div class="note-section">
+    <div class="note-heading">Visualization Panel Placement — Open Decision</div>
+    <div class="note-item">Discussion: Should visualization type controls exist only in Properties Panel, only in Map Layering, or both?</div>
+    <div class="note-item">Emerging direction (Chetan's suggestion): remove visualization selection from Properties Panel and keep it only in Map Layering — needs confirmation.</div>
+  </div>
+
+  <div class="note-section">
+    <div class="note-heading">Next Steps</div>
+    <div class="note-item">Discuss technical feasibility with Chetan, Tim, Abhishek, and other stakeholders.</div>
+    <div class="note-item">Add recommendations and screenshots to DevOps documentation.</div>
+    <div class="note-item">Workflow direction is approved from a UX perspective — remaining issues are technical consistency and ownership of visualization controls.</div>
+  </div>
+</div>
+
+<!-- UX Insights -->
+<div class="cs-card">
+  <span class="section-label">UX Insights</span>
+
+  <div class="insight-grid">
+
+    <div class="insight-block">
+      <div class="insight-block-title">State Consistency Principle</div>
+      <div class="insight-item">When the same action (hide a layer) can be triggered from two different places, both must produce the same result and reflect the same state.</div>
+      <div class="insight-item">Two-source state tracking is a UX and engineering anti-pattern — always resolve to a single source of truth.</div>
+    </div>
+
+    <div class="insight-block">
+      <div class="insight-block-title">Recovery Path Design</div>
+      <div class="insight-item">If hiding a layer requires the user to navigate to a completely different panel to undo, the hide action is too destructive for its intent.</div>
+      <div class="insight-item">Prefer soft-hide (persistent chip, visually toggled off) over hard-remove from the layer list.</div>
+    </div>
+
+    <div class="insight-block">
+      <div class="insight-block-title">Floating Priority Layer</div>
+      <div class="insight-item">Data Card's auto-float to the top layer removes a class of user errors — users don't have to manually manage priority after every switch.</div>
+      <div class="insight-item">Auto-ordering based on layer type is a pattern worth applying to other visualization hierarchies.</div>
+    </div>
+
+    <div class="insight-block">
+      <div class="insight-block-title">Key Open Items</div>
+      <div class="insight-item">Finalize Show/Hide logic: remove from layering panel or only visually hide?</div>
+      <div class="insight-item">Finalize where visualization controls live: Properties Panel, Map Layering, or both?</div>
+      <div class="insight-item">Confirm technical feasibility of unified state with Chetan and Tim.</div>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>

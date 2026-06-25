@@ -1,0 +1,199 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Study Landing Page &amp; TAG — Component Design Review</title>
+  <link rel="stylesheet" href="assets/css/font style.css">
+  <link rel="stylesheet" href="assets/css/button.css">
+  <link rel="stylesheet" href="assets/css/card.css">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #F1F5F9; padding-bottom: 60px; }
+  .topband {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 16px 30px; background-color: #F1F5F9;
+    border-bottom: none;
+    position: sticky; top: 0; z-index: 100;
+  }
+  .topband-text { font-size: 15px; font-weight: 600; letter-spacing: -0.01em; color: var(--color-text-primary); }
+  .topband-text p { margin: 2px 0 0; font-size: 12px; font-weight: 400; color: var(--color-text-muted); }
+  .cs-card {
+    background: #fff; border-radius: 10px; border: 1px solid #E2E8F0;
+    padding: 36px 40px; margin: 24px auto 0; width: 960px; max-width: 100%;
+  }
+  .section-label {
+    font-size: 10px; font-weight: 700; letter-spacing: 0.12em;
+    text-transform: uppercase; color: #94A3B8; margin-bottom: 20px; display: block;
+  }
+  .rec-title { font-size: 22px; font-weight: 700; color: #0F172A; letter-spacing: -0.02em; margin-bottom: 6px; }
+  .rec-subtitle { font-size: 14px; color: #64748B; font-weight: 400; line-height: 1.6; margin-top: 8px; }
+  .video-wrap {
+    position: relative; padding-bottom: 56.25%; height: 0;
+    overflow: hidden; border-radius: 8px; background: #0F172A;
+  }
+  .video-wrap video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; border-radius: 8px; }
+  .note-section { margin-top: 28px; }
+  .note-section:first-child { margin-top: 0; }
+  .note-heading {
+    font-size: 13px; font-weight: 700; color: #0F172A; letter-spacing: 0.01em;
+    margin-bottom: 10px; padding-bottom: 8px; border-bottom: 1px solid #F1F5F9;
+  }
+  .note-item {
+    font-size: 14px; color: #475569; line-height: 1.65;
+    padding: 4px 0 4px 16px; border-left: 2px solid #E2E8F0; margin-bottom: 6px;
+  }
+  .note-sub { font-size: 13px; color: #64748B; line-height: 1.6; padding: 3px 0 3px 28px; margin-bottom: 4px; }
+  .insight-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 4px; }
+  .insight-block { background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 8px; padding: 18px 20px; }
+  .insight-block-title {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.1em;
+    text-transform: uppercase; color: #94A3B8; margin-bottom: 12px;
+  }
+  .insight-item { font-size: 13px; color: #334155; line-height: 1.6; padding: 3px 0 3px 14px; border-left: 2px solid #CBD5E1; margin-bottom: 6px; }
+  .badge-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+  .badge { font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 20px; border: 1px solid; }
+  .badge-pub  { color: #0D9488; border-color: #99F6E4; background: #F0FDFA; }
+  .badge-priv { color: #7C3AED; border-color: #DDD6FE; background: #F5F3FF; }
+  .badge-req  { color: #D97706; border-color: #FDE68A; background: #FFFBEB; }
+</style>
+</head>
+<body>
+
+<div class="topband">
+  <div class="topband-text">
+    Vishal Mhala
+    <p>Senior Product Designer | AI-Powered Enterprise Workflow | Human-AI Collaboration | Agentic Systems</p>
+  </div>
+  <div style="display:flex; align-items:center; gap:0;">
+    <a href="index.html#section-ican" style="font-size:15px; font-weight:500; color:var(--color-accent); text-decoration:none; letter-spacing:0.01em;">I Can</a>
+    <span style="color:var(--color-border); font-size:15px; padding:0 16px;">|</span>
+    <a href="index.html#section-thinking" style="font-size:15px; font-weight:500; color:var(--color-accent); text-decoration:none; letter-spacing:0.01em;">UX &amp; PM Thinking</a>
+    <span style="color:var(--color-border); font-size:15px; padding:0 16px;">|</span>
+    <a href="index.html#section-aithinking" style="font-size:15px; font-weight:500; color:var(--color-accent); text-decoration:none; letter-spacing:0.01em;">AI Thinking &amp; Tool</a>
+    <span style="color:var(--color-border); font-size:15px; padding:0 16px;">|</span>
+    <a href="index.html#section-casestudies" style="font-size:15px; font-weight:500; color:var(--color-accent); text-decoration:none; letter-spacing:0.01em;">Case Studies</a>
+    <span style="color:var(--color-border); font-size:15px; padding:0 16px;">|</span>
+    <a href="index.html#section-beyond" style="font-size:15px; font-weight:500; color:var(--color-accent); text-decoration:none; letter-spacing:0.01em;">Design Review</a>
+  </div>
+</div>
+
+<!-- Header -->
+<div class="cs-card">
+  <span class="section-label">Design Review &mdash; Recording</span>
+  <div class="rec-title">Study Landing Page &amp; TAG — Component</div>
+  <div class="rec-subtitle">Second round of design review for the Study Landing Page and Tagging system. Covers study card states, user presence indicators, tagging flows, sorting, filtering, search, and the activity panel. Key decisions: remove owner-based sorting, simplify tag management, use panel overlays instead of popups.</div>
+</div>
+
+<!-- Video -->
+<div class="cs-card">
+  <span class="section-label">Recording</span>
+  <div class="video-wrap">
+    <video controls preload="metadata">
+      <source src="https://www.dropbox.com/scl/fi/ren951vgjrilpybgugztm/Study-Landing-Page-TAG-Component-Design-Review.mp4?rlkey=htvi3kvn113f5pfurelc7hi5g&st=eep358fl&dl=1" type="video/mp4">
+    </video>
+  </div>
+</div>
+
+<!-- Discussion Notes -->
+<div class="cs-card">
+  <span class="section-label">Discussion Notes</span>
+
+  <div class="note-section">
+    <div class="note-heading">Study Card — Three States</div>
+    <div class="note-item"><strong>Private Study:</strong> default, hover, favorite, and favorite+post states; shows title, description, tags, user initials, active editors.</div>
+    <div class="note-item"><strong>Public Study:</strong> anyone can access/edit; only current user's initials shown; same card structure as private.</div>
+    <div class="note-item"><strong>Requested Access Study:</strong> shows study info; hover provides "Request Access" option; expandable for more information.</div>
+    <div class="note-item">Access status should be clearly surfaced via badge — Public, Private, and Requested Access all need distinct visual treatment.</div>
+    <div class="badge-row" style="padding-left:16px; margin-bottom:8px;">
+      <span class="badge badge-pub">Public</span>
+      <span class="badge badge-priv">Private</span>
+      <span class="badge badge-req">Access Requested</span>
+    </div>
+  </div>
+
+  <div class="note-section">
+    <div class="note-heading">User Presence &amp; Collaboration</div>
+    <div class="note-item">Earlier design showed two user groups: left (actively editing), right (assigned but not currently editing).</div>
+    <div class="note-item">Decision: active/online users are important; assigned-user list is less critical and should be removed from the card.</div>
+    <div class="note-item">Need coordination with Madhu for online-user real-time implementation.</div>
+  </div>
+
+  <div class="note-section">
+    <div class="note-heading">Posts / Comments Behavior</div>
+    <div class="note-item">Post indicator: shows initials of who posted; multiple users shown as initials + count (e.g., +2).</div>
+    <div class="note-item">Hover: tooltip shows message preview and poster identity — concern about very long messages creating oversized tooltips.</div>
+    <div class="note-item">Click behavior: clicking post/comment chip opens a right-side overlay panel (not inline card expansion); panel contains study details, all messages, and reply option.</div>
+  </div>
+
+  <div class="note-section">
+    <div class="note-heading">Tagging System — Add Tag</div>
+    <div class="note-item">Entry points: study card hover, or Home screen tag section.</div>
+    <div class="note-item">Flow: click "Add Tag" &rarr; expand panel showing search, available tags, system tags, user-created tags.</div>
+    <div class="note-item">System tags are disabled (non-editable); user tags allow add/remove.</div>
+  </div>
+
+  <div class="note-section">
+    <div class="note-heading">Create &amp; Edit Tag Flow</div>
+    <div class="note-item">Click "+" Create Tag &rarr; full-screen modal; fields: tag name, color. On Create: new tag appears at top.</div>
+    <div class="note-item">Edit: hover tag &rarr; Edit icon appears; opens modal; changes apply everywhere the tag is used.</div>
+    <div class="note-item">Delete: hover tag &rarr; Delete icon appears; confirmation dialog ("Do you want to delete tag?") with Cancel / Delete actions.</div>
+    <div class="note-item">"+3 more tags" overflow: avoid tooltip; use a popup with chips; allow delete from within that popup.</div>
+  </div>
+
+  <div class="note-section">
+    <div class="note-heading">Sorting</div>
+    <div class="note-item">Removed: "Study Owner" and "Created By" sorting — users care about working on studies, not ownership.</div>
+    <div class="note-item">Final sort options: Last Viewed, Study Created Date, Study Title (A–Z / Z–A). Same approach for Tenant Studies.</div>
+  </div>
+
+  <div class="note-section">
+    <div class="note-heading">Study Activity Panel</div>
+    <div class="note-item">Reuse existing PLEXOS Cloud activity card — avoid introducing new component patterns.</div>
+    <div class="note-item">Sort options: Date/time (Newest/Oldest), User (A–Z / Z–A), Study (A–Z / Z–A).</div>
+    <div class="note-item">Filters: Study name, Username. Click activity item &rarr; opens related study in new tab.</div>
+  </div>
+
+  <div class="note-section">
+    <div class="note-heading">Global Search &amp; Quick Filters</div>
+    <div class="note-item">Search: user clicks &rarr; cursor appears &rarr; enters keyword &rarr; suggestions appear (Studies, Owners, Related results). Results refine as user types.</div>
+    <div class="note-item">Quick filters (My Studies): All, Favorite, Public, Private, Not Accessed, Unread Post.</div>
+    <div class="note-item">Archive filters: remove Favorite, Public/Private; keep only archive-relevant filters.</div>
+  </div>
+</div>
+
+<!-- UX Insights -->
+<div class="cs-card">
+  <span class="section-label">UX Insights</span>
+
+  <div class="insight-grid">
+
+    <div class="insight-block">
+      <div class="insight-block-title">Panel Overlay vs. Popup</div>
+      <div class="insight-item">Replacing popups with right-side overlay panels keeps users in context of the selected study — they don't lose their place in the list.</div>
+      <div class="insight-item">Panels also give more space for detailed content (messages, tags, activity) that popups can't accommodate cleanly.</div>
+    </div>
+
+    <div class="insight-block">
+      <div class="insight-block-title">Simplify Sorting</div>
+      <div class="insight-item">Removing "Study Owner" and "Created By" from sort options reflects how users actually think — by recency or title, not by who owns it.</div>
+      <div class="insight-item">Fewer sort options reduce decision fatigue without removing anything users care about.</div>
+    </div>
+
+    <div class="insight-block">
+      <div class="insight-block-title">Presence Over Assignments</div>
+      <div class="insight-item">Showing who is actively editing now (online presence) is more useful than the full assigned-user list.</div>
+      <div class="insight-item">Card space is limited — prioritize real-time information over static metadata.</div>
+    </div>
+
+    <div class="insight-block">
+      <div class="insight-block-title">Tag Management Principles</div>
+      <div class="insight-item">Consistent entry points (card hover and Home screen) ensure discoverability regardless of user workflow.</div>
+      <div class="insight-item">Global tag edits that propagate everywhere respect data consistency — avoid tags with different names across the same study set.</div>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>

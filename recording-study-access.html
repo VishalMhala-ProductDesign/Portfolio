@@ -1,0 +1,366 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Study Management / Access Flow Discussion</title>
+  <link rel="stylesheet" href="assets/css/font style.css">
+  <link rel="stylesheet" href="assets/css/button.css">
+  <link rel="stylesheet" href="assets/css/card.css">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body { background: #F1F5F9; padding-bottom: 60px; }
+
+  .topband {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 30px;
+    background-color: #F1F5F9;
+    border-bottom: none;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .topband-text {
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: var(--color-text-primary);
+  }
+  .topband-text p {
+    margin: 2px 0 0;
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--color-text-muted);
+  }
+
+  .wrap {
+    width: 960px;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .cs-card {
+    background: #fff;
+    border-radius: 10px;
+    border: 1px solid #E2E8F0;
+    padding: 36px 40px;
+    margin: 24px auto 0;
+    width: 960px;
+    max-width: 100%;
+  }
+
+  .section-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #94A3B8;
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  .rec-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #0F172A;
+    letter-spacing: -0.02em;
+    margin-bottom: 6px;
+  }
+  .rec-timestamp {
+    font-size: 13px;
+    color: #64748B;
+    font-weight: 500;
+    margin-bottom: 0;
+  }
+
+  /* Video */
+  .video-wrap {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    border-radius: 8px;
+    background: #0F172A;
+  }
+  .video-wrap video {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    border: none;
+    border-radius: 8px;
+  }
+
+  /* Notes sections */
+  .note-section { margin-top: 28px; }
+  .note-section:first-child { margin-top: 0; }
+
+  .note-heading {
+    font-size: 13px;
+    font-weight: 700;
+    color: #0F172A;
+    letter-spacing: 0.01em;
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #F1F5F9;
+  }
+
+  .note-item {
+    font-size: 14px;
+    color: #475569;
+    line-height: 1.65;
+    padding: 4px 0 4px 16px;
+    border-left: 2px solid #E2E8F0;
+    margin-bottom: 6px;
+  }
+
+  .note-sub {
+    font-size: 13px;
+    color: #64748B;
+    line-height: 1.6;
+    padding: 3px 0 3px 28px;
+    margin-bottom: 4px;
+  }
+
+  /* UX Insights */
+  .insight-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 4px;
+  }
+
+  .insight-block {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    padding: 18px 20px;
+  }
+  .insight-block-title {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #94A3B8;
+    margin-bottom: 12px;
+  }
+  .insight-item {
+    font-size: 13px;
+    color: #334155;
+    line-height: 1.6;
+    padding: 3px 0 3px 14px;
+    border-left: 2px solid #CBD5E1;
+    margin-bottom: 6px;
+  }
+
+  /* Badge row */
+  .badge-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 8px;
+  }
+  .badge {
+    font-size: 11px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 20px;
+    border: 1px solid;
+  }
+  .badge-public    { color: #0D9488; border-color: #99F6E4; background: #F0FDFA; }
+  .badge-private   { color: #7C3AED; border-color: #DDD6FE; background: #F5F3FF; }
+  .badge-pending   { color: #D97706; border-color: #FDE68A; background: #FFFBEB; }
+  .badge-noaccess  { color: #DC2626; border-color: #FECACA; background: #FEF2F2; }
+
+  /* Filter tree */
+  .filter-tree {
+    font-size: 13px;
+    color: #334155;
+    line-height: 2;
+    font-family: monospace;
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 6px;
+    padding: 14px 18px;
+    margin-top: 8px;
+  }
+
+  /* Table example */
+  .example-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    margin-top: 8px;
+  }
+  .example-table th {
+    background: #F1F5F9;
+    color: #64748B;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 8px 12px;
+    text-align: left;
+    border-bottom: 1px solid #E2E8F0;
+  }
+  .example-table td {
+    padding: 10px 12px;
+    color: #475569;
+    border-bottom: 1px solid #F1F5F9;
+  }
+</style>
+</head>
+<body>
+
+<!-- Topband -->
+<div class="topband">
+  <div class="topband-text">
+    Vishal Mhala
+    <p>Senior Product Designer | AI-Powered Enterprise Workflow | Human-AI Collaboration | Agentic Systems</p>
+  </div>
+  <div style="display:flex; align-items:center; gap:0;">
+    <a href="index.html#section-ican" style="font-size:15px; font-weight:500; color:var(--color-accent); text-decoration:none; letter-spacing:0.01em;">I Can</a>
+    <span style="color:var(--color-border); font-size:15px; padding:0 16px;">|</span>
+    <a href="index.html#section-thinking" style="font-size:15px; font-weight:500; color:var(--color-accent); text-decoration:none; letter-spacing:0.01em;">UX &amp; PM Thinking</a>
+    <span style="color:var(--color-border); font-size:15px; padding:0 16px;">|</span>
+    <a href="index.html#section-aithinking" style="font-size:15px; font-weight:500; color:var(--color-accent); text-decoration:none; letter-spacing:0.01em;">AI Thinking &amp; Tool</a>
+    <span style="color:var(--color-border); font-size:15px; padding:0 16px;">|</span>
+    <a href="index.html#section-casestudies" style="font-size:15px; font-weight:500; color:var(--color-accent); text-decoration:none; letter-spacing:0.01em;">Case Studies</a>
+    <span style="color:var(--color-border); font-size:15px; padding:0 16px;">|</span>
+    <a href="index.html#section-beyond" style="font-size:15px; font-weight:500; color:var(--color-accent); text-decoration:none; letter-spacing:0.01em;">Design Review</a>
+  </div>
+</div>
+
+<!-- Header card -->
+<div class="cs-card">
+  <span class="section-label">Design Review &mdash; Recording</span>
+  <div class="rec-title">Study Management / Access Flow Discussion</div>
+  <div class="rec-timestamp">Timestamp: 46:39 &ndash; 49:19</div>
+</div>
+
+<!-- Video card -->
+<div class="cs-card">
+  <span class="section-label">Recording</span>
+  <div class="video-wrap">
+    <video controls preload="metadata">
+      <source src="https://www.dropbox.com/scl/fi/cc94zbdfxrxsta4u0pgeh/Create-Study-On-Cloud-Design-Review-20250429_160150-Meeting-Recording.mp4?rlkey=06lqr8zlbhg8ydlzdpou38rev&st=ta1oc5op&dl=1" type="video/mp4">
+    </video>
+  </div>
+</div>
+
+<!-- Discussion notes card -->
+<div class="cs-card">
+  <span class="section-label">Discussion Notes</span>
+
+  <div class="note-section">
+    <div class="note-heading">Existing Study List</div>
+    <div class="note-item">Users can view the existing list of studies.</div>
+    <div class="note-item">Users can create a new study directly from the same area.</div>
+  </div>
+
+  <div class="note-section">
+    <div class="note-heading">Study Access Model</div>
+    <div class="note-item">All studies are visible based on access permissions.</div>
+    <div class="note-item">Users can filter studies based on access status:</div>
+    <div class="note-sub">No access</div>
+    <div class="note-sub">Request access</div>
+    <div class="note-sub">Public studies</div>
+    <div class="note-sub">Private studies</div>
+  </div>
+
+  <div class="note-section">
+    <div class="note-heading">Study Details &amp; Sorting</div>
+    <div class="note-item">Users can view different study details.</div>
+    <div class="note-item">Default sorting options:</div>
+    <div class="note-sub">Date</div>
+    <div class="note-sub">Study title</div>
+  </div>
+
+  <div class="note-section">
+    <div class="note-heading">Comments / Collaboration</div>
+    <div class="note-item">Users can view desktop comments associated with studies.</div>
+  </div>
+
+  <div class="note-section">
+    <div class="note-heading">Search</div>
+    <div class="note-item">Search functionality exists.</div>
+    <div class="note-item">Feedback: Search should be positioned under the source/navigation area.</div>
+  </div>
+
+  <div class="note-section">
+    <div class="note-heading">Closing Feedback</div>
+    <div class="note-item">No additional feedback.</div>
+    <div class="note-item">Session ended with thanks for participation.</div>
+  </div>
+</div>
+
+<!-- UX Insights card -->
+<div class="cs-card">
+  <span class="section-label">UX Insights / Potential Requirements</span>
+
+  <div class="note-section" style="margin-bottom:28px;">
+    <div class="note-heading">User Goal</div>
+    <div class="note-item">Quickly find, access, manage, and collaborate on studies.</div>
+  </div>
+
+  <div class="note-section" style="margin-bottom:28px;">
+    <div class="note-heading">Key Needs</div>
+    <div class="note-item">Clear visibility of study ownership and access state.</div>
+    <div class="note-item">Easy discovery of studies they can access.</div>
+    <div class="note-item">Ability to request access without leaving the workflow.</div>
+    <div class="note-item">Efficient filtering and sorting for large study libraries.</div>
+  </div>
+
+  <div class="note-section">
+    <div class="note-heading">Possible UX Improvements</div>
+
+    <div class="insight-grid">
+
+      <div class="insight-block">
+        <div class="insight-block-title">Access Status Badges</div>
+        <div class="badge-row">
+          <span class="badge badge-public">Public</span>
+          <span class="badge badge-private">Private</span>
+          <span class="badge badge-pending">Request Pending</span>
+          <span class="badge badge-noaccess">No Access</span>
+        </div>
+      </div>
+
+      <div class="insight-block">
+        <div class="insight-block-title">Search Placement</div>
+        <div class="insight-item">Keep search close to study discovery controls.</div>
+        <div class="insight-item">Consider placing it above the list with filters.</div>
+      </div>
+
+      <div class="insight-block">
+        <div class="insight-block-title">Filter Hierarchy</div>
+        <div class="filter-tree">Studies<br>
+├── All Studies<br>
+├── My Studies<br>
+├── Shared with Me<br>
+├── No Access<br>
+└── Access Requested</div>
+      </div>
+
+      <div class="insight-block">
+        <div class="insight-block-title">Study Card / Table Information</div>
+        <table class="example-table">
+          <tr><th>Field</th></tr>
+          <tr><td>Study Name</td></tr>
+          <tr><td>Owner</td></tr>
+          <tr><td>Access Level</td></tr>
+          <tr><td>Last Updated</td></tr>
+          <tr><td>Comments</td></tr>
+          <tr><td>Actions</td></tr>
+        </table>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
